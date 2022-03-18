@@ -1,0 +1,7 @@
+#Ob3243
+#0e0e0e
+#63ecdf
+#85b9ba
+#ffffff
+
+Tipografía: Roboto, Montserrat
