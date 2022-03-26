@@ -1,0 +1,95 @@
+body{
+    font-family: "Roboto";
+}
+
+
+/* Top/Main-header */
+
+
+.main-header{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(32, 32, 32);
+}
+
+.logo{
+    width: 170px;
+    height: 130px;
+}
+
+.memo{
+    color:aqua;
+    align-self: center;
+    font-size: 28px
+}
+
+.input{
+    align-self: center;
+}
+
+.carritoAccesoDirecto{
+    align-self: center;
+}
+
+.carritoAccesoDirecto a{
+    color: aqua;
+}
+
+.login {
+    align-self: center;
+}
+
+.login a{
+    color: aqua;
+    text-decoration: none;
+}
+
+/* Bottom header */
+.bottom-header{
+    background-color: black;
+}
+
+.lista{
+    color:aqua
+}
+
+.bottom-header{
+    display: flex;
+
+}
+.lista {
+    display: flex;
+
+}
+
+.lista li {
+    list-style-type: none;
+    padding-left:  70px;
+}
+.lista li a{
+    color:aqua;
+    text-decoration: none;
+}
+/* Main */
+main{
+    background-color: white;
+}
+
+.carrito-body{
+    display: flex;
+    flex-direction: column;
+}
+
+.h2container{
+    color: black
+}
+
+
+.descripcionItem{
+    float:right;
+}
+
+footer{
+    background-color: rgb(32, 32, 32);
+    color:white
+}

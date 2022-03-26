@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link href="\css\styles.css" rel="stylesheet">
+    <title>Hammerhead</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="main-header">
+            <div class="top-header">
+                <div class="logoImagen">
+                    <img src="\img\LogoFerreteria.png" alt="logo de Hammerhead" class="logo">
+                </div>
+                </div>
+                <p class="memo">La solución a tus problemas</p>
+                <span class="input"><input type="text" placeholder="Producto o Marca">
+                    <button><i class="fas fa-search"></i></button>
+                </span>
+                <div class="carritoAccesoDirecto">
+                    <a href="">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </div>            
+                <div class="login">
+                    <a href="">Iniciar Sesión</a>
+                </div>
+            </div>
+            </div>
+            <div class="bottom-header">
+                <ul class="lista">
+                    <li><a href="">Inicio</a></li>
+                    <li><a href="">Tienda</a></li>
+                    <li><a href="">Ayuda</a></li>
+                    <li><a href="">Sobre Nosotros</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="carrito-header">
+            <div class="row-center-carrito-header">
+                <div class="h2container">
+                    <h2>Carrito de Compras</h2>
+                </div>
+                <div class="descripcioncss">
+                    <div class="paginasRecorridas">
+                        <a href="" title="Hammerhead">Inicio</a>
+                        <span class="divider">-</span>
+                        <span class="paginaActual">Carrito de Compras</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="paginaCarrito" class="container">
+            <div class="carrito-body">
+                <div class="item1">
+                    <div class="imagenItemCarrito">
+                    <img src="https://d2r9epyceweg5n.cloudfront.net/stores/001/859/338/products/fox70180-quick-preset_2000x12361-e1be437fcfc87a12d116426217133095-320-0.jpg">
+                    </div>
+                    <div class="descripcionItem">
+                         <div class="nombreItem">
+                            <a href="">Disco Para Madera Premium 180 Mm. Carburo De Tungsteno</a>
+                        </div>
+                        <span class="menosItem">
+                            <button type="button" onclick="">-</button>
+                        </span>
+                        <span class="inputCantidadItem">
+                            <input type="number" value="1" style="display:inline-block">
+                        </span>
+                        <span class="masItem">
+                            <button type="button" onclick="">+</button>
+                        </span>
+                        <h4 class="subtotal">$Cantidad</h4>
+                    </div>
+                    <div class="buttonBorrar">
+                        <button type="button">X</button>
+                    </div>
+                </div>
+                <div class="item2">
+                    <div class="imagenItemCarrito">
+                    <img src="https://d2r9epyceweg5n.cloudfront.net/stores/001/859/338/products/fox65180-quick-preset_2000x12361-89d299cfce57d3904416426216038139-640-0.jpg">
+                    </div>
+                    <div class="descripcionItem">
+                         <div class="nombreItem">
+                            <a href="">Disco Diamantado Para Corte De Metales 180 Mm</a>
+                        </div>
+                        <span class="menosItem">
+                            <button type="button" onclick="">-</button>
+                        </span>
+                        <span class="inputCantidadItem">
+                            <input type="number" value="1" style="display:inline-block">
+                        </span>
+                        <span class="masItem">
+                            <button type="button" onclick="">+</button>
+                        </span>
+                        <h4 class="subtotal">$Cantidad</h4>
+                    </div>
+                    <div class="buttonBorrar">
+                        <button type="button">X</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="siguienteButton">
+            <button type="button">
+                <a href="">Siguiente</a>
+            </button>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-elements">
+                <div class="dataContacto">
+                    <h4>Contactanos:</h4>
+                        <ul>
+                            <li>Metodo de contacto 1</li>
+                            <li>Metodo de contacto 2</li>
+                            <li>Metodo de contacto 3</li>
+                            <li>Metodo de contacto 4</li>
+                        </ul>
+                </div>
+                <div class="navegacion">
+                    <h4>Navegacion</h4>
+                    <ul>
+                        <li>Inicio</li>
+                        <li>Tienda</li>
+                        <li>Ayuda</li>
+                        <li>Sobre Nosotros</li>
+                    </ul>
+                </div>
+                <div class="newsletter">
+                    <h4>Newsletter</h4>
+                    <input type="text" id="name" placeholder="Nombre">
+                    <input type="email" id="email" placeholder="Mail">
+                </div>
+            </div>
+        </div>
+        <div class="footer-legal">
+            <p>Copyright Hammerhead - 2022. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
