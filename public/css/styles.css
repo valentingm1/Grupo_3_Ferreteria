@@ -1,6 +1,10 @@
 body{
     font-family: "Roboto";
 }
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
 
 
 /* Top/Main-header */
@@ -70,7 +74,75 @@ body{
     color:aqua;
     text-decoration: none;
 }
-/* Main */
+/*Main Index*/
+img {
+    max-width: 100%;
+    max-height: 100%;
+   }
+main ul li{
+    list-style-type: none;
+}
+
+main ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+main h3{
+    text-align: center;
+}
+
+article {
+    border: 1px solid black;
+    width:30%;
+}
+
+.categorias {
+    border-bottom: 1px solid black;
+}
+
+.categorias-carrusel {
+    display: flex;
+    padding: 5%;
+
+}
+
+aside {
+    width:70%;
+    text-align: center;
+}
+
+
+.productos{
+    text-align: center;
+    }
+
+.precio-ahora{
+    font-size: 18px;
+}
+
+.description, .precio-antes{
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.titulo-entre-productos{
+    text-align: center;
+    font-size: 20px;
+}
+
+.productos{
+    display:flex;
+    flex-flow: row wrap;
+}
+
+.picture{
+    height: 40%;
+    width: 60%;
+}
+
+
+/* Main carrito */
 main{
     background-color: white;
 }
@@ -89,6 +161,7 @@ main{
     float:right;
 }
 
+/*footer*/
 footer{
     background-color: rgb(32, 32, 32);
     color:white
