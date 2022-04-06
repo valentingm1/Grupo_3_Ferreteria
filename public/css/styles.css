@@ -1,168 +1,214 @@
-body{
-    font-family: "Roboto";
+body {
+  font-family: "Roboto";
+  background-color: #ebebeb;
 }
 img {
-    max-width: 100%;
-    max-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
-
 
 /* Top/Main-header */
 
-
-.main-header{
-    display: flex;
-    justify-content: space-around;
-    background-color: rgb(32, 32, 32);
+.main-header {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(32, 32, 32);
 }
 
-.logo{
-    width: 170px;
-    height: 130px;
+.logo {
+  width: 170px;
+  height: 130px;
 }
 
-.memo{
-    color:aqua;
-    align-self: center;
-    font-size: 28px
+.memo {
+  color: aqua;
+  align-self: center;
+  font-size: 28px;
 }
 
-.input{
-    align-self: center;
+.input {
+  align-self: center;
 }
 
-.carritoAccesoDirecto{
-    align-self: center;
+.carritoAccesoDirecto {
+  align-self: center;
 }
 
-.carritoAccesoDirecto a{
-    color: aqua;
+.carritoAccesoDirecto a {
+  color: aqua;
 }
 
 .login {
-    align-self: center;
+  align-self: center;
 }
 
-.login a{
-    color: aqua;
-    text-decoration: none;
+.login a {
+  color: aqua;
+  text-decoration: none;
 }
 
 /* Bottom header */
-.bottom-header{
-    background-color: black;
+.bottom-header {
+  background-color: black;
 }
 
-.lista{
-    color:aqua
+.lista {
+  color: aqua;
 }
 
-.bottom-header{
-    display: flex;
-
+.bottom-header {
+  display: flex;
 }
 .lista {
-    display: flex;
-
+  display: flex;
 }
 
 .lista li {
-    list-style-type: none;
-    padding-left:  70px;
+  list-style-type: none;
+  padding-left: 70px;
 }
-.lista li a{
-    color:aqua;
-    text-decoration: none;
+.lista li a {
+  color: aqua;
+  text-decoration: none;
 }
 /*Main Index*/
-img {
-    max-width: 100%;
-    max-height: 100%;
-   }
-main ul li{
-    list-style-type: none;
+main a {
+  text-decoration: none;
+  color: black;
+  padding: 5px;
 }
 
-main ul li a{
-    text-decoration: none;
-    color: black;
+main h3 {
+  text-align: center;
 }
 
-main h3{
-    text-align: center;
+main {
+  width: 90%;
+  margin: 5px;
+  padding: 15px;
 }
 
-article {
-    border: 1px solid black;
-    width:30%;
+main section article {
+  background-color: #fff;
+  margin: 10px 0px;
+}
+
+main section article img {
+  width: 100%;
 }
 
 .categorias {
-    border-bottom: 1px solid black;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.lista-categorias {
+  text-align: column;
+  padding: 0 15%;
 }
 
 .categorias-carrusel {
-    display: flex;
-    padding: 5%;
-
+  display: flex;
+  height: auto;
+  align-items: center;
+  background-color: #ebebeb;
+  padding: 15%;
 }
 
-aside {
-    width:70%;
-    text-align: center;
+aside .carrusel.img {
+  padding: 15px;
 }
 
+main section article {
+  background-color: #fff;
+  margin: 10px 0px;
+} /*quizá esta parte se pueda quitar*/
 
-.productos{
-    text-align: center;
-    }
-
-.precio-ahora{
-    font-size: 18px;
+.precio-ahora {
+  font-size: 18px;
 }
 
-.description, .precio-antes{
-    font-size: 16px;
-    font-weight: normal;
+.description,
+.precio-antes {
+  font-size: 16px;
+  font-weight: normal;
 }
 
-.titulo-entre-productos{
-    text-align: center;
-    font-size: 20px;
+.titulo-entre-productos {
+  text-align: center;
+  font-size: 20px;
 }
 
-.productos{
-    display:flex;
-    flex-flow: row wrap;
+.productos {
+  display: flex;
+  flex-flow: row wrap;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  justify-content: space-evenly;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
-.picture{
-    height: 40%;
-    width: 60%;
+.picture {
+  /*revisar el tamaño entre los productos y que el martillo cambia mucho de tamaño*/
+  height: 100px;
+  width: 100px;
+  /*object-fit: cover; Este es para uqe no se pixele*/
 }
 
+main section article {
+  border: 1px solid #ebebeb;
+  padding: 5px;
+  margin: 5px;
+  align-items: center;
+}
+
+section {
+  background-color: #ebebeb;
+}
+
+section.ultima-vista .productos {
+  background-color: black;
+}
+
+.articulos-vistos,
+.articulos-en-promocion {
+  border-top: 1px solid #ebebeb;
+  /*padding: 15px;*/
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  position: relative;
+}
+
+.precio-ahora {
+  color: lightcoral;
+}
+
+.descripcion {
+  color: black;
+}
 
 /* Main carrito */
-main{
-    background-color: white;
+main {
+  background-color: white;
 }
 
-.carrito-body{
-    display: flex;
-    flex-direction: column;
+.carrito-body {
+  display: flex;
+  flex-direction: column;
 }
 
-.h2container{
-    color: black
+.h2container {
+  color: black;
 }
 
-
-.descripcionItem{
-    float:right;
+.descripcionItem {
+  float: right;
 }
 
 /*footer*/
-footer{
-    background-color: rgb(32, 32, 32);
-    color:white
+footer {
+  background-color: rgb(32, 32, 32);
+  color: white;
 }
