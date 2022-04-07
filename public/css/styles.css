@@ -240,9 +240,5 @@ footer {
   }
   .productos {
     display: flex;
-    flex-wrap: wrap;
-    display: flex;
-    flex-flow: row wrap;
-    flex-wrap: nowrap;
   }
 }
