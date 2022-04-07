@@ -11,6 +11,7 @@ img {
 
 .main-header {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   background-color: rgb(32, 32, 32);
 }
@@ -58,9 +59,11 @@ img {
 
 .bottom-header {
   display: flex;
+  flex-wrap: wrap;
 }
 .lista {
   display: flex;
+  flex-wrap: wrap; /*.lista, .bottom-header y .main-header tienen flex proque de lo contrario el responsive se corta ya que los elementos se apilan*/
 }
 
 .lista li {
@@ -83,14 +86,13 @@ main h3 {
 }
 
 main {
-  width: 90%;
-  margin: 5px;
   padding: 15px;
 }
 
 main section article {
   background-color: #fff;
   margin: 10px 0px;
+  text-align: center;
 }
 
 main section article img {
@@ -104,6 +106,7 @@ main section article img {
 .lista-categorias {
   text-align: column;
   padding: 0 15%;
+  text-align: inherit;
 }
 
 .categorias-carrusel {
@@ -139,9 +142,6 @@ main section article {
 }
 
 .productos {
-  display: flex;
-  flex-flow: row wrap;
-  flex-wrap: nowrap;
   align-content: stretch;
   justify-content: space-evenly;
   margin: 0px;
@@ -174,10 +174,11 @@ section.ultima-vista .productos {
 .articulos-vistos,
 .articulos-en-promocion {
   border-top: 1px solid #ebebeb;
-  /*padding: 15px;*/
-  display: flex;
-  flex-wrap: wrap;
+  padding: 15px;
+  /*display: flex;
+  flex-wrap: wrap;*/
   align-items: baseline;
+  text-align: center;
   position: relative;
 }
 
@@ -211,4 +212,37 @@ main {
 footer {
   background-color: rgb(32, 32, 32);
   color: white;
+}
+
+/*Tablet*/
+@media screen and (min-width: 361px) and (max-width: 769px) {
+  main section article {
+    box-shadow: 0 0 10px rgb(100, 100, 100);
+    width: 45%;
+  }
+
+  main section .products {
+    display: flex;
+    justify-content: space-between; /*este es para que haya espacio entre los elementos*/
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .productos {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+/*Desktop*/
+@media screen and (min-width: 769px) {
+  main section article {
+    box-shadow: 0 0 10px rgb(100, 100, 100);
+    width: 45%;
+  }
+  .productos {
+    display: flex;
+    flex-wrap: wrap;
+    display: flex;
+    flex-flow: row wrap;
+    flex-wrap: nowrap;
+  }
 }
