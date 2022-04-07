@@ -7,5 +7,5 @@ app.listen(3000,() =>{
     console.log("Todo sobre ruedas")
 })
 app.get("/", (req,res)=>{
-    res.sendFile(__dirname+"/views/elcoso.html")
+    res.sendFile(__dirname+"/views/carrito.html")
 })

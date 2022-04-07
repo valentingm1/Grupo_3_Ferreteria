@@ -10,6 +10,7 @@ body{
     display: flex;
     justify-content: space-around;
     background-color: rgb(32, 32, 32);
+    height: 130px
 }
 
 .logo{
@@ -57,7 +58,7 @@ body{
     display: flex;
 
 }
-.lista {
+.lista{
     display: flex;
 
 }
@@ -72,24 +73,137 @@ body{
 }
 /* Main */
 main{
-    background-color: white;
+    background-color: rgb(255, 255, 255);
+    padding-bottom: 100px;
 }
 
-.carrito-body{
+.carrito-header{
+    display: flex;
+    background-color: #f7f7f7;
+}
+
+#paginaCarrito{
+    margin-top: 75px;
+}
+
+.row-center-carrito-header{
+    width: 100%;
+}
+
+.itemList{
     display: flex;
     flex-direction: column;
 }
 
-.h2container{
-    color: black
+.breadcrumbs{
+    float: right;
+    padding-right: 250px;
+    margin-bottom: 50px;
 }
 
+.item{
+    display: flex;
+    align-self: center;
+    width: 600px;
+    height: 105px;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    margin-top: 6px;
+    box-sizing: border-box;
+}
 
 .descripcionItem{
-    float:right;
+    width: 500px;
 }
 
+.img-fluid{
+    width:62px;
+    height: 38px;
+}
+
+.h2container {
+    color: black;
+    padding-left: 200px;
+    max-width: 225px;
+}
+
+.total-subtotal-container{
+    background-color: #33c3c8;
+    margin-top: 19px;
+    max-width: 600px;
+    justify-content: baseline;
+}
+
+.spaghetti-container{
+    display: flex;
+    justify-content: center;
+}
+
+.subtotal-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-self: center;
+    width: 600px;
+}
+
+.carro-subtotal{
+    border-bottom: groove 1px grey;
+    margin: 0 0;
+    padding-bottom: 15px;
+    font-size: 18px;
+}
+
+.total-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-self: center;
+    width: 600px;
+    margin-left: 0%;
+}
+
+.siguienteButton-container{
+    display: flex;
+    justify-content: center;
+}
+
+.siguienteButton{
+    width: 600px;
+    height: 40px;
+    background-color: black;
+    box-shadow: #0a9ea3;
+}
+
+.siguienteButton a{
+    color:#33c3c8;
+    text-decoration: none;
+    font-weight: 900;
+}
+
+/* footer */
 footer{
     background-color: rgb(32, 32, 32);
     color:white
+}
+
+.footer-elements{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color:aqua;
+    border-bottom: groove 2px rgb(88, 87, 87);
+    margin: 0%;
+    padding-bottom: 50px;
+}
+
+
+.listaNavegacion li a{ 
+    color:aqua;
+    text-decoration: none;
+}
+
+.footer-legal{
+    display:flex;
+    justify-content: center;
 }
