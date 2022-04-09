@@ -14,31 +14,47 @@
     <header>
         <nav>
             <div class="main-header">
-            <div class="top-header">
-                <div class="logoImagen">
+                <div class="top-header">
+                    <div>
                     <img src="\img\LogoFerreteria.png" alt="logo de Hammerhead" class="logo">
+                    </div>
                 </div>
-                </div>
-                <p class="memo">La solución a tus problemas</p>
-                <span class="input"><input type="text" placeholder="Producto o Marca">
+
+                <p class="memo">
+                    La solución a tus problemas
+                </p>
+
+                <span class="input">
+                    <input type="text" placeholder="Producto o Marca">
                     <button><i class="fas fa-search"></i></button>
                 </span>
+
                 <div class="carritoAccesoDirecto">
-                    <a href="">
+                    <a href="/carrito">
                         <i class="fas fa-shopping-cart"></i>
                     </a>
-                </div>            
-                <div class="login">
-                    <a href="">Iniciar Sesión</a>
+                </div> 
+
+                <div class="burger-menu">
+                    <i class="fa fa-bars burger"></i>
                 </div>
+
+                <div class="login">
+                    <a href="/login">Iniciar Sesión</a>
+                </div>
+
+                <div class="login">
+                    <a href="/register">Registrarse</a>
+                </div>
+
             </div>
             </div>
             <div class="bottom-header">
                 <ul class="lista">
-                    <li><a href="">Inicio</a></li>
-                    <li><a href="">Tienda</a></li>
-                    <li><a href="">Ayuda</a></li>
-                    <li><a href="">Sobre Nosotros</a></li>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/">Tienda</a></li>
+                    <li><a href="#">Ayuda</a></li>
+                    <li><a href="#">Sobre Nosotros</a></li>
                 </ul>
             </div>
         </nav>
@@ -66,7 +82,7 @@
                     </div>
                     <div class="descripcionItem">
                          <div class="nombreItem">
-                            <a href="">Disco Para Madera Premium 180 Mm. Carburo De Tungsteno</a>
+                            <a href="/detalle">Disco Para Madera Premium 180 Mm. Carburo De Tungsteno</a>
                         </div>
                         <span class="menosItem">
                             <button type="button" onclick="">-</button>
@@ -89,7 +105,7 @@
                     </div>
                     <div class="descripcionItem">
                          <div class="nombreItem">
-                            <a href="">Disco Diamantado Para Corte De Metales 180 Mm</a>
+                            <a href="/detalle">Disco Diamantado Para Corte De Metales 180 Mm</a>
                         </div>
                         <span class="menosItem">
                             <button type="button" onclick="">-</button>
@@ -107,32 +123,32 @@
                     </div>
                 </div>
             </div>
-        <div class="spaghetti-container">
             <div class="total-subtotal-container">
             <div class="subtotal-container">
-                    <h5 class="carro-subtotal">
+                    <h3 class="carro-subtotal">
                         <span class="subtotal">Subtotal
                             <small>(Sin envío):</small>
                         </span>
                         <strong class="subtotal-text-right">
                             $Cantidad
                         </strong>
-                    </h5>
+                    </h3>
                 </div>
             <div class="total-container">
                 <h3>
-                    <span class="total-float-right">Total:</span>
+                    <span class="total-float-left">Total:</span>
                     <span class="total-cantidad-float-right">$Cantidad</span>
                 </h3>
             </div>
+            <div class="siguienteButton-container">
+                <button type="button" class="siguienteButton">
+                    <a href="">INICIAR COMPRA</a>
+                </button>
+            </div>
+            <div class="ver-mas">
+                <a href="/" >VER MAS PRODUCTOS</a>
             </div>
             </div>
-        </div>
-        
-        <div class="siguienteButton-container">
-            <button type="button" class="siguienteButton">
-                <a href="">INICIAR COMPRA</a>
-            </button>
         </div>
     </main>
     <footer>
@@ -158,9 +174,10 @@
                 </div>
                 <div class="newsletter">
                     <h4>Newsletter</h4>
+                    <p>Suscribite a nuestro Newsletter para recibir al instante nueva informacion sobre nuestras ofertas</p>
                     <input type="text" id="name" placeholder="Nombre">
                     <input type="email" id="email" placeholder="Mail">
-                    <p>Suscribite a nuestro Newsletter para recibir al instante nueva informacion sobre nuestras ofertas</p>
+                    <button>Enviar</button>
                 </div>
             </div>
         </div>
