@@ -1134,37 +1134,6 @@ article div.main-article i {
   section div.product-mostrados {
     padding: 15px;
   }
-
-  div.main-product-detail {
-    display: flex;
-    align-content: stretch;
-    justify-content: center;
-  }
-  section div.botton-product-img {
-    padding: 28px 0px;
-    width: 30%;
-  }
-  section div.product-title-rigth p {
-    font-size: 20px;
-    margin: 0px 20px;
-  }
-  section div.product-price h3 {
-    font-size: 36px;
-    padding-top: 30px;
-  }
-
-  section div.product-price p {
-    font-size: 20px;
-    margin-top: 20px;
-  }
-
-  section div.product-carrito {
-    margin-top: 50px;
-  }
-  section div.product-mostrados {
-    padding: 15px;
-  }
-
   div.main-product-detail {
     display: flex;
     align-content: stretch;
