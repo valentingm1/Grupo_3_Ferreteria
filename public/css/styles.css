@@ -616,6 +616,7 @@ section div.img-producto{
     border-bottom: 1px gray solid;
     display: flex;
     justify-content: center;
+    background-color: white;
 }
 
 section div.img-producto img{
@@ -805,6 +806,7 @@ article div.main-article i{
         width:100vw;
         padding: 0px;
     }
+
     /* ----carrito fin --------------*/
     .footer-elements{
         display:flex;
@@ -869,6 +871,7 @@ article div.main-article i{
         display:flex;
         flex-direction: column;
     }
+
     /* ---------- login inicio ----------- */
     input#login-name, input#password{
         width:80%;
@@ -889,7 +892,7 @@ article div.main-article i{
     
     div.login-button {
         width:70vw;
-}
+    }
     button.loguearse{
         width:70vw
     }
@@ -897,47 +900,8 @@ article div.main-article i{
 
 }
 
-@media (min-width:769px){
-    .menosItem button, .masItem button{
-        width:10%;
-        max-width: 50px;
-    }
-    .inputCantidadItem input{
-        width:20%;
-        max-width: 150px;
-    }
-    input#login-name, input#password{
-        width:80%;
-        max-width: 750px;
-    }
-    div.username{
-        width:100%;
-        display: flex;
-        justify-content: center;
-        max-width: 750px;
-    }
-    div.password-container{
-        width:100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        max-width: 750px;
-
-    }
-    
-    div.login-button {
-        width:80vw;
-        max-width: 750px;
-}
-    button.loguearse{
-        width:80vw;
-        max-width:750px;
-    }
-}
-
-
 @media (min-width:768px) and (max-width:1024px) {
+
     /*Header*/
     .logo{
         width: 180px;
@@ -972,6 +936,14 @@ article div.main-article i{
         width: 8%;
         border:none;
     }
+
+    div.main-header .carritoAccesoDirecto{
+        font-size: 20px;
+    }
+
+    div.main-header .burger-menu i {
+        font-size: 26px;
+    }
     
 
     /* Bottom header */
@@ -998,11 +970,13 @@ article div.main-article i{
     
     div.main-product-detail{
         display: flex;
+        margin-top: 10px;
     }
     
     section div.botton-product-img{
       padding: 28px 0px;
       width: 30%;
+      background-color: white;
     }
     
     section div.product-title {
@@ -1011,17 +985,34 @@ article div.main-article i{
     
     section div.product-title-rigth{
      display: block;
+     font-weight: bold;
     }
     
     section div.img-producto {
      border-bottom: 0px;
-     width: 60%;
+     width: 70%;
+     background-color: white;
+    }
+
+    section div.product-compra {
+        display: flex;
+        width: 90%;
+        margin: 20px 0px;
+        justify-content: center;
+    }
+
+    section div.product-carrito {
+        display: flex;
+        width: 90%;
+        margin: 20px 0px;
+        justify-content: center;
     }
     
     /*Productos similares*/
     .product-mostrados article {
      width: 22%;
     }
+
     /*Main-INDEX*/
 
     .productos-login {
@@ -1046,8 +1037,50 @@ article div.main-article i{
         margin: 5% 0px;
       }
 
+    /*----------Main-Login-------------*/
+
+    .menosItem button, .masItem button{
+        width:10%;
+        max-width: 50px;
+    }
+
+    .inputCantidadItem input{
+        width:20%;
+        max-width: 150px;
+    }
+
+    input#login-name, input#password{
+        width:80%;
+        max-width: 750px;
+    }
+
+    div.username{
+        width:100%;
+        display: flex;
+        justify-content: center;
+        max-width: 750px;
+    }
+
+    div.password-container{
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 750px;
     }
     
+    div.login-button {
+        width:80vw;
+        max-width: 750px;
+    }
+
+    button.loguearse{
+        width:80vw;
+        max-width:750px;
+    }
+
+} 
 
     @media (min-width: 1024px) and (max-width: 1440px) {
         
@@ -1077,10 +1110,20 @@ article div.main-article i{
         .login{
             display: block;
             text-align: center;
+            width: 15%;
         }
     
         .login a {
+            font-size: 18px;
+        }
+
+        div.main-header .carritoAccesoDirecto {
             font-size: 20px;
+            padding-left: 10px;
+        }
+
+        .carritoAccesoDirecto a {
+            padding: 0px;
         }
     
         .carritoAccesoDirecto a i{
@@ -1091,16 +1134,16 @@ article div.main-article i{
             display: none;
         }
     
-        /*Botton-Header*/
+    /*----------------------Botton-Header-----------------------*/
         .bottom-header {
             background-color: rgb(32 32 32);
             padding: 8px 0px 8px 0px;
             display: block;
             border-top: 1px gray solid;
         }
-    
 
-        /*Detalle de producto*/
+
+    /*--------------------Detalle de producto-----------------------*/
       
         .product-mostrados article {
           width: 22%;
@@ -1111,6 +1154,7 @@ article div.main-article i{
           padding: 16px 16px 0px;
           border-bottom: 0px;
           width: 60%;
+          background-color: white;
         }
       
         /*section div.img-producto img { /// Comment 2
@@ -1118,18 +1162,23 @@ article div.main-article i{
         }*/
       
         section div.botton-product-img {
-          margin-bottom: 2px;
-          width: 35%;
+            padding: 28px 0px;
+            width: 30%;
+            background-color: white;
         }
+
         section div.product-title {
           display: none;
         }
+
         section div.product-title-rigth {
           display: block;
         }
+
         section div.product-title-rigth p {
           font-size: 20px;
           margin: 0px 20px;
+          font-weight: bold;
         }
       
         section div.product-price h3 {
@@ -1154,11 +1203,8 @@ article div.main-article i{
           align-content: stretch;
           justify-content: center;
         }
-        section div.botton-product-img {
-          padding: 28px 0px;
-          width: 30%;
-        }
-        /*Main-Index*/
+        
+    /*-------------------Main-Index---------------------*/
     .categorias-carrusel {
         display: flex;
         flex-wrap: wrap;
@@ -1176,11 +1222,14 @@ article div.main-article i{
         width: 22%;
     }
       }
+
+
     @media (min-width: 1440px) and (max-width: 2560px) {
-        /*Top-Header*/
+
+    /*-----------------------Top-Header---------------------*/
     span input {
         width: 90%;
-        font-size: 18px;
+        font-size: 20px;
         border-radius: 7px 0px 0px 7px;
         border: none;
         padding: 10px;
@@ -1192,8 +1241,8 @@ article div.main-article i{
     }
     
     .memo {
-        width: 15%;
-        font-size: 23px;
+        width: 16%;
+        font-size: 30px;
         display: block;
     }
 
@@ -1207,7 +1256,7 @@ article div.main-article i{
     }
 
     .login a {
-        font-size: 20px;
+        font-size: 25px;
     }
 
     .carritoAccesoDirecto a i{
@@ -1218,7 +1267,7 @@ article div.main-article i{
         display: none;
     }
 
-    /*Botton-Header*/
+    /*-----------------Botton-Header-------------------*/
     .bottom-header {
         background-color: rgb(32 32 32);
         padding: 8px 0px 8px 0px;
@@ -1231,18 +1280,18 @@ article div.main-article i{
     }
 
 
-        /*Imagen carrusel*/
+    /*-------------------Imagen carrusel--------------*/
   img.carrusel-img {
     width: 100%;
     height: 450px;
   }
 
-  /*Footer*/
+  /*-----------------Footer-------------------*/
   .footer-elements {
     flex-direction: row;
   }
 
-  /*Main-Index*/
+  /*---------------Main-Index----------------*/
   .categorias-carrusel {
     display: flex;
     flex-wrap: wrap;
@@ -1307,15 +1356,106 @@ article div.main-article i{
     margin: 0px;
   }
 
-  /*Detalle de producto*/
-  .product-mostrados article {
-    width: 25%;
+  /*-----------------Detalle de producto----------------*/
+
+  section{
+      background-color: white;
   }
+
+  section.product-description{
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,.1);
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 25%);
+  }
+
+  section.products-similares {
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,.1);
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 25%);
+    padding: 0px;
+  }
+
+  .product-mostrados article {
+    width: 22%;
+    padding: 5px;
+  }
+
+  div.contain-img{
+    width: 84%;
+  }
+
   section div.img-producto {
     padding: 16px 16px 0px;
-    border-bottom: 1px gray solid;
+    border-bottom: 0px;
+    width: 60%;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+    justify-content: flex-end;
   }
-  section div.img-producto img {
-    width: 46%;
+
+  section div.botton-product-img {
+    padding: 28px 0px;
+    width: 30%;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,.1);
+    margin: 15px;
+    max-width: 350px;
   }
+
+  section div.botton-product-img {
+    margin-bottom: 2px;
+    width: 35%;
+  }
+  section div.product-title {
+    display: none;
+  }
+  section div.product-title-rigth {
+    display: block;
+  }
+
+  section div.product-title-rigth p {
+    font-size: 20px;
+    margin: 0px 20px;
+    font-weight: bold;
+  }
+
+  section div.product-price h3 {
+    font-size: 36px;
+    padding-top: 30px;
+  }
+
+  section div.product-price p {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  section div.product-carrito {
+    margin-top: 50px;
+  }
+  section div.product-mostrados {
+    padding: 15px;
+  }
+
+  div.main-product-detail {
+    display: flex;
+    align-content: stretch;
+    justify-content: center;
+  }
+ 
+  section.products-similares h3 {
+    font-size: 26px;
+    color: black;
+    margin: auto;
+    padding: 11px;
+    padding-left: 25px;
+}
+
 }
