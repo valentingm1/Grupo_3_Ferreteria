@@ -178,7 +178,7 @@ main{
 }
 
 .total-subtotal-container{
-    background-color: #33c3c8;
+    background-color: #faa473;
     max-width: 600px;
     justify-content: baseline;
     display: flex;
@@ -225,7 +225,7 @@ main{
 
     height: 40px;
     background-color: black;
-    box-shadow: #0a9ea3;
+    box-shadow: #f36e21;
     position: absolute;
     width: 100%;
     cursor: pointer;
@@ -233,7 +233,7 @@ main{
 }
 
 .siguienteButton a{
-    color:#33c3c8;
+    color:#f36e21;
     text-decoration: none;
     font-weight: 900;
 }
@@ -261,15 +261,15 @@ footer{
     display:flex;
     flex-direction: row;
     justify-content: space-around;
-    color:aqua;
+    color:#f36e21;
     border-bottom: groove 2px rgb(88, 87, 87);
     margin: 0%;
     padding-bottom: 50px;
 }
 
 
-.listaNavegacion li a{ 
-    color:aqua;
+.listaNavegacion li a{
+    color:#f36e21;
     text-decoration: none;
 }
 
@@ -280,8 +280,8 @@ footer{
 
 .newsletter button{
     background-color: black;
-    color:#33c3c8;
-    border: 2px solid #33c3c8;
+    color:#f36e21;
+    border: 2px solid #f36e21;
     font-weight: 600;
     transition-property: background-color, color, border;
     transition-duration: 0.5s;
@@ -828,6 +828,7 @@ article div.main-article p.discount{
     .newsletter p{
         display: none;
     }
+    
 }
 
 @media (min-width: 375px) and (max-width:768px){
