@@ -1,22 +1,22 @@
 const mainController = {
     index :(req,res) => {
-        res.sendFile('index.html', { root: "./views" });
+        res.render('index');
     ;
     },
     carrito :(req,res) => {
-        res.sendFile('carrito.html', { root: "./views" });
+        res.render('carrito');
     ;
     },
     productDetail :(req,res) => {
-        res.sendFile('productDetail.html', { root: "./views" });
+        res.render('productDetail');
     ;
     },
     register :(req,res) => {
-        res.sendFile('register.html', { root: "./views" });
+        res.render('register');
     ;
     },
     login :(req,res) => {
-        res.sendFile('login.html', { root: "./views" });
+        res.render('login');
     ;
     }
 }
