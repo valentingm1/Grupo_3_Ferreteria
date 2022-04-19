@@ -11,54 +11,9 @@
     <title>Hammerhead</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="main-header">
-                <div class="top-header">
-                    <div>
-                    <img src="\img\LogoFerreteria.png" alt="logo de Hammerhead" class="logo">
-                    </div>
-                </div>
 
-                <p class="memo">
-                    La solución a tus problemas
-                </p>
+    <%- include("partials/header.ejs")%>
 
-                <span class="input">
-                    <input type="text" placeholder="Producto o Marca">
-                    <button><i class="fas fa-search"></i></button>
-                </span>
-
-                <div class="carritoAccesoDirecto">
-                    <a href="/carrito">
-                        <i class="fas fa-shopping-cart"></i>
-                    </a>
-                </div> 
-
-                <div class="burger-menu">
-                    <i class="fa fa-bars burger"></i>
-                </div>
-
-                <div class="login">
-                    <a href="/login">Iniciar Sesión</a>
-                </div>
-
-                <div class="login">
-                    <a href="/register">Registrarse</a>
-                </div>
-
-            </div>
-            </div>
-            <div class="bottom-header">
-                <ul class="lista">
-                    <li><a href="/">Inicio</a></li>
-                    <li><a href="/">Tienda</a></li>
-                    <li><a href="#">Ayuda</a></li>
-                    <li><a href="#">Sobre Nosotros</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
     <main>
         <section class="carrito-header">
             <div class="row-center-carrito-header">
@@ -151,39 +106,8 @@
             </div>
         </div>
     </main>
-    <footer>
-        <div class="container">
-            <div class="footer-elements">
-                <div class="dataContacto">
-                    <h4>Contactanos:</h4>
-                        <ul>
-                            <li>Metodo de contacto 1</li>
-                            <li>Metodo de contacto 2</li>
-                            <li>Metodo de contacto 3</li>
-                            <li>Metodo de contacto 4</li>
-                        </ul>
-                </div>
-                <div class="navegacion">
-                    <h4>Navegacion</h4>
-                    <ul class="listaNavegacion">
-                        <li><a href="">Inicio</a></li>
-                        <li><a href="">Tienda</a></li>
-                        <li><a href="">Ayuda</a></li>
-                        <li><a href="">Sobre Nosotros</a></li>
-                    </ul>
-                </div>
-                <div class="newsletter">
-                    <h4>Newsletter</h4>
-                    <p>Suscribite a nuestro Newsletter para recibir al instante nueva informacion sobre nuestras ofertas</p>
-                    <input type="text" id="name" placeholder="Nombre">
-                    <input type="email" id="email" placeholder="Mail">
-                    <button>Enviar</button>
-                </div>
-            </div>
-        </div>
-        <div class="footer-legal">
-            <p>Copyright Hammerhead - 2022. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+    
+    <%- include("partials/footer.ejs")%>
+
 </body>
 </html>
