@@ -1147,7 +1147,7 @@ article div.main-article p.discount{
     
     /*----------------------Botton-Header-----------------------*/
         .bottom-header {
-            background-color: rgb(32 32 32);
+            background-color:black;
             padding: 8px 0px 8px 0px;
             display: block;
             border-top: 1px #f36e21 solid;
