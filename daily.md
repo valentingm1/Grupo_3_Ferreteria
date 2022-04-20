@@ -6,4 +6,4 @@ Jonathan: agregó ejs e hizo que el header, footer y head, sean compartidos por 
 
 Manuel:
 
-Adriana: Colocó y actualizó el archico dauly con los mensajes de whatsapp y actualizó el trello para el sprint 3. Colocó el gitignore
+Adriana: Colocó y actualizó el archico daily con los mensajes de whatsapp y actualizó el trello para el sprint 3. Modificó el color a naranja para algunos elementos faltantes.
