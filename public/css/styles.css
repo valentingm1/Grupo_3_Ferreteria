@@ -4,7 +4,7 @@ body{
 
 .main-header{
     display: flex;
-    background-color: rgb(32, 32, 32);
+    background-color: black;
     justify-content: space-around;
 }
 
@@ -253,7 +253,7 @@ main{
 
 /* footer */
 footer{
-    background-color: rgb(32, 32, 32);
+    background-color: black;
     color:white
 }
 
@@ -262,7 +262,7 @@ footer{
     flex-direction: row;
     justify-content: space-around;
     color:#f36e21;
-    border-bottom: groove 2px rgb(88, 87, 87);
+    border-bottom: groove 2px rgb(32, 32, 32);
     margin: 0%;
     padding-bottom: 50px;
 }
