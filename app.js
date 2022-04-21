@@ -9,13 +9,7 @@ app.set("view engine", "ejs");
 
 app.listen(3000,() =>{
     console.log("Todo sobre ruedas")
-})
-app.use("/", rutasPagina)
+});
 
-app.use("/register", rutasPagina)
+app.use("/", rutasPagina);
 
-app.use("/login", rutasPagina)
-
-app.use('/detalle', rutasPagina)
-
-app.use('/carrito', rutasPagina)
