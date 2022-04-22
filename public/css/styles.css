@@ -39,7 +39,7 @@ span input{
 }
 
 span button{
-    width: 10%;
+    width: 16%;
     border-radius: 0px 7px 7px 0px;
     border: none;
 }
@@ -760,6 +760,79 @@ article div.main-article p.discount{
     justify-content: center;
     align-items: center;
 }
+
+
+/*-----------------Submit Product--------------------*/
+.section-login .form2 .descripcion {
+    width:100%;
+    display: flex;
+    justify-content: center;
+    max-width: 750px;
+    height: 70px;
+  }
+
+button.subirimagen{
+    background-color: white;
+    color:black;
+    width: 100px;
+    height: 55px; 
+    border-radius: 5px;
+    border: 5px solid rgba(0,0,0,.6);
+    margin-top: 50px;
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+    .section-login .form2 .descripcion input#login-name{
+        width:100%;
+       /*  max-width: 700px;
+        height: 85px; */
+        display: flex;
+        justify-content: left;
+    }
+    .section-login .form2 .nombredelproducto input#login-name{
+        width:100%;
+        /*max-width: 750px;*/
+        height: 30px;
+        display: inline-flex; 
+        width: 700px; 
+    }
+    .section-login .form2 .button.loguearse{
+        margin-top: 10px; 
+    }
+
+    .section-login .form2 .button.publicarproducto{
+        padding: 0.5em 1em;
+        border: none;
+        background: #d5d5d5;
+        cursor: pointer;
+        max-width: 750px;
+        border-radius: 4px;
+      }
+
+      .publicarproducto{
+          transition-property: background-color;
+          transition-duration: 0.5s;
+      }
+
+      .publicarproducto a{
+          text-decoration: none;
+          color:#000;
+          transition-property: color;
+          transition-duration: 0.5s;
+      }
+
+      .publicarproducto:hover{
+          background-color: #f36e21;
+          cursor: pointer;
+      }
+
+      .publicarproducto:hover > a{
+          color:white
+      }
+
 
 /* ---------- Media queries ----------- */
 @media (min-width:320px) and (max-width:425px){

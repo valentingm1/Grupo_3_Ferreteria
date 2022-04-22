@@ -11,13 +11,14 @@
           Amoladora angular Klatter YSAG01 de 50 Hz verde y negra 840 W 220 V
         </p>
       </div>
-
+      
+      <% for (let i = 0; i < productos.length; i++) {%>
       <div class="main-product-detail">
         <div class="img-producto">
           <div class="contain-img">
             <img
-              src="https://http2.mlstatic.com/D_NQ_NP_764739-MLA46544980918_062021-O.webp"
-              alt="Logo de Ferreteria"
+              src="<%= productos[i].img %>"
+              alt="<%= productos[i].alt %>"
             />
           </div>
         </div>
@@ -25,15 +26,14 @@
         <div class="botton-product-img">
           <div class="product-title-rigth">
             <p>
-              Amoladora angular Klatter YSAG01 de 50 Hz verde y negra 840 W 220
-              V
+              <%= productos[i].desc %>
             </p>
           </div>
 
           <div class="product-price">
-            <h3>$6.500</h3>
-            <p>en 12x$708</p>
-            <p>cantidad: 1</p>
+            <h3><%= productos[i].price %></h3>
+            <p>Precio en cuotas</p>
+            <p>cantidad:<%= productos[i].cantidad %></p>
           </div>
 
           <div class="product-carrito">
@@ -58,140 +58,27 @@
         </ul>
       </div>
     </section>
+    
+    <%}%>
 
     <section class="products-similares">
       <h3>Productos Similares:</h3>
       <div class="product-mostrados">
+      <% for (let i = 0; i < productos.length; i++) {%>
         <article>
           <img
-            src="https://http2.mlstatic.com/D_NQ_NP_764739-MLA46544980918_062021-O.webp"
-            alt="SmartTv Samsung"
+            src="<%= productos[i].img %>"
+            alt="<%= productos[i].alt %>"
             class="product_img"
           />
           <div class="main-article">
-            <h4 class="description">Amoladora angular</h4>
+            <h4 class="description"><%= productos[i].name %></h4>
             <i class="fas fa-truck"></i>
-            <p class="price">$23.200</p>
+            <p class="price"><%= productos[i].price %></p>
             <p class="discount">6% off</p>
           </div>
         </article>
-        <article>
-          <img
-            src="https://http2.mlstatic.com/D_NQ_NP_764739-MLA46544980918_062021-O.webp"
-            alt="SmartTv Samsung"
-            class="product_img"
-          />
-          <div class="main-article">
-            <h4 class="description">Amoladora angular</h4>
-            <i class="fas fa-truck"></i>
-            <p class="price">$23.200</p>
-            <p class="discount">6% off</p>
-          </div>
-        </article>
-        <article>
-          <img
-            src="https://http2.mlstatic.com/D_NQ_NP_764739-MLA46544980918_062021-O.webp"
-            alt="SmartTv Samsung"
-            class="product_img"
-          />
-          <div class="main-article">
-            <h4 class="description">Amoladora angular</h4>
-            <i class="fas fa-truck"></i>
-            <p class="price">$23.200</p>
-            <p class="discount">6% off</p>
-          </div>
-        </article>
-        <article>
-          <img
-            src="https://http2.mlstatic.com/D_NQ_NP_764739-MLA46544980918_062021-O.webp"
-            alt="SmartTv Samsung"
-            class="product_img"
-          />
-          <div class="main-article">
-            <h4 class="description">Amoladora angular</h4>
-            <i class="fas fa-truck"></i>
-            <p class="price">$23.200</p>
-            <p class="discount">6% off</p>
-          </div>
-        </article>
-        <article>
-          <img
-            src="https://http2.mlstatic.com/D_NQ_NP_764739-MLA46544980918_062021-O.webp"
-            alt="SmartTv Samsung"
-            class="product_img"
-          />
-          <div class="main-article">
-            <h4 class="description">Amoladora angular</h4>
-            <i class="fas fa-truck"></i>
-            <p class="price">$23.200</p>
-            <p class="discount">6% off</p>
-          </div>
-        </article>
-        <article>
-          <img
-            src="https://http2.mlstatic.com/D_NQ_NP_764739-MLA46544980918_062021-O.webp"
-            alt="SmartTv Samsung"
-            class="product_img"
-          />
-          <div class="main-article">
-            <h4 class="description">Amoladora angular</h4>
-            <i class="fas fa-truck"></i>
-            <p class="price">$23.200</p>
-            <p class="discount">6% off</p>
-          </div>
-        </article>
-        <article>
-          <img
-            src="https://http2.mlstatic.com/D_NQ_NP_764739-MLA46544980918_062021-O.webp"
-            alt="SmartTv Samsung"
-            class="product_img"
-          />
-          <div class="main-article">
-            <h4 class="description">Amoladora angular</h4>
-            <i class="fas fa-truck"></i>
-            <p class="price">$23.200</p>
-            <p class="discount">6% off</p>
-          </div>
-        </article>
-        <article>
-          <img
-            src="https://http2.mlstatic.com/D_NQ_NP_764739-MLA46544980918_062021-O.webp"
-            alt="SmartTv Samsung"
-            class="product_img"
-          />
-          <div class="main-article">
-            <h4 class="description">Amoladora angular</h4>
-            <i class="fas fa-truck"></i>
-            <p class="price">$23.200</p>
-            <p class="discount">6% off</p>
-          </div>
-        </article>
-        <article>
-          <img
-            src="https://http2.mlstatic.com/D_NQ_NP_764739-MLA46544980918_062021-O.webp"
-            alt="SmartTv Samsung"
-            class="product_img"
-          />
-          <div class="main-article">
-            <h4 class="description">Amoladora angular</h4>
-            <i class="fas fa-truck"></i>
-            <p class="price">$23.200</p>
-            <p class="discount">6% off</p>
-          </div>
-        </article>
-        <article>
-          <img
-            src="https://http2.mlstatic.com/D_NQ_NP_764739-MLA46544980918_062021-O.webp"
-            alt="SmartTv Samsung"
-            class="product_img"
-          />
-          <div class="main-article">
-            <h4 class="description">Amoladora angular</h4>
-            <i class="fas fa-truck"></i>
-            <p class="price">$23.200</p>
-            <p class="discount">6% off</p>
-          </div>
-        </article>
+        <%}%>  
       </div>
     </section>
 
