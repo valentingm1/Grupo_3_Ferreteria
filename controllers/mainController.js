@@ -1,43 +1,48 @@
 const herramientas= [
     {
-        img:"img/Alicate.jpg",
+        img:"/img/Alicate.jpg",
         name:"Alicate megabueno",
         desc:"Alicate megabueno de acero con descripcion descriptiva",
         price:"Precio $50.00",
         alt:"Imagen de alicate",
         cantidad:"10",
+        id: 1,
     },
     {
-        img:"img/Hacha.jpg",
+        img:"/img/Hacha.jpg",
         name:"Hacha cortasúper",
-        desc:"",
+        desc:"Hacha cortasúper de acero con descripcion descriptiva",
         price:"Precio $10.00",
         alt:"imagen de Hacha",
         cantidad:"15",
+        id: 2,
     },
     {
-        img:"img/Martillo.jpg",
+        img:"/img/Martillo.jpg",
         name:"Martillo pegaduro",
-        desc:"",
+        desc:"Martillo pegaduro de acero con descripcion descriptiva",
         price:"Precio $40.00",
         alt:"imagen de Martillo",
         cantidad:"5",
+        id: 3,
     },
     {
-        img:"img/Hacha.jpg",
+        img:"/img/Hacha.jpg",
         name:"Hacha cortasúper",
-        desc:"",
+        desc:"Martillo pegaduro de acero con descripcion descriptiva",
         price:"Precio $10.00",
         alt:"imagen de Hacha",
         cantidad:"7",
+        id: 4,
     },
     {
-        img:"img/Alicate.jpg",
+        img:"/img/Alicate.jpg",
         name:"Alicate megabueno",
         desc:"Alicate megabueno de acero con descripcion descriptiva",
         price:"Precio $50.00",
         alt:"Imagen de alicate",
         cantidad:"10",
+        id: 5,
     },
 ]
 
@@ -48,9 +53,14 @@ const mainController = {
     carrito :(req,res) => {
         res.render('products/carrito');
     },
+
     productDetail :(req,res) => {
-        res.render('products/productDetail',{productos: herramientas});
-    },
+        if(req.params.id-1 < herramientas.length){
+        res.render('products/productDetail', herramientas[req.params.id-1]);
+    }else {
+        res.send("Producto inexistente")
+    }
+},
     register :(req,res) => {
         res.render('users/register');
     },

@@ -288,7 +288,7 @@ footer{
 }
 
 .newsletter button:hover{
-    background-color: #33c3c8;
+    background-color: #f36e21;
     color:black;
     border: 2px solid black;
     cursor: pointer;
@@ -425,6 +425,11 @@ main a {
   
   /*--------------Login/register*-----------------*/
 
+  div.register a i{
+    color: #f36e21;
+    padding: 5px;
+}
+
 .form2 {
     width: 100%;
     margin:auto;
@@ -548,6 +553,11 @@ main a {
 }
 
 /* -----------------------register----------------- */
+
+div.login a i{
+    color: #f36e21;
+    padding: 5px;
+}
 
 .identikit-container input{
     width: 400px;
@@ -1198,7 +1208,7 @@ button.subirimagen{
         }
     
         .login a {
-            font-size: 18px;
+            font-size: 17px;
         }
 
         div.main-header .carritoAccesoDirecto {
@@ -1442,9 +1452,6 @@ button.subirimagen{
 
   /*-----------------Detalle de producto----------------*/
 
-  section{
-      background-color: white;
-  }
 
   section.product-description{
     width: 80%;

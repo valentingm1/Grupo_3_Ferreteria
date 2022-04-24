@@ -41,7 +41,7 @@
         </article>
       </section>
       <section class="ultima-visita">
-        <h4 class="titulo-entre-productos">En tu última visita</h4>
+        <h4 class="titulo-entre-productos">Productos Destacados</h4>
         <div class="productos-login">
           <% for (let i = 0; i < productos.length; i++) {%>  
           <article class="article-producto-login">
@@ -55,7 +55,7 @@
             <div class="articulos-vistos">
               <p class="precio-Antes"><%= productos[i].price %></p>
               <h5 class="descripcion">
-                <a href="/detalle"><%= productos[i].name %></a>
+                <a href="/detalle/<%= productos[i].id %>"><%= productos[i].name %></a>
               </h5>
               <div class="add-to-cart-button">
                 <button>Añadir al carrito</button>
@@ -79,7 +79,7 @@
               <div class="articulos-vistos">
                 <p class="precio-Antes"><%= productos[i].price %></p>
                 <h5 class="descripcion">
-                  <a href="/detalle"><%= productos[i].name %></a>
+                  <a href="/detalle/<%= productos[i].id %>""><%= productos[i].name %></a>
                 </h5>
                 <div class="add-to-cart-button">
                   <button>Añadir al carrito</button>

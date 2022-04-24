@@ -1,4 +1,5 @@
-const express = require("express")
+const express = require("express");
+const req = require("express/lib/request");
 const router = express.Router()
 const mainController = require("../controllers/mainController.js")
 
@@ -8,7 +9,7 @@ router.get('/register', mainController.register);
 
 router.get('/login', mainController.login);
 
-router.get('/detalle', mainController.productDetail);
+router.get('/detalle/:id', mainController.productDetail);
 
 router.get('/carrito', mainController.carrito);
 
