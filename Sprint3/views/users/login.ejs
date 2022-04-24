@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include("../partials/head.ejs")%>
+
+<body>
+
+    <%- include("../partials/header.ejs")%>
+
+    <main id="main">
+        <section class="section-login">
+            <form action="/" method="POST" class="form2">
+            <div class="big-container">
+                <div class="username">
+                    <label for="login-name"></label>
+                    <input type="text" name="login-name" id="login-name" minlength="10" placeholder="Email">
+                </div>
+                <div class="password-container">
+                    <label for="login-password"></label>
+                    <input type="password" name="contraseña" id="password" minlength="8" placeholder="Contraseña">
+
+                    <div class="login-button">
+                        <div>
+                            <p><a href="#">¿Olvidastes tu Contraseña?</a></p>
+                            <label for="checkbox-recuerdame">Recuerdame</label>
+                            <input type="checkbox" name="checkbox" id="checkbox">
+                            <section class="#">
+                <div class="login-button">
+                <button class="loguearse">
+                    <a href="/">Iniciar Sesion</a>
+                </button>
+                </div>
+            </div>
+            </form>
+        </section>
+    </main>
+
+    <%- include("../partials/footer.ejs")%>
+
+</body>
+
+</html>
+
+</html>

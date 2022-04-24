@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs")%>
+
+  <body>
+    <%- include("../partials/header.ejs")%>
+
+    <main id="main">
+      <section class="section-login">
+        <form action="/" method="POST" class="form2">
+          <div class="nombredelproducto">
+            <label for="login-name"></label>
+            <input
+              type="text"
+              name="login-name"
+              id="login-name"
+              minlength="10"
+              placeholder="Nombre del Producto"
+            />
+          </div>
+          <div class="descripcion">
+            <label for="login-name"></label>
+            <input
+              type="text"
+              name="login-name"
+              id="login-name"
+              minlength="30"
+              placeholder="Descripcion"
+            />
+          </div>
+          <div class="login-button">
+            <button class="subirimagen">
+              <a href="/">SUBIR IMAGEN</a>
+            </button>
+          </div>
+          <div class="login-button">
+            <div>
+              <p><a href="#">COLORES:</a></p>
+                <label for="checkbox-recuerdame">Naranja</label>
+                <input type="checkbox" name="checkbox" id="checkbox">
+                <section class="#">
+    </div>
+    <div class="login-button">
+      <div>
+          <label for="checkbox-recuerdame">Amarillo</label>
+          <input type="checkbox" name="checkbox" id="checkbox">
+          <section class="#">
+</div>
+<div class="login-button">
+  <div>
+      <label for="checkbox-recuerdame">Negro</label>
+      <input type="checkbox" name="checkbox" id="checkbox">
+      <section class="#">
+</div>
+<div class="login-button">
+  <div>
+      <label for="checkbox-recuerdame">Original(Gris Claro)</label>
+      <input type="checkbox" name="checkbox" id="checkbox">
+      <section class="#">
+</div>
+<div class="login-button">
+            <div>
+              <p><a href="#">CATEGORIAS:</a></p>
+                <label for="checkbox-recuerdame">Herramientas</label>
+                <input type="checkbox" name="checkbox" id="checkbox">
+                <section class="#">
+    </div>
+    <div class="login-button">
+      <div>
+          <label for="checkbox-recuerdame">Electricidad</label>
+          <input type="checkbox" name="checkbox" id="checkbox">
+          <section class="#">
+</div>
+<div class="login-button">
+  <div>
+      <label for="checkbox-recuerdame">Plomeria</label>
+      <input type="checkbox" name="checkbox" id="checkbox">
+      <section class="#">
+</div>
+<div class="login-button">
+  <div>
+    
+      <label for="checkbox-recuerdame">Construccion</label>
+      <input type="checkbox" name="checkbox" id="checkbox">
+      <section class="#">
+</div>
+<div class="username">
+  <label for="login-name"></label>
+  <input
+    type="text"
+    name="login-name"
+    id="login-name"
+    minlength="4"
+    placeholder="Precio $"
+  />
+</div>
+          <div class="login-button">
+            <button class="publicarproducto">
+              <a href="/">ACTUALIZAR </a>
+            </button>
+          </div>
+          <div class="login-button">
+            <div>
+              <p><a href="#"></a></p></div>
+          <div class="login-button">
+            <button class="publicarproducto">
+              <a href="/">PUBLICAR PRODUCTO</a>
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <%- include("../partials/footer.ejs")%>
+  </body>
+</html>
