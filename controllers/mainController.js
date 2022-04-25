@@ -46,6 +46,8 @@ const herramientas= [
     },
 ]
 
+const otros = herramientas
+
 const mainController = {
     index :(req,res) => {
         res.render('index', {productos: herramientas});
@@ -56,7 +58,7 @@ const mainController = {
 
     productDetail :(req,res) => {
         if(req.params.id-1 < herramientas.length){
-        res.render('products/productDetail', herramientas[req.params.id-1]);
+        res.render('products/productDetail', {productos:herramientas[req.params.id-1],otros});
     }else {
         res.send("Producto inexistente")
     }
@@ -73,3 +75,4 @@ const mainController = {
 }
 
 module.exports = mainController
+
