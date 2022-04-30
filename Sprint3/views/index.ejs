@@ -54,12 +54,10 @@
             />
             <div class="articulos-vistos">
               <p class="precio-Antes"><%= productos[i].price %></p>
+              <i class="fas fa-truck"></i>
               <h5 class="descripcion">
                 <a href="/detalle/<%= productos[i].id %>"><%= productos[i].name %></a>
               </h5>
-              <div class="add-to-cart-button">
-                <button>Añadir al carrito</button>
-              </div>
             </div>
           </article>
           <%}%>
@@ -78,12 +76,10 @@
               />
               <div class="articulos-vistos">
                 <p class="precio-Antes"><%= productos[i].price %></p>
+                <i class="fas fa-truck"></i>
                 <h5 class="descripcion">
                   <a href="/detalle/<%= productos[i].id %>""><%= productos[i].name %></a>
                 </h5>
-                <div class="add-to-cart-button">
-                  <button>Añadir al carrito</button>
-                </div>
               </div>
             </article>
             <%}%>
