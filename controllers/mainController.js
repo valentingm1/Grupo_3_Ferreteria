@@ -69,8 +69,11 @@ const mainController = {
     login :(req,res) => {
         res.render('users/login');
     },
-    submitDetail :(req,res) => {
-        res.render('products/submitDetail');
+    createProduct :(req,res) => {
+        res.render('products/crearproducto');
+    },
+    editProduct :(req,res) => {
+        res.render('products/modificarproducto');
     }
 }
 

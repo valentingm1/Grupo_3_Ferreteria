@@ -179,7 +179,7 @@ main{
 }
 
 .total-subtotal-container{
-    background-color: #faa473;
+    background-color: black;
     max-width: 600px;
     justify-content: baseline;
     display: flex;
@@ -195,6 +195,7 @@ main{
 
 .carro-subtotal{
     border-bottom: groove 1px grey;
+    color: #f36e21;
     padding-bottom: 26px;
     font-size: 18px;
     width:100%
@@ -203,6 +204,7 @@ main{
 .total-container{
     display: flex;
     padding-bottom: 16px;
+    color:white
 }
 
 .total-container h3{
@@ -225,8 +227,7 @@ main{
 .siguienteButton{
 
     height: 40px;
-    background-color: black;
-    box-shadow: #f36e21;
+    background-color:#f36e21;
     position: absolute;
     width: 100%;
     cursor: pointer;
@@ -234,9 +235,9 @@ main{
 }
 
 .siguienteButton a{
-    color:#f36e21;
+    color:white;
     text-decoration: none;
-    font-weight: 900;
+    font-weight: 500;
 }
 
 .ver-mas{
@@ -246,7 +247,7 @@ main{
 }
 
 .ver-mas a{
-    color:black;
+    color:#f36e21;
     text-decoration: none;
     font-weight: bold;
 }
@@ -798,20 +799,6 @@ button.subirimagen{
 }
 
 
-    .section-login .form2 .descripcion input#login-name{
-        width:100%;
-       /*  max-width: 700px;
-        height: 85px; */
-        display: flex;
-        justify-content: left;
-    }
-    .section-login .form2 .nombredelproducto input#login-name{
-        width:100%;
-        /*max-width: 750px;*/
-        height: 30px;
-        display: inline-flex; 
-        width: 700px; 
-    }
     .section-login .form2 .button.loguearse{
         margin-top: 10px; 
     }
@@ -1319,28 +1306,67 @@ button.subirimagen{
     div.productos-login article.article-producto-login {
         width: 22%;
     }
-      }
+      /*----------Main-Login-------------*/
+      .menosItem button, .masItem button{
+        width:10%;
+        max-width: 50px;
+    }
 
+    .inputCantidadItem input{
+        width:20%;
+        max-width: 150px;
+    }
 
+    input#login-name, input#password{
+        width:80%;
+        max-width: 750px;
+    }
+
+    div.username{
+        width:100%;
+        display: flex;
+        justify-content: center;
+        max-width: 750px;
+    }
+
+    div.password-container{
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 750px;
+    }
+    
+    div.login-button {
+        width:80vw;
+        max-width: 750px;
+    }
+
+    button.loguearse{
+        width:80vw;
+        max-width:750px;
+    }
+}
     @media (min-width: 1440px) and (max-width: 2560px) {
 
     /*-----------------------Top-Header---------------------*/
     span input {
         width: 90%;
-        font-size: 20px;
+        font-size: 18px;
         border-radius: 7px 0px 0px 7px;
         border: none;
         padding: 10px;
     }
     
     .logo {
-        width: 250px;
+        width: 200px;
         height: 75px;
     }
     
     .memo {
-        width: 16%;
-        font-size: 30px;
+        width: 15%;
+        font-size: 17px;
         display: block;
     }
 
@@ -1351,10 +1377,20 @@ button.subirimagen{
     .login{
         display: block;
         text-align: center;
+        width: 15%;
     }
 
     .login a {
-        font-size: 25px;
+        font-size: 15px;
+    }
+
+    div.main-header .carritoAccesoDirecto {
+        font-size: 20px;
+        padding-left: 10px;
+    }
+
+    .carritoAccesoDirecto a {
+        padding: 0px;
     }
 
     .carritoAccesoDirecto a i{
@@ -1365,16 +1401,21 @@ button.subirimagen{
         display: none;
     }
 
-    /*-----------------Botton-Header-------------------*/
+/*----------------------Botton-Header-----------------------*/
     .bottom-header {
-        background-color: rgb(32 32 32);
-        padding: 2px 0px 2px 0px;
+        background-color:black;
+        padding: 1px 0px 10px 0px;
         display: block;
         border-top: 1px #f36e21 solid;
+        height: 30px;
     }
 
     .lista li a {
-        font-size: 24px;
+        font-size: 16px;
+    }
+    .lista{
+        margin-top: 12px;
+        margin-bottom: 14px;
     }
 
 
@@ -1551,6 +1592,139 @@ button.subirimagen{
     margin: auto;
     padding: 11px;
     padding-left: 25px;
+    }
+     /*----------Main-Login-------------*/
+     .menosItem button, .masItem button{
+        width:10%;
+        max-width: 50px;
+    }
+
+    .inputCantidadItem input{
+        width:20%;
+        max-width: 150px;
+    }
+
+    input#login-name, input#password{
+        width:80%;
+        max-width: 750px;
+    }
+
+    div.username{
+        width:100%;
+        display: flex;
+        justify-content: center;
+        max-width: 750px;
+    }
+
+    div.password-container{
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 750px;
+    }
+    
+    div.login-button {
+        width:80vw;
+        max-width: 750px;
+    }
+
+    button.loguearse{
+        width:80vw;
+        max-width:750px;
+    }
 }
 
+.section-login .form2 .descripcion {
+    width:100%;
+    display: flex;
+    justify-content: center;
+    max-width: 750px;
+    height: 70px;
+  }
+
+button.subirimagen{
+    background-color: white;
+    color:black;
+    width: 100px;
+    height: 55px; 
+    border-radius: 5px;
+    border: 5px solid rgba(0,0,0,.6);
+    margin-top: 50px;
+    width:100%;
+    display: flex;
+    justify-content: center;
 }
+
+    .section-login .form2 .descripcion input#login-name{
+        width:100%;
+        max-width: 750px;
+        height: 85px;  
+        display: flex;
+        justify-content: left;   
+    }
+    .nombredelproducto{
+        justify-content: center;
+        max-width: 750px;
+        width: 100%;
+    }
+    .section-login .form2 .nombredelproducto input#login-name{
+        width:100%;
+        max-width: 750px;
+        height: 30px;  
+        display: inline-flex;  
+    }
+    .section-login .form2 .button.loguearse{
+        margin-top: 10px; 
+    }
+    
+
+    .section-login .form2 .button.publicarproducto{
+        padding: 0.5em 1em;
+        border: none;
+        background: #d5d5d5;
+        cursor: pointer;
+        max-width: 750px;
+        border-radius: 4px;
+      }
+    
+      .publicarproducto{
+          transition-property: background-color;
+          transition-duration: 0.5s;
+      }
+      
+      .publicarproducto a{
+          text-decoration: none;
+          color:#000;
+          transition-property: color;
+          transition-duration: 0.5s;
+      }
+    
+      .publicarproducto:hover{
+          background-color: #f36e21;
+          cursor: pointer;
+      }
+    
+      .publicarproducto:hover > a{
+          color:white
+      }
+      div.login-button-checkbox {
+        width:80vw;
+        max-width: 250px;
+        height: 10px;   
+        align-items: center;
+        justify-content: center;
+        display: flexbox;
+    }
+    .section-login .form2 .emaillogin input#login-name{
+        width:100%;
+        max-width: 450px;
+        height: 30px;  
+        display: inline-flex; 
+        width: 700px; 
+    }
+    .section-login .form2 .contralogin input#login-password{
+        width:  inline-flex; 
+        width: 700x; }
+

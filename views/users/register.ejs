@@ -1,72 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include("../partials/head.ejs")%>
 
-  <body>
+    <%- include("../partials/head.ejs")%>
+
+<body>
+
     <%- include("../partials/header.ejs")%>
 
     <main id="main">
-      <section class="section-login">
-        <form action="/" method="POST" class="form2">
-          <div class="username">
-            <label for="login-name"></label>
-            <input
-              type="text"
-              name="login-name"
-              id="login-name"
-              minlength="4"
-              placeholder="Nombre"
-            />
-          </div>
-          <div class="username">
-            <label for="login-name"></label>
-            <input
-              type="text"
-              name="login-name"
-              id="login-name"
-              minlength="4"
-              placeholder="Apellido"
-            />
-          </div>
-          <div class="username">
-            <label for="login-name"></label>
-            <input
-              type="text"
-              name="login-name"
-              id="login-name"
-              minlength="10"
-              placeholder="Email"
-            />
-          </div>
-          <div class="password-container">
-            <label for="login-password"></label>
-            <input
-              type="password"
-              name="contraseña"
-              id="password"
-              minlength="8"
-              placeholder="Contraseña"
-            />
-          </div>
-          <div class="password-container">
-            <label for="login-password"></label>
-            <input
-              type="password"
-              name="contraseña"
-              id="password"
-              minlength="8"
-              placeholder="Repetir la Contraseña"
-            />
-          </div>
-          <div class="login-button">
-            <button class="loguearse">
-              <a href="/">Registrarse</a>
-            </button>
-          </div>
-        </form>
-      </section>
-    </main>
+        <section class="section-login">
+          <form action="/" method="POST" class="form2">
+            <div class="username">
+              <label for="login-name"></label>
+              <input
+                type="text"
+                name="login-name"
+                id="login-name"
+                minlength="4"
+                placeholder="Nombre"
+              />
+            </div>
+            <div class="username">
+              <label for="login-name"></label>
+              <input
+                type="text"
+                name="login-name"
+                id="login-name"
+                minlength="4"
+                placeholder="Apellido"
+              />
+            </div>
+            <div class="username">
+              <label for="login-name"></label>
+              <input
+                type="text"
+                name="login-name"
+                id="login-name"
+                minlength="10"
+                placeholder="Email"
+              />
+            </div>
+            <div class="password-container">
+              <label for="login-password"></label>
+              <input
+                type="password"
+                name="contraseña"
+                id="password"
+                minlength="8"
+                placeholder="Contraseña"
+              />
+            </div>
+            <div class="password-container">
+              <label for="login-password"></label>
+              <input
+                type="password"
+                name="contraseña"
+                id="password"
+                minlength="8"
+                placeholder="Repetir la Contraseña"
+              />
+            </div>
+            <div class="login-button">
+              <button class="publicarproducto">
+                <a href="/">Registrarse</a>
+              </button>
+            </div>
+          </form>
+        </section>
+      </main>
 
     <%- include("../partials/footer.ejs")%>
-  </body>
+
+</body>
+
 </html>
