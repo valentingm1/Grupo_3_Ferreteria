@@ -319,6 +319,7 @@ main a {
     background-color: #fff;
     margin: 10px 0px;
     text-align: center;
+    
   }
   
   main section article img {
@@ -385,12 +386,29 @@ main a {
   .add-to-cart-button button{
       cursor: pointer;
   }
+
+   main section article i {
+    display: block;
+    font-size: 14px;
+    padding: 6px;
+    width: 15px;
+    height: 15px;
+    color: #f36e21;
+    border: 1px solid lightgray;
+    background-color: #FFF;
+    border-radius: 50%;
+    position: absolute;
+    right: 5px;
+    top: -10px;
+  }
   
   main section article {
     border: 1px solid #ebebeb;
     padding: 5px;
     margin: 5px;
     align-items: center;
+    border-bottom: 2px solid #f36e21;
+    box-shadow: 0px 0px 10px grey;
   }
   
   section {
@@ -408,7 +426,6 @@ main a {
   
   .articulos-vistos,
   .articulos-en-promocion {
-    border-top: 1px solid #ebebeb;
     padding: 15px;
     /*display: flex;
     flex-wrap: wrap;*/
@@ -1304,7 +1321,8 @@ button.subirimagen{
     }
 
     div.productos-login article.article-producto-login {
-        width: 22%;
+        width: 17%;
+        padding: 5px;
     }
       /*----------Main-Login-------------*/
       .menosItem button, .masItem button{
@@ -1447,6 +1465,7 @@ button.subirimagen{
 
   div.productos-login article.article-producto-login {
     width: 22%;
+
   }
 
   main section article {

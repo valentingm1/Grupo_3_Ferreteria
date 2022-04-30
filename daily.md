@@ -5,7 +5,10 @@ Valentín:
 
 - Armó la rama development.
 - subió el proyecto al Git.
-- Hizo el sistema de las rutas.
+- Hizo el sistema de rutas.
+- Ayudó a armar el formato para modificar productos
+- Re organizó las rutas
+- Modificó aspectos del CSS
 
 Jonathan:
 
@@ -16,6 +19,8 @@ Jonathan:
 Manuel:
 
 - Hizo el formulario products
+- Modificó el login y el email junto con el espacio para la contraseña
+- Modificó aspectos del CSS
 
 Adriana:
 
