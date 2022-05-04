@@ -60,7 +60,9 @@ const mainController = {
     carrito :(req,res) => {
         res.render('products/carrito');
     },
-
+    products : (req,res) =>{
+        res.render("products/products",{products: herramientas})
+    },
     productDetail :(req,res) => {
         if(req.params.id-1 < herramientas.length){
         res.render('products/productDetail', {productos:herramientas[req.params.id-1],otros});
