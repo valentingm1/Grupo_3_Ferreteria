@@ -1,4 +1,4 @@
-const herramientas= [
+/* const herramientas= [
     {
         img:"/img/Alicate.jpg",
         name:"Alicate megabueno",
@@ -44,8 +44,13 @@ const herramientas= [
         cantidad:"10",
         id: 5,
     },
-]
+] */
 
+const fs = require("fs");
+const path = require("path");
+
+const herramientasFilePath = path.join(__dirname, "../data/PRODUCTS_DATA.json");
+const herramientas = JSON.parse(fs.readFileSync(herramientasFilePath, "utf-8"));
 const otros = herramientas
 
 const mainController = {
