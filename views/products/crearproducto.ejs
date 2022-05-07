@@ -7,7 +7,7 @@
     <%- include("../partials/header.ejs")%>
 
       <main id="main">
-        <form action="/" method="POST" class="form2">
+        <form action="/producto/crear" method="POST" enctype="multipart/form-data" class="form2">
           <div>
             <h4>Como se veria tu Producto:</h4>
           </div>
@@ -20,9 +20,9 @@
 
               <div class="img-submit-product">
                 <div class="contain-img">
-                  <button class="submit-imagen">
-                    <a href="/">SUBIR IMAGEN</a>
-                  </button>
+                  <div class="submit-imagen">
+                    <input type="file" name="image" id="image" placeholder="Subir Imagen" />
+                  </div>
                 </div>
               </div>
 
@@ -38,7 +38,7 @@
                 </div>
                 <div class="submit-product-price">
                   <label for="price"></label>
-                  <input type="text" class="price" name="price" id="price" placeholder="Precio $">
+                  <input type="text" class="price" name="price" id="price" value="$" placeholder="Precio">
                 </div>
 
                 <div class="submit-product-carrito">
@@ -58,42 +58,15 @@
 
             <div class="submit-color">
               <p>COLORES DISPONIBLES:</p>
-              <div>
-                <label for="checkbox-recuerdame">Naranja<input type="checkbox" name="color" id="color"></label>
-              </div>
-              <div>
-                <label for="checkbox-recuerdame">Amarillo<input type="checkbox" name="color" id="color"></label>
-                
-              </div>
-              <div>
-                <label for="checkbox-recuerdame">Negro<input type="checkbox" name="color" id="color"></label>       
-              </div>
-              <div>
-                <label for="checkbox-recuerdame">Original(Gris Claro)<input type="checkbox" name="color" id="color"></label>
-              </div>
+              <input type="text" name="colores" id="colores" placeholder="Colores" />
             </div>
 
             <div class="submit-sub-categorias">
               <p>CATEGORIAS:</p>
-              <div>
-                <label for="checkbox-recuerdame">Herramientas<input type="checkbox" name="sub-category" id="sub-category"></label>                
-              </div>
-              <div>
-                <label for="checkbox-recuerdame">Electricidad<input type="checkbox" name="sub-category" id="sub-category"></label>                
-              </div>
-              <div>
-                <label for="checkbox-recuerdame">Plomeria<input type="checkbox" name="sub-category" id="sub-category"></label>
-                
-              </div>
-              <div>
-                <label for="checkbox-recuerdame">Construccion<input type="checkbox" name="sub-category" id="sub-category"></label>                
-              </div>
-              <div>
-                <label for="checkbox-recuerdame">Otros<input type="checkbox" name="sub-category" id="sub-category"></label>               
-              </div>
+              <input type="text" name="subCategory" id="subCategory" placeholder="Sub Categoria" />
             </div>
             <div class="submit-product">
-              <button class="button-submit-product">
+              <button type="submit" class="button-submit-product">
                 PUBLICAR PRODUCTO
               </button>  
             </div>

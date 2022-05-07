@@ -1,9 +1,16 @@
+//requerimientos//
+const { append } = require("express/lib/response");
 const fs = require("fs");
+const multer = require("multer");
+
+//Base DE DATOS//
 const path = require("path");
 const herramientasFilePath = path.join(__dirname, "../data/PRODUCTS_DATA.json");
 const herramientas = JSON.parse(fs.readFileSync(herramientasFilePath, "utf-8"));
 const otrosProductos = herramientas;
 
+
+//CONFIGURACION de RUTAS//
 const productController = {
   productDetail: (req, res) => {
     const id = req.params.id;
@@ -20,9 +27,47 @@ const productController = {
       res.send("Producto inexistente");
     }
   },
+
   createProduct: (req, res) => {
     res.render("products/crearproducto");
   },
+
+  createProductPost: (req, res) => {
+
+    const name = req.body.name;
+    const discount = req.body.discount;
+    const stock = req.body.stock;
+    const price = req.body.price;
+    const description = req.body.description;
+    const color = req.body.colores;
+    const subCategory = req.body.subCategory;
+    const id = herramientas.length + 1;
+
+    const image_array = req.file;
+    const image  = image_array.path;
+
+
+
+    herramientas.push({
+      name,
+      discount,
+      stock,
+      price,
+      description,
+      color,
+      subCategory,
+      image,
+      id
+    })
+
+    const nuevas_herramientas = JSON.stringify(herramientas);
+    fs.writeFileSync(herramientasFilePath, nuevas_herramientas);
+
+
+
+    res.redirect("/");
+  },
+
   editProduct: (req, res) => {
     const id = req.params.id;
     const toolFound = herramientas.find((herramienta) => herramienta.id == id);
@@ -36,6 +81,7 @@ const productController = {
       res.send("Producto inexistente");
     }
   },
+
   putProduct: (req, res) => {
     const id = req.params.id;
     const name = req.body.name;
@@ -54,6 +100,7 @@ const productController = {
     fs.writeFileSync(herramientasFilePath, data);
     res.redirect("/");
   },
+
 };
 
 module.exports = productController;

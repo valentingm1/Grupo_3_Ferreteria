@@ -1,11 +1,16 @@
+
+//REQUERIMIENTOS//
 const express = require("express");
 const path = require("path");
 const methodOverride = require("method-override");
 
+//REQUERIMIENTOS RUTAS//
 const app = express();
 const mainRouter = require("./routers/mainRouter.js");
 const userRouter = require("./routers/userRouter");
 const productRouter = require("./routers/productRouter");
+
+//Middlewares//
 app.use(express.static("public"));
 
 // Habilitar las peticiones http put y delete
