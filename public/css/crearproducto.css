@@ -1,0 +1,217 @@
+/*---------------TITULO---------------*/
+
+section div.submit-product-title{
+    padding: 12px 16px;
+    color:black;
+    font-weight: 700;
+}
+
+section div.submit-product-title input{
+    width: 100%;
+    border-radius: 5px;
+    border: 2px lightgray solid;
+    font-size: 15px;
+}
+
+section div.product-title-rigth{
+    display: none;
+}
+
+
+/*---------------IMAGEN---------------*/
+
+section div.img-submit-product{
+    padding: 16px 16px;
+    border-bottom: 2px solid #f36e21;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+
+section div.img-submit-product img{
+    width: 100%;
+}
+
+button.submit-imagen{
+    background-color: white;
+    color:black;
+    width: 100px;
+    height: 55px; 
+    border-radius: 5px;
+    border: 5px solid rgba(0,0,0,.6);
+    margin: 50px 0px;
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+button.submit-imagen a{
+    text-decoration: none;
+    color: black;
+    padding: inherit;
+}
+
+
+/*---------------STOCK--------------*/
+
+section div.submit-product-stock{
+    color: black;
+    padding: 15px 16px;
+    padding-bottom: 0px;
+}
+
+section div.submit-product-stock .stock{
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 2px lightgray solid;
+    font-size: 15px;
+}
+
+section div.submit-product-stock h3{   
+    font-size: 32px;
+    padding-top: 5px;
+}
+
+section div.submit-product-stock p{
+    font-size: 16px;
+}
+
+
+/*---------------PRECIO---------------*/
+
+section div.submit-product-price{
+    color: black;
+    padding: 15px 16px;
+    padding-top: 0px;
+}
+
+section div.submit-product-price .price{
+    border-radius: 5px;
+    border: 2px lightgray solid;
+    font-size: 15px;
+}
+
+section div.submit-product-price h3{   
+    font-size: 32px;
+    padding-top: 5px;
+}
+
+section div.submit-product-price p{
+    font-size: 16px;
+}
+
+
+/*---------------BOTON AÑADIR CARRITO---------------*/
+
+section div.submit-product-carrito{
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+}
+
+section div.submit-product-carrito p{
+    width: 100%;
+    text-align: center;
+    padding: 2px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 24px;
+    color: white;
+    background-color: #f36e21;
+    margin: 0px;
+}
+
+/*---------------BOTON COMPRA---------------*/
+
+section div.submit-product-compra{
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+}
+
+section div.submit-product-compra p{
+    width: 100%;
+    text-align: center;
+    padding: 2px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 24px;
+    color: white;
+    background-color: #f36e21;
+    margin: 0px;
+}
+
+/*---------------BOTON SUBIR PRODUCTO---------------*/
+div.submit-product{
+    margin-top: 5px;
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+}
+
+div button.button-submit-product{
+    width: 100%;
+    text-align: center;
+    padding: 2px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 24px;
+    color: white;
+    background-color: #f36e21;
+    margin: 0px;
+}
+
+/*---------------CARACTERISTICAS---------------*/
+
+section div.submit-product-carac{
+    margin: 16px;
+}
+
+section div.submit-product-carac input{
+    border-radius: 5px;
+    border: 2px lightgray solid;
+    font-size: 15px;
+    width: 95%;
+}
+
+/*---------------COLORES---------------*/
+
+div.submit-color{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px;
+}
+
+div.submit-color div{
+    padding-bottom: 4px;
+}
+
+div.submit-color p{
+    font-size: 16px;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+div.submit-color input{
+    margin-left: 6px;
+}
+
+
+/*---------------CATEGORIAS---------------*/
+
+div.submit-sub-categorias{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px;
+}
+
+div.submit-sub-categorias input{
+    margin-left: 6px;
+}
+
+div.submit-sub-categorias p{
+    font-size: 16px;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+
