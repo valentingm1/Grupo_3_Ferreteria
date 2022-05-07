@@ -11,4 +11,6 @@ router.get("/:id/editar", mainController.productController.editProduct);
 
 router.put("/:id/editar", mainController.productController.putProduct);
 
+router.get("/productList", mainController.productController.productList)
+
 module.exports = router;
