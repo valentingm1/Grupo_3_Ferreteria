@@ -87,7 +87,7 @@ const productController = {
     const name = req.body.name;
     const price = req.body.price;
     const description = req.body.description;
-    // TODO: incluir color, otros e imágenes que serían los atributos faltantes.
+    // TO-DO: incluir color, otros e imágenes que serían los atributos faltantes.
 
     herramientas.forEach((producto) => {
       if (producto.id === parseInt(id)) {
@@ -101,6 +101,11 @@ const productController = {
     res.redirect("/");
   },
 
+  productList: (req,res) => {
+    res.render("products/productList",{ products: herramientas })
+  },
+
 };
+
 
 module.exports = productController;
