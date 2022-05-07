@@ -56,7 +56,7 @@
               <p class="precio-Antes"><%= productos[i].price %></p>
               <i class="fas fa-truck"></i>
               <h5 class="descripcion">
-                <a href="/detalle/<%= productos[i].id %>"><%= productos[i].name %></a>
+                <a href="/producto/<%= productos[i].id %>/detalle"><%= productos[i].name %></a>
               </h5>
             </div>
           </article>
@@ -65,7 +65,7 @@
       <section class="promociones">
         <h4 class="titulo-entre-productos">Nuestras promociones</h4>
         <div class="productos-login">
-          <% for (let i = 0; i < productos.length; i++) {%>  
+          <% for (let i = 0; i < productos.length; i++) {%>
             <article class="article-producto-login">
               <img
                 class="picture"
@@ -78,7 +78,7 @@
                 <p class="precio-Antes"><%= productos[i].price %></p>
                 <i class="fas fa-truck"></i>
                 <h5 class="descripcion">
-                  <a href="/detalle/<%= productos[i].id %>""><%= productos[i].name %></a>
+                  <a href="producto/<%= productos[i].id %>/detalle/"><%= productos[i].name %></a>
                 </h5>
               </div>
             </article>
