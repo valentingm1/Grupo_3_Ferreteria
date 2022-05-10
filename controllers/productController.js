@@ -9,7 +9,6 @@ const herramientasFilePath = path.join(__dirname, "../data/PRODUCTS_DATA.json");
 var herramientas = JSON.parse(fs.readFileSync(herramientasFilePath, "utf-8"));
 const otrosProductos = herramientas;
 
-
 //CONFIGURACION de RUTAS//
 const productController = {
   productDetail: (req, res) => {
@@ -33,7 +32,6 @@ const productController = {
   },
 
   createProductPost: (req, res) => {
-
     const name = req.body.name;
     const discount = req.body.discount;
     const stock = req.body.stock;
@@ -44,9 +42,7 @@ const productController = {
     const id = herramientas.length + 1;
 
     const image_array = req.file;
-    const image  = image_array.path;
-
-
+    const image = image_array.path;
 
     herramientas.push({
       name,
@@ -57,13 +53,11 @@ const productController = {
       color,
       subCategory,
       image,
-      id
-    })
+      id,
+    });
 
     const nuevas_herramientas = JSON.stringify(herramientas);
     fs.writeFileSync(herramientasFilePath, nuevas_herramientas);
-
-
 
     res.redirect("/");
   },
@@ -87,7 +81,7 @@ const productController = {
     const name = req.body.name;
     const price = req.body.price;
     const description = req.body.description;
-    // TO-DO: incluir color, otros e imágenes que serían los atributos faltantes.
+    // TODO: incluir color, otros e imágenes que serían los atributos faltantes.
 
     herramientas.forEach((producto) => {
       if (producto.id === parseInt(id)) {
@@ -100,20 +94,21 @@ const productController = {
     fs.writeFileSync(herramientasFilePath, data);
     res.redirect("/");
   },
-  deleteProduct: (req,res)=>{
-    function checkProduct(product){if(product.id != req.params.id) 
-       {return product}}                                           
-    herramientas=herramientas.filter(checkProduct)                         
+  deleteProduct: (req, res) => {
+    function checkProduct(product) {
+      if (product.id != req.params.id) {
+        return product;
+      }
+    }
+    herramientas = herramientas.filter(checkProduct);
     let newData = JSON.stringify(herramientas);
     fs.writeFileSync(herramientasFilePath, newData);
     res.redirect("/products");
   },
 
-  productList: (req,res) => {
-    res.render("products/productList",{ products: herramientas })
+  productList: (req, res) => {
+    res.render("products/productList", { products: herramientas });
   },
-
 };
-
 
 module.exports = productController;
