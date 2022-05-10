@@ -803,6 +803,14 @@ article div.main-article p.discount{
     align-items: center;
 }
 
+/* productList.ejs */
+
+.productos-List {
+    align-content: stretch;
+    justify-content: space-evenly;
+} 
+
+
 
 
 /* ---------- Media queries ----------- */
@@ -1075,8 +1083,18 @@ article div.main-article p.discount{
         justify-content: space-evenly;
         display: flex;
     } 
+    .productos-List {
+        align-content: stretch;
+        justify-content: space-evenly;
+        display: flex;
+        flex-wrap: wrap;
+    } 
 
     div.productos-login article.article-producto-login{
+        width: 22%;
+    }
+
+    div.productos-List article.article-producto-login{
         width: 22%;
     }
 
@@ -1273,8 +1291,19 @@ article div.main-article p.discount{
         justify-content: space-evenly;
         display: flex;
     }
+    .productos-List {
+        align-content: stretch;
+        justify-content: space-evenly;
+        display: flex;
+        flex-wrap: wrap;
+    }
 
     div.productos-login article.article-producto-login {
+        width: 17%;
+        padding: 5px;
+    }
+
+    div.productos-List article.article-producto-login {
         width: 17%;
         padding: 5px;
     }
@@ -1416,8 +1445,19 @@ article div.main-article p.discount{
     display: flex;
     padding-bottom: 30px;
   }
+  .productos-List {
+    align-content: stretch;
+    justify-content: space-evenly;
+    display: flex;
+    padding-bottom: 30px;
+    flex-wrap: wrap;
+  }
 
   div.productos-login article.article-producto-login {
+    width: 22%;
+
+  }
+  div.productos-List article.article-producto-login {
     width: 22%;
 
   }
