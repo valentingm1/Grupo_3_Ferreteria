@@ -6,7 +6,7 @@ const multer = require("multer");
 //Base DE DATOS//
 const path = require("path");
 const herramientasFilePath = path.join(__dirname, "../data/PRODUCTS_DATA.json");
-const herramientas = JSON.parse(fs.readFileSync(herramientasFilePath, "utf-8"));
+var herramientas = JSON.parse(fs.readFileSync(herramientasFilePath, "utf-8"));
 const otrosProductos = herramientas;
 
 
@@ -99,6 +99,14 @@ const productController = {
     const data = JSON.stringify(herramientas, null, 2);
     fs.writeFileSync(herramientasFilePath, data);
     res.redirect("/");
+  },
+  deleteProduct: (req,res)=>{
+    function checkProduct(product){if(product.id != req.params.id) 
+       {return product}}                                           
+    herramientas=herramientas.filter(checkProduct)                         
+    let newData = JSON.stringify(herramientas);
+    fs.writeFileSync(herramientasFilePath, newData);
+    res.redirect("/products");
   },
 
   productList: (req,res) => {

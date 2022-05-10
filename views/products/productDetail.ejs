@@ -15,7 +15,7 @@
       <div class="main-product-detail">
         <div class="img-producto">
           <div class="contain-img">
-            <img src="<%= producto.img %>" alt="<%=producto.alt %>" />
+            <img src="/img/<%= producto.image%>" alt="<%=producto.alt %>" />
           </div>
         </div>
 
@@ -25,8 +25,8 @@
           </div>
 
           <div class="product-price">
-            <h3><%= producto.price %></h3>
-            <p>Precio en cuotas: <%= producto.price %></p>
+            <h3><%= producto.price %>$</h3>
+            <p>Precio en 12 cuotas: <%=producto.price/10%>$ </p>
             <p>cantidad: <%= producto.stock %></p>
           </div>
 
@@ -37,6 +37,7 @@
           <div class="product-compra">
             <a href="/producto/<%=producto.id%>/editar">Editar Producto</a>
           </div>
+          
         </div>
       </div>
 
@@ -70,14 +71,14 @@
         <% for (let i = 0; i < otrosProductos.length; i++) {%>
         <article>
           <img
-            src="<%= otrosProductos[i].img %>"
+            src="/img/<%= otrosProductos[i].image %>"
             alt="<%= otrosProductos[i].alt %>"
             class="product_img"
           />
           <div class="main-article">
             <h4 class="description"><%= otrosProductos[i].name %></h4>
             <i class="fas fa-truck"></i>
-            <p class="price"><%= otrosProductos[i].price %></p>
+            <p class="price"><%= otrosProductos[i].price %>$</p>
             <p class="discount">6% off</p>
           </div>
         </article>
