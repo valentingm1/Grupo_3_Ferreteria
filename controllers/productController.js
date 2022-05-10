@@ -81,13 +81,20 @@ const productController = {
     const name = req.body.name;
     const price = req.body.price;
     const description = req.body.description;
-    // TODO: incluir color, otros e imágenes que serían los atributos faltantes.
+    const stock = req.body.stock;
+    const color = req.body.color;
+    const subCategory = req.body.subCategory;
+    const image = req.body.image;
 
     herramientas.forEach((producto) => {
       if (producto.id === parseInt(id)) {
         producto.name = name;
         producto.price = price;
         producto.description = description;
+        producto.stock = stock;
+        producto.color = color;
+        producto.subCategory = subCategory;
+        producto.image = image;
       }
     });
     const data = JSON.stringify(herramientas, null, 2);
@@ -103,7 +110,7 @@ const productController = {
     herramientas = herramientas.filter(checkProduct);
     let newData = JSON.stringify(herramientas);
     fs.writeFileSync(herramientasFilePath, newData);
-    res.redirect("/products");
+    res.redirect("/");
   },
 
   productList: (req, res) => {
