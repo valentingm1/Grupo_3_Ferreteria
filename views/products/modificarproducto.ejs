@@ -12,6 +12,7 @@
           method="POST"
           class="form2"
         >
+          <br /><br />
           <label>Nombre:</label>
           <input type="text" name="name" value="<%= producto.name %>" />
           <br />
@@ -21,6 +22,34 @@
             name="description"
             value="<%= producto.description %>"
           />
+          <br /><br />
+          <label for="color">Color:</label>
+          <select id="color" name="color">
+            <%
+              const colores = ["Negro", "Gris", "Naranja", "Amarillo", "Rojo","Azul", "Verde", "Cafe"];
+              for (var i = 0; i<colores.length; i++){
+                  const color = colores[i];
+                  const isSelected = colores[i] == producto.color;
+                  let selected= "";
+                  if(isSelected){
+                    selected = "selected";
+                  };
+                %>
+                <option value="<%=color%>" <%=selected%>> <%=color%></option>
+                <%
+              };
+            %>
+          </select>
+          <br /><br />
+          <label for="categoría">Categoría:</label>
+          <select id="categoría" name="Categoría">
+            <option value="Categoría 1">Categoría 1</option>
+            <option value="Categoría 2">Categoría 2</option>
+            <option value="Categoría 3">Categoría 3</option>
+            <option value="Categoría 4">Categoría 4</option>
+            <option value="Categoría 5">Categoría 5</option>
+            <option value="Categoría 6">Categoría 6</option>
+          </select>
           <br /><br />
           <label>Precio:</label>
           <input type="text" name="price" value="<%= producto.price %>" />
