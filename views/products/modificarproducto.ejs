@@ -25,14 +25,20 @@
           <br /><br />
           <label for="color">Color:</label>
           <select id="color" name="color">
-            <option value="Negro">Negro</option>
-            <option value="Gris">Gris</option>
-            <option value="Naranja">Naranja</option>
-            <option value="Amarillo">Amarillo</option>
-            <option value="Rojo">Rojo</option>
-            <option value="Azul">Azul</option>
-            <option value="Verde">Verde</option>
-            <option value="Café">Café</option>
+            <%
+              const colores = ["Negro", "Gris", "Naranja", "Amarillo", "Rojo","Azul", "Verde", "Cafe"];
+              for (var i = 0; i<colores.length; i++){
+                  const color = colores[i];
+                  const isSelected = colores[i] == producto.color;
+                  let selected= "";
+                  if(isSelected){
+                    selected = "selected";
+                  };
+                %>
+                <option value="<%=color%>" <%=selected%>> <%=color%></option>
+                <%
+              };
+            %>
           </select>
           <br /><br />
           <label for="categoría">Categoría:</label>
