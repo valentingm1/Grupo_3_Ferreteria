@@ -30,7 +30,7 @@
     "id": 4,
     "name": "Hacha de mano 600grs",
     "description": "nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed",
-    "price": 3162,
+    "price": "3162",
     "category": "Construccion",
     "image": "Hacha.jpg",
     "color": "Naranja"
