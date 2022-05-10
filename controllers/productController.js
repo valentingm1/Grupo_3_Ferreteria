@@ -113,7 +113,7 @@ const productController = {
     herramientas=herramientas.filter(checkProduct)                         
     let newData = JSON.stringify(herramientas);
     fs.writeFileSync(herramientasFilePath, newData);
-    res.redirect("/products");
+    res.redirect("/");
   },
 
   productList: (req,res) => {

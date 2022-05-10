@@ -99,16 +99,5 @@
     "color": "Rojo,amarillo,azul",
     "subCategory": "Construccion, Herramientas",
     "image": "C:\\Users\\Romano Jhonathan\\Desktop\\Digital house\\PROYECTO_INTEGRADOR\\DEVELOPMENT\\development7.0\\Grupo_3_Ferreteria\\public\\img\\1651955668427.png"
-  },
-  {
-    "name": "Producto de prueba8",
-    "discount": "",
-    "stock": "4",
-    "price": 6666,
-    "description": "I’ve come here from nowhere\r\nAcross the unforgiving sea\r\nDrifting further and further\r\nIt’s all becoming clear to me\r\nBut violent winds are upon us and I can’t sleep\r\nInternal temperatures rising\r\nAnd all the voices won’t recede\r\n\r\nI’ve finally found what I was looking for\r\nA place where I can be without remorse\r\nBecause I am a stranger who has found\r\nAn even stranger war\r\nI’ve finally found what I was looking for\r\n\r\nHere I come\r\n\r\nLa chaleur me dérange\r\nMais c’est le grincement du bateau qui m’a réveillé\r\n\r\nI sharpen the knife\r\nAnd look down upon the bay\r\nFor all of my life\r\nA stranger I remain\r\nA stranger I remain\r\nA stranger I remain",
-    "color": "Rojo,Rojo,Rojo,Rojo",
-    "subCategory": "Herramientas,Pruebas,Etc",
-    "image": "C:\\Users\\VALENTIN\\Desktop\\Facultad\\digitalHouse\\Sprints\\Grupo_3_Ferreteria-main\\Sprint3\\public\\img\\1652148895180.png",
-    "id": 12
   }
 ]
