@@ -459,6 +459,7 @@ main a {
     padding-bottom: 15%;
   }
   
+  
   .section-login .form2 input {
     max-width: 750px;
     height: 35px;
@@ -1155,7 +1156,7 @@ article div.main-article p.discount{
 
 } 
 
-    @media (min-width: 1024px) and (max-width: 1440px) {
+@media (min-width: 1024px) and (max-width: 1440px) {
         
         span input {
             width: 90%;
@@ -1349,7 +1350,7 @@ article div.main-article p.discount{
         max-width:750px;
     }
 }
-    @media (min-width: 1440px) and (max-width: 2560px) {
+@media (min-width: 1440px) and (max-width: 2560px) {
 
     /*-----------------------Top-Header---------------------*/
     span input {
