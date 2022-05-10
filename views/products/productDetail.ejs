@@ -8,26 +8,26 @@
     <section class="product-description">
       <div class="product-title">
         <p>
-          Amoladora angular Klatter YSAG01 de 50 Hz verde y negra 840 W 220 V
+          <%= producto.name %>
         </p>
       </div>
 
       <div class="main-product-detail">
         <div class="img-producto">
           <div class="contain-img">
-            <img src="<%= producto.img %>" alt="<%=producto.alt %>" />
+            <img src="/img/<%= producto.image%>" alt="<%=producto.alt %>" />
           </div>
         </div>
 
         <div class="botton-product-img">
           <div class="product-title-rigth">
-            <p><%= producto.description %></p>
+            <p><%= producto.name %></p>
           </div>
 
           <div class="product-price">
-            <h3><%= producto.price %></h3>
-            <p>Precio en cuotas</p>
-            <p>cantidad:<%= producto.cantidad %></p>
+            <h3><%= producto.price %>$</h3>
+            <p>Precio en 12 cuotas: <%=producto.price/10%>$ </p>
+            <p>cantidad: <%= producto.stock %></p>
           </div>
 
           <div class="product-carrito">
@@ -37,18 +37,28 @@
           <div class="product-compra">
             <a href="/producto/<%=producto.id%>/editar">Editar Producto</a>
           </div>
+          
         </div>
       </div>
 
       <div class="product-carac">
         <h2>Caracteristicas:</h2>
-        <ul class="produc-info">
+        <div>
+          <%= producto.description %>
+        </div>
+        <div>
+          <%= producto.color %>
+        </div>
+        <div>
+          <%= producto.subCategory %>
+        </div>
+        <!-- <ul class="produc-info">
           <li>Apta para un disco de 115 mm de diámetro</li>
           <li>Trae interruptor tecla.</li>
           <li>Su potencia es de 840 W.</li>
           <li>Velocidad máxima de rotación de rpm.</li>
           <li>Con arranque progresivo.</li>
-          <li>Tiene botón de bloqueo de disco.</li>
+          <li>Tiene botón de bloqueo de disco.</li> -->
         </ul>
       </div>
     </section>
@@ -61,14 +71,14 @@
         <% for (let i = 0; i < otrosProductos.length; i++) {%>
         <article>
           <img
-            src="<%= otrosProductos[i].img %>"
+            src="/img/<%= otrosProductos[i].image %>"
             alt="<%= otrosProductos[i].alt %>"
             class="product_img"
           />
           <div class="main-article">
             <h4 class="description"><%= otrosProductos[i].name %></h4>
             <i class="fas fa-truck"></i>
-            <p class="price"><%= otrosProductos[i].price %></p>
+            <p class="price"><%= otrosProductos[i].price %>$</p>
             <p class="discount">6% off</p>
           </div>
         </article>

@@ -21,7 +21,7 @@
     "id": 3,
     "name": "Guante De Algodon Negro Con Mota Naranja",
     "description": "ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id",
-    "price": 3252,
+    "price": "3252",
     "category": "Plomeria",
     "image": "guante-algodon-negro.jpg",
     "color": "Gris"
@@ -30,7 +30,7 @@
     "id": 4,
     "name": "Hacha de mano 600grs",
     "description": "nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed",
-    "price": "3162",
+    "price": 3162,
     "category": "Construccion",
     "image": "Hacha.jpg",
     "color": "Naranja"
@@ -48,14 +48,14 @@
     "id": 6,
     "name": "Martillo Galponero Cabo De Fibra Saca Clavo",
     "description": "ultrices phasellus id sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur in libero ut massa",
-    "price": 2300,
+    "price": "2300",
     "category": "Plomeria",
     "image": "Martillo.jpg",
     "color": "Amarillo"
   },
   {
     "id": 7,
-    "name": "moladora angular Stanley STGS8115 amarilla 850 W 220 V",
+    "name": "Amoladora angular Stanley STGS8115 amarilla 850 W 220 V",
     "description": "elit proin interdum mauris non ligula pellentesque ultrices phasellus id sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate",
     "price": 3021,
     "category": "Plomeria",
@@ -66,7 +66,7 @@
     "id": 8,
     "name": "Disco Diamantado Para Corte De Metales 180 Mm",
     "description": "justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat",
-    "price": 2091,
+    "price": "2091",
     "category": "Plomeria",
     "image": "disco-180mm.jpg",
     "color": "Negro"
@@ -88,5 +88,16 @@
     "category": "Electricidad",
     "image": "hacha-bombero.jpg",
     "color": "Amarillo"
+  },
+  {
+    "id": 11,
+    "name": "Martillo doble de acero inoxidable",
+    "discount": "",
+    "stock": "4",
+    "price": "$1350",
+    "description": "Super martillo doble hiper mega increible de acero inoxidable, con gran resistencia",
+    "color": "Rojo,amarillo,azul",
+    "subCategory": "Construccion, Herramientas",
+    "image": "1651955668427.png"
   }
 ]
