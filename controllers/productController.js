@@ -38,11 +38,11 @@ const productController = {
     const price = req.body.price;
     const description = req.body.description;
     const color = req.body.colores;
-    const subCategory = req.body.subCategory;
+    const category = req.body.category;
     const id = herramientas.length + 1;
 
-    const image_array = req.file;
-    const image = image_array.path;
+    const image = req.file.filename;
+    
 
     herramientas.push({
       name,
@@ -51,7 +51,7 @@ const productController = {
       price,
       description,
       color,
-      subCategory,
+      category,
       image,
       id,
     });
@@ -83,8 +83,9 @@ const productController = {
     const description = req.body.description;
     const stock = req.body.stock;
     const color = req.body.color;
-    const subCategory = req.body.subCategory;
-    const image = req.body.image;
+    const category = req.body.category;
+    const image = req.file.filename;
+    
 
     herramientas.forEach((producto) => {
       if (producto.id === parseInt(id)) {
@@ -93,7 +94,7 @@ const productController = {
         producto.description = description;
         producto.stock = stock;
         producto.color = color;
-        producto.subCategory = subCategory;
+        producto.category = category;
         producto.image = image;
       }
     });

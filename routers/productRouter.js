@@ -37,7 +37,7 @@ router.post(
 
 //FORMULARIO DE EDICION DE PRODUCTOS
 router.get("/:id/editar", mainController.productController.editProduct);
-router.put("/:id/editar", mainController.productController.putProduct);
+router.put("/:id/editar",path_upload_img.single("image"),mainController.productController.putProduct);
 
 //ELIMINAR UN PRODUCTO
 router.delete("/:id/detalle", mainController.productController.deleteProduct);

@@ -11,6 +11,7 @@
           action="/producto/<%=producto.id%>/editar?_method=PUT"
           method="POST"
           class="form2"
+          enctype="multipart/form-data"
         >
           <br /><br />
           <label>Nombre:</label>
@@ -41,121 +42,54 @@
             %>
           </select>
           <br /><br />
-          <label for="categoría">Categoría:</label>
-          <select id="categoría" name="Categoría">
-            <option value="Categoría 1">Categoría 1</option>
-            <option value="Categoría 2">Categoría 2</option>
-            <option value="Categoría 3">Categoría 3</option>
-            <option value="Categoría 4">Categoría 4</option>
-            <option value="Categoría 5">Categoría 5</option>
-            <option value="Categoría 6">Categoría 6</option>
+          <label for="category">Categoría:</label>
+          <select id="category" name="category">
+            <%
+              const categories = ["Construccion","Otros","Plomeria","Herramientas","Electricidad"];
+              for (var i = 0; i<categories.length; i++){
+                  const category = categories[i];
+                  const isCategorySelected = categories[i] == producto.category;
+                  let selected= "";
+                  if(isCategorySelected){
+                    selected = "selected";
+                  };
+                %>
+                <option value="<%=category%>" <%=selected%>> <%=category%></option>
+                <%
+              };
+            %>
           </select>
           <br /><br />
           <label>Precio:</label>
           <input type="text" name="price" value="<%= producto.price %>" />
           <br /><br />
+          <img src="/img/<%= producto.image%>" id="vitrina"/>
+          <br /><br />
+          <label for="image">Cargar nueva imagen de producto</label>
+          <input type="file"
+                  id="image" name="image"
+                  accept="image/png, image/jpeg" onchange="loadFile(event)">
+            <script>
+              const imagenHtml = document.getElementById("vitrina");
+              const loadFile=(event)=>{
+                const file= event.target.files[0];
+                 if (file) {
+                  imagenHtml.src = URL.createObjectURL(file)
+                }
+              };
+            </script>
+          
           <button type="submit">Actualizar</button>
+
         </form>
 
-        <!-- <form action="/producto/<%=producto.id%>/editar?_method=PUT" method="POST" class="form2">
-          <div class="nombredelproducto">
-            <label for="product-name">Nombre</label>
-            <input
-              type="text"
-              name="name"
-              id="product-name"
-              minlength="10"
-              placeholder="Nombre del Producto"
-              value="<%=producto.name%>"
-            />
-          </div>
-          <div class="descripcion">
-            <label for="product-description">Descripción</label>
-            <input
-              type="text"
-              id="product-description"
-              minlength="30"
-              placeholder="Descripcion"
-              name="description"
-              value="<%=producto.description%>"
-            />
-          </div>
+       
           <div class="login-button">
             <button class="subirimagen">
               <a href="/">CAMBIAR IMAGEN</a>
             </button>
-          </div>
+          </div>          
           <div class="login-button">
-            <div>
-              <%#
-                TODO: ¿cambiamos el checkbox a un dropdown?
-                https://www.w3schools.com/html/tryit.asp?filename=tryhtml_elem_select
-              %>
-              <p><a href="#">COLORES:</a></p>
-                <label for="checkbox-recuerdame">Naranja</label>
-                <input type="checkbox" name="checkbox" id="checkbox">
-                <section class="#">
-    </div>
-    <div class="login-button">
-      <div>
-          <label for="checkbox-recuerdame">Amarillo</label>
-          <input type="checkbox" name="checkbox" id="checkbox">
-          <section class="#">
-</div>
-<div class="login-button">
-  <div>
-      <label for="checkbox-recuerdame">Negro</label>
-      <input type="checkbox" name="checkbox" id="checkbox">
-      <section class="#">
-</div>
-<div class="login-button">
-  <div>
-      <label for="checkbox-recuerdame">Original(Gris Claro)</label>
-      <input type="checkbox" name="checkbox" id="checkbox">
-      <section class="#">
-</div>
-<div class="login-button">
-            <div>
-              <%#
-                TODO: ¿cambiamos el checkbox a un dropdown?
-                https://www.w3schools.com/html/tryit.asp?filename=tryhtml_elem_select
-              %>
-              <p><a href="#">CATEGORIAS:</a></p>
-                <label for="checkbox-recuerdame">Herramientas</label>
-                <input type="checkbox" name="checkbox" id="checkbox">
-                <section class="#">
-    </div>
-    <div class="login-button">
-      <div>
-          <label for="checkbox-recuerdame">Electricidad</label>
-          <input type="checkbox" name="checkbox" id="checkbox">
-          <section class="#">
-</div>
-<div class="login-button">
-  <div>
-      <label for="checkbox-recuerdame">Plomeria</label>
-      <input type="checkbox" name="checkbox" id="checkbox">
-      <section class="#">
-</div>
-<div class="login-button">
-  <div>
-    
-      <label for="checkbox-recuerdame">Construccion</label>
-      <input type="checkbox" name="checkbox" id="checkbox">
-      <section class="#">
-</div>
-<div class="username">
-  <label for="product-price"> Precio</label>
-  <input
-    type="number"
-    id="product-price"
-    minlength="4"
-    placeholder="Precio $"
-    name="price"
-    value="<%=producto.price%>"
-  />
-</div>
-<div class="login-button">
   <button type="submit" class="publicarproducto">ACTUALIZAR</button>
 </div>
 <div class="login-button">

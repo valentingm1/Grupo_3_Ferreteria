@@ -26,5 +26,5 @@ const mainController = {
   userController: userController,
 };
 
-console.log(herramientas)
+
 module.exports = mainController;
