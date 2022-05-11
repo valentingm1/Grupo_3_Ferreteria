@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs")%>
+
+  <body>
+    <%- include("../partials/header.ejs")%>
+
+    <main id="main">
+      <section class="section-login">
+        <form
+          action="/producto/<%=producto.id%>/editar?_method=PUT"
+          method="POST"
+          class="form2"
+          enctype="multipart/form-data"
+        >
+          <br /><br />
+          <label>Nombre:</label>
+          <input type="text" name="name" value="<%= producto.name %>" />
+          <br />
+          <label>Descripción:</label>
+          <input
+            type="text"
+            name="description"
+            value="<%= producto.description %>"
+          />
+          <br /><br />
+          <label for="color">Color:</label>
+          <select id="color" name="color">
+            <%
+              const colores = ["Negro", "Gris", "Naranja", "Amarillo", "Rojo","Azul", "Verde", "Cafe"];
+              for (var i = 0; i<colores.length; i++){
+                  const color = colores[i];
+                  const isSelected = colores[i] == producto.color;
+                  let selected= "";
+                  if(isSelected){
+                    selected = "selected";
+                  };
+                %>
+                <option value="<%=color%>" <%=selected%>> <%=color%></option>
+                <%
+              };
+            %>
+          </select>
+          <br /><br />
+          <label for="category">Categoría:</label>
+          <select id="category" name="category">
+            <%
+              const categories = ["Construccion","Otros","Plomeria","Herramientas","Electricidad"];
+              for (var i = 0; i<categories.length; i++){
+                  const category = categories[i];
+                  const isCategorySelected = categories[i] == producto.category;
+                  let selected= "";
+                  if(isCategorySelected){
+                    selected = "selected";
+                  };
+                %>
+                <option value="<%=category%>" <%=selected%>> <%=category%></option>
+                <%
+              };
+            %>
+          </select>
+          <br /><br />
+          <label>Precio:</label>
+          <input type="text" name="price" value="<%= producto.price %>" />
+          <br /><br />
+          <img src="/img/<%= producto.image%>" id="vitrina"/>
+          <br /><br />
+          <label for="image">Cargar nueva imagen de producto</label>
+          <input type="file"
+                  id="image" name="image"
+                  accept="image/png, image/jpeg" onchange="loadFile(event)">
+            <script>
+              const imagenHtml = document.getElementById("vitrina");
+              const loadFile=(event)=>{
+                const file= event.target.files[0];
+                 if (file) {
+                  imagenHtml.src = URL.createObjectURL(file)
+                }
+              };
+            </script>
+          
+          <button type="submit">Actualizar</button>
+
+        </form>
+
+       
+          <div class="login-button">
+            <button class="subirimagen">
+              <a href="/">CAMBIAR IMAGEN</a>
+            </button>
+          </div>          
+          <div class="login-button">
+  <button type="submit" class="publicarproducto">ACTUALIZAR</button>
+</div>
+<div class="login-button">
+        </form> -->
+      </section>
+    </main>
+    <%- include("../partials/footer.ejs")%>
+  </body>
+</html>

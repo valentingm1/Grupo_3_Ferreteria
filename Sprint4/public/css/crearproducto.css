@@ -1,0 +1,532 @@
+
+/*Forma de la pagina*/
+
+form.submit-product-form{
+    width: 100%;
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 15%;
+}
+
+section.submit-product-description{
+    background-color: #ebebeb;
+}
+
+/*Descuento del producto derecha*/
+section div.submit-product-discount-rigth{
+    padding: 15px 16px;
+    padding-bottom: 0px;
+}
+
+section div.submit-product-discount-rigth .discount{
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 2px lightgray solid;
+    font-size: 15px;
+}
+
+/*---------------TITULO---------------*/
+
+section div.submit-product-title{
+    padding: 12px 16px;
+    color:black;
+    font-weight: 700;
+}
+
+section div.submit-product-title input{
+    width: 100%;
+    border-radius: 5px;
+    border: 2px lightgray solid;
+    font-size: 15px;
+}
+
+section div.submit-product-title-rigth{
+    display: none;
+}
+
+
+/*---------------IMAGEN---------------*/
+
+section div.img-submit-product{
+    padding: 16px 0px;
+    border-bottom: 2px solid #f36e21;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    margin: auto;
+}
+
+section div.img-submit-product img{
+    width: 100%;
+}
+
+div.submit-imagen{
+    background-color: white;
+    color:black;
+    border-radius: 5px;
+    border: 4px solid rgba(0,0,0,.6);
+    margin: 50px 0px;
+    width:95%;
+    display: flex;
+}
+button.submit-imagen a{
+    text-decoration: none;
+    color: black;
+    padding: inherit;
+}
+
+
+/*---------------STOCK--------------*/
+
+section div.submit-product-stock{
+    color: black;
+    padding: 0px 16px;
+}
+
+section div.submit-product-stock .stock{
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 2px lightgray solid;
+    font-size: 15px;
+}
+
+section div.submit-product-stock h3{   
+    font-size: 32px;
+    padding-top: 5px;
+}
+
+section div.submit-product-stock p{
+    font-size: 16px;
+}
+
+
+/*---------------PRECIO---------------*/
+
+section div.submit-product-price{
+    color: black;
+    padding: 15px 16px;
+    padding-top: 0px;
+}
+
+section div.submit-product-price .price{
+    border-radius: 5px;
+    border: 2px lightgray solid;
+    font-size: 15px;
+}
+
+section div.submit-product-price h3{   
+    font-size: 32px;
+    padding-top: 5px;
+}
+
+section div.submit-product-price p{
+    font-size: 16px;
+}
+
+
+/*---------------BOTON AÑADIR CARRITO---------------*/
+
+section div.submit-product-carrito{
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+}
+
+section div.submit-product-carrito p{
+    width: 100%;
+    text-align: center;
+    padding: 2px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 24px;
+    color: white;
+    background-color: #f36e21;
+    margin: 0px;
+}
+
+/*---------------BOTON COMPRA---------------*/
+
+section div.submit-product-compra{
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+}
+
+section div.submit-product-compra p{
+    width: 100%;
+    text-align: center;
+    padding: 2px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 24px;
+    color: white;
+    background-color: #f36e21;
+    margin: 0px;
+}
+
+/*---------------BOTON SUBIR PRODUCTO---------------*/
+div.submit-product{
+    margin-top: 5px;
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+}
+
+div button.button-submit-product{
+    width: 100%;
+    text-align: center;
+    padding: 2px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 24px;
+    color: white;
+    background-color: #f36e21;
+    margin: 0px;
+}
+
+/*---------------CARACTERISTICAS---------------*/
+
+section div.submit-product-carac{
+    margin: 16px;
+}
+
+section div.submit-product-carac input{
+    border-radius: 5px;
+    border: 2px lightgray solid;
+    font-size: 15px;
+    width: 95%;
+}
+
+section div.submit-product-carac .description {
+    border-radius: 5px;
+    border: 2px lightgray solid;
+    width:100% ;
+    font-size: 16px;
+}
+
+/*---------------COLORES---------------*/
+
+div.submit-color{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px;
+}
+
+div.submit-color div{
+    padding-bottom: 4px;
+}
+
+div.submit-color p{
+    font-size: 16px;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+div.submit-color input {
+    margin-left: 6px;
+    border-radius: 5px;
+    border: 2px lightgray solid;
+    font-size: 16px;
+}
+
+
+/*---------------CATEGORIAS---------------*/
+
+div.submit-sub-categorias{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px;
+}
+
+div.submit-sub-categorias input {
+    margin-left: 6px;
+    border-radius: 5px;
+    border: 2px lightgray solid;
+    font-size: 16px;
+}
+
+div.submit-sub-categorias p{
+    font-size: 16px;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+
+@media (min-width:768px) and (max-width:1024px) {
+
+    /*Forma de la pagina*/
+    div.submit-main-product-detail {
+        display: flex;
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    /*Imagen del producto*/
+    div.submit-imagen {
+        margin: 84px 0px;
+    }
+
+    section div.submit-botton-product-img {
+        padding: 25px 0px;
+        padding-right: 30px;
+        width: 30%;
+        margin-right: 20px;
+    }
+    }
+
+
+    /*Nombre del producto derecha*/
+    section div.submit-product-title {
+    display: none;
+    }
+
+    section div.submit-product-title-rigth{
+    display: block;
+    padding: 15px 16px;
+    }
+
+    section div.submit-product-title-rigth .name{
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 2px lightgray solid;
+        font-size: 15px;
+    }
+
+    /*Descuento del producto derecha*/
+    section div.submit-product-discount-rigth{
+        padding: 15px 16px;
+        padding-top: 0px;
+    }
+
+    section div.submit-product-discount-rigth .discount{
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 2px lightgray solid;
+        font-size: 15px;
+    }
+
+
+    /*Cantidad del producto derecha*/
+
+    section div.submit-product-stock{
+        padding: 15px 16px;
+        padding-top: 0px;
+    }
+
+
+    /*Descripcion del producto*/
+    section div.submit-product-carac {
+        margin: 25px;
+    }
+    section div.submit-product-carac .description {
+        border-radius: 5px;
+        border: 2px lightgray solid;
+        width:100% ;
+        font-size: 16px;
+    }
+
+    /*Colores del producto*/
+    div.submit-color input {
+        margin-left: 6px;
+        border-radius: 5px;
+        border: 2px lightgray solid;
+        font-size: 16px;
+    }
+
+    /*Sub-categorias del producto*/
+    div.submit-sub-categorias input {
+        margin-left: 6px;
+        border-radius: 5px;
+        border: 2px lightgray solid;
+        font-size: 16px;
+    }
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+
+
+    /*Forma de la pagina*/
+    form.submit-product-form{
+        width: 65%;
+    }
+
+    div.submit-main-product-detail {
+        display: flex;
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    /*Imagen del producto*/
+    div.submit-imagen {
+        margin: 84px 0px;
+    }
+
+
+    /*Nombre del producto derecha*/
+    section div.submit-product-title {
+    display: none;
+    }
+
+    section div.submit-product-title-rigth{
+    display: block;
+    padding: 15px 16px;
+    padding-top: 0px;
+    }
+
+    section div.submit-product-title-rigth .name{
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 2px lightgray solid;
+        font-size: 15px;
+    }
+
+    /*Descuento del producto derecha*/
+    section div.submit-product-discount-rigth{
+        padding: 15px 16px;
+        padding-top: 0px;
+    }
+
+    section div.submit-product-discount-rigth .discount{
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 2px lightgray solid;
+        font-size: 15px;
+    }
+
+
+    /*Cantidad del producto derecha*/
+
+    section div.submit-product-stock{
+        padding: 15px 16px;
+        padding-top: 0px;
+    }
+
+
+    /*Descripcion del producto*/
+    section div.submit-product-carac {
+        margin: 25px;
+    }
+    section div.submit-product-carac .description {
+        border-radius: 5px;
+        border: 2px lightgray solid;
+        width:100% ;
+        font-size: 16px;
+    }
+
+    /*Colores del producto*/
+    div.submit-color input {
+        margin-left: 6px;
+        border-radius: 5px;
+        border: 2px lightgray solid;
+        font-size: 16px;
+    }
+
+    /*Sub-categorias del producto*/
+    div.submit-sub-categorias input {
+        margin-left: 6px;
+        border-radius: 5px;
+        border: 2px lightgray solid;
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1440px) {
+
+
+    /*Forma de la pagina*/
+    form.submit-product-form{
+        width: 65%;
+    }
+
+    div.submit-main-product-detail {
+        display: flex;
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    /*Imagen del producto*/
+    div.submit-imagen {
+        margin: 84px 0px;
+    }
+
+    section div.img-submit-product {
+        margin-left: 17PX;
+    }
+
+    section div.submit-botton-product-img {
+        padding: 25px 0px;
+        padding-right: 30px;
+        width: 30%;
+        margin-right: 20px;
+    }
+
+
+    /*Nombre del producto derecha*/
+    section div.submit-product-title {
+    display: none;
+    }
+
+    section div.submit-product-title-rigth{
+    display: block;
+    padding: 15px 16px;
+    padding-top: 0px;
+    }
+
+    section div.submit-product-title-rigth .name{
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 2px lightgray solid;
+        font-size: 15px;
+    }
+
+    /*Descuento del producto derecha*/
+    section div.submit-product-discount-rigth{
+        padding: 15px 16px;
+        padding-top: 0px;
+    }
+
+    section div.submit-product-discount-rigth .discount{
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 2px lightgray solid;
+        font-size: 15px;
+    }
+
+
+    /*Cantidad del producto derecha*/
+
+    section div.submit-product-stock{
+        padding: 15px 16px;
+        padding-top: 0px;
+    }
+
+
+    /*Descripcion del producto*/
+    section div.submit-product-carac {
+        margin: 25px;
+    }
+    section div.submit-product-carac .description {
+        border-radius: 5px;
+        border: 2px lightgray solid;
+        width:100% ;
+        font-size: 16px;
+    }
+
+    /*Colores del producto*/
+    div.submit-color input {
+        margin-left: 6px;
+        border-radius: 5px;
+        border: 2px lightgray solid;
+        font-size: 16px;
+    }
+
+    /*Sub-categorias del producto*/
+    div.submit-sub-categorias input {
+        margin-left: 6px;
+        border-radius: 5px;
+        border: 2px lightgray solid;
+        font-size: 16px;
+    }
+}
