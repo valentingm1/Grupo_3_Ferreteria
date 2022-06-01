@@ -9,12 +9,12 @@
 
     <main id="main">
         <section class="section-login">
-          <form action="/" method="POST" class="form2">
+          <form action="/register" method="POST" class="form2">
             <div class="username">
               <label for="login-name"></label>
               <input
                 type="text"
-                name="login-name"
+                name="first_name"
                 id="login-name"
                 minlength="4"
                 placeholder="Nombre"
@@ -24,7 +24,7 @@
               <label for="login-name"></label>
               <input
                 type="text"
-                name="login-name"
+                name="last_name"
                 id="login-name"
                 minlength="4"
                 placeholder="Apellido"
@@ -34,7 +34,7 @@
               <label for="login-name"></label>
               <input
                 type="text"
-                name="login-name"
+                name="email"
                 id="login-name"
                 minlength="10"
                 placeholder="Email"
@@ -44,26 +44,26 @@
               <label for="login-password"></label>
               <input
                 type="password"
-                name="contraseña"
+                name="password"
                 id="password"
                 minlength="8"
                 placeholder="Contraseña"
               />
             </div>
-            <div class="password-container">
+            <!-- <div class="password-container">
               <label for="login-password"></label>
               <input
                 type="password"
-                name="contraseña"
+                name="password"
                 id="password"
                 minlength="8"
                 placeholder="Repetir la Contraseña"
               />
-            </div>
+            </div> -->
             <div class="login-button">
-              <button class="publicarproducto">
-                <a href="/">Registrarse</a>
-              </button>
+                <button type="submit" class="button-submit-product">
+                  Registrarse
+                </button>  
             </div>
           </form>
         </section>

@@ -25,7 +25,7 @@
           </div>
 
           <div class="product-price">
-            <h3><%= producto.price %>$</h3>
+            <h3>$<%= producto.price %></h3>
             <p>Precio en 12 cuotas: <%=producto.price/10%>$ </p>
             <p>cantidad: <%= producto.stock %></p>
           </div>
@@ -83,8 +83,8 @@
           <div class="main-article">
             <h4 class="description"><a href="/producto/<%=otrosProductos[i].id%>/detalle"><%= otrosProductos[i].name %></a></h4>
             <i class="fas fa-truck"></i>
-            <p class="price"><%= otrosProductos[i].price %>$</p>
-            <p class="discount">6% off</p>
+            <p class="price">$<%= otrosProductos[i].price %></p>
+            <p class="discount"><%= otrosProductos[i].discount %>% off</p>
           </div>
         </article>
         <%}%>

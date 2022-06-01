@@ -84,7 +84,6 @@ const productController = {
     const stock = req.body.stock;
     const color = req.body.color;
     const category = req.body.category;
-    const image = req.file.filename;
     
 
     herramientas.forEach((producto) => {
@@ -95,12 +94,11 @@ const productController = {
         producto.stock = stock;
         producto.color = color;
         producto.category = category;
-        producto.image = image;
       }
     });
-    const data = JSON.stringify(herramientas, null, 2);
+    const data = JSON.stringify(herramientas);
     fs.writeFileSync(herramientasFilePath, data);
-    res.redirect("/");
+    res.redirect("/producto/"+ req.params.id + "/detalle");
   },
   deleteProduct: (req, res) => {
     function checkProduct(product) {
