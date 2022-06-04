@@ -29,11 +29,7 @@ router.get("/:id/detalle", mainController.productController.productDetail);
 //FORMULARIO DE CREACION DE PRODUCTOS
 router.get("/crear", mainController.productController.createProduct);
 //utilizacion de multer con el path_upload_img
-router.post(
-  "/crear",
-  path_upload_img.single("image"),
-  mainController.productController.createProductPost
-);
+router.post( "/crear",path_upload_img.single("image"),mainController.productController.createProductPost);
 
 //FORMULARIO DE EDICION DE PRODUCTOS
 router.get("/:id/editar", mainController.productController.editProduct);

@@ -1,5 +1,7 @@
 const fs = require("fs");
+const multer = require("multer");
 const path = require("path");
+
 const userFilePath = path.join(__dirname, "../data/USER_DATA.json");
 const users = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
 
@@ -14,13 +16,19 @@ const userController = {
     const password = req.body.password;
     const id = users.length + 1;
 
+    const image = req.file;
+
+    console.log(image)
+
     users.push({
       first_name,
       last_name,
       email,
       password,
-      id
+      id,
+      image
     });
+
     const news_users = JSON.stringify(users);
     fs.writeFileSync(userFilePath, news_users);
 

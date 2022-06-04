@@ -1,0 +1,303 @@
+main.register_main{
+    min-height: 42vh;
+}
+
+div.color_orange{
+    background-color: #f36e21;
+    display: block;
+    height: 12.375rem;
+    width: 100%;
+    position: absolute;
+}
+
+/*Section register*/
+section.section_register {
+    padding-top: 17px;
+    padding-bottom: 17px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 40px;
+    position: relative;
+    top: 40px;
+    background-color: white;
+    box-shadow: 0px 0px 10px grey;
+}
+
+form.register_form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Imagen del registro */
+
+div.register_img{
+    display: flex;
+    flex-direction: column;
+}
+
+div.register_img label.register_img_label{
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+div.register_img input.register_profile_img {
+    margin: auto;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    width: 83%;
+}
+
+/* Nombre del registro */
+
+div.register_firstname{
+
+}
+
+
+div.register_firstname input.register_firstname_in{
+    margin-bottom: 20px;
+    width: 80%;
+    font-size: 15px;
+    border: 5px lightgray solid;
+}
+
+/* Apellido del registro */
+
+div.register_lastname{
+
+}
+
+div.register_lastname input.register_lastname_in{
+    margin-bottom: 20px;
+    width: 80%;
+    font-size: 15px;
+    border: 5px lightgray solid;
+}
+
+/*Email del registro*/
+
+div.register_email{
+
+}
+
+div.register_email input.register_email_in{
+    margin-bottom: 20px;
+    width: 80%;
+    font-size: 15px;
+    border: 5px lightgray solid;
+}
+
+/*Contraseña del registro*/
+
+div.register_password{
+
+}
+
+div.register_password input.register_password_in{
+    margin-bottom: 20px;
+    width: 80%;
+    font-size: 15px;
+    border: 5px lightgray solid;
+}
+
+/*Boton de registro*/
+
+div.register_buttons{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/*Boton de regresar*/
+div.register_button_back{
+    margin-top: 5px;
+}
+
+div.register_button_back a.register_back_button{
+    padding: 4px;
+    border-radius: 3px;
+    border: none;
+    font-size: 16px;
+    color: white;
+    background-color: #f36e21;
+}
+
+/*Boton de registarse*/
+div.register_button_submit button.register_submit_button{
+    padding: 4px;
+    border-radius: 3px;
+    border: none;
+    font-size: 16px;
+    color: white;
+    background-color: #f36e21;
+}
+
+@media (min-width: 768px) and (max-width:1024px) {
+
+    main.register_main{
+        min-height: 72vh;
+        padding: 0px;
+    }
+
+    div.color_orange{
+        background-color: #f36e21;
+        display: block;
+        height: 12.375rem;
+        width: 100%;
+        position: absolute;
+    }
+
+    /*Seccion de Registro*/
+    section.section_register {
+        width: 50%;
+        top: 80px;
+        margin: auto;
+    }
+
+    /*Imagen del registro*/
+    div.register_img label.register_img_label {
+        font-size: 20px;
+    }
+
+    div.register_img input.register_profile_img {
+        margin-left: auto;
+    }
+
+    /*Nombre del registro*/
+    div.register_firstname input.register_firstname_in {
+        padding: 5px;
+    }
+
+    /* Apellido del registro */
+
+    div.register_lastname input.register_lastname_in{
+        padding: 5px;
+    }
+
+
+    /*Email del registro*/
+    div.register_email input.register_email_in{
+        padding: 5px;
+    }   
+
+    /*Contraseña del registro*/
+    div.register_password input.register_password_in{
+        padding: 5px;
+    }
+
+}
+
+@media (min-width: 1025px) and (max-width:1440px) {
+
+    main.register_main {
+        min-height: 61vh;
+    }
+
+
+    /*Section del register*/
+    section.section_register {
+        top: 85px
+    }
+    
+    section.section_register {
+        width: 30%;
+        margin: auto;   
+    }
+
+    /*Imagen del registro*/
+    div.register_img label.register_img_label {
+        font-size: 23px;
+    }
+
+    /*Nombre del registro*/
+    div.register_firstname input.register_firstname_in {
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    /* Apellido del registro */
+    div.register_lastname input.register_lastname_in{
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    /*Email del registro*/
+    div.register_email input.register_email_in{
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    /*Contraseña del registro*/
+    div.register_password input.register_password_in{
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    /*Boton de registro*/
+    div.register_button_back a.register_back_button{
+        font-size: 20px;
+    }
+
+    div.register_button_submit button.register_submit_button{
+        font-size: 20px;
+
+    }
+
+}
+
+@media (min-width: 1440px){
+
+    main.register_main {
+        min-height: 61vh;
+    }
+
+
+    /*Section del register*/
+    section.section_register {
+        top: 85px
+    }
+    
+    section.section_register {
+        width: 25%;
+        margin: auto;   
+    }
+
+    /*Imagen del registro*/
+    div.register_img label.register_img_label {
+        font-size: 23px;
+    }
+
+    /*Nombre del registro*/
+    div.register_firstname input.register_firstname_in {
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    /* Apellido del registro */
+    div.register_lastname input.register_lastname_in{
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    /*Email del registro*/
+    div.register_email input.register_email_in{
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    /*Contraseña del registro*/
+    div.register_password input.register_password_in{
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    /*Boton de registro*/
+    div.register_button_back a.register_back_button{
+        font-size: 20px;
+    }
+
+    div.register_button_submit button.register_submit_button{
+        font-size: 20px;
+
+    }
+}

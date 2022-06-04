@@ -85,6 +85,7 @@ const productController = {
     const color = req.body.color;
     const category = req.body.category;
     
+    const image = req.file.filename
 
     herramientas.forEach((producto) => {
       if (producto.id === parseInt(id)) {
@@ -94,6 +95,7 @@ const productController = {
         producto.stock = stock;
         producto.color = color;
         producto.category = category;
+        producto.image = image;
       }
     });
     const data = JSON.stringify(herramientas);
