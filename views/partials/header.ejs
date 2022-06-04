@@ -25,7 +25,15 @@
             <div class="burger-menu">
                 <i class="fa fa-bars burger"></i>
             </div>
-
+            <% if (locals.isLogged) { %>
+                <div class="login">
+                    <a href="/login"><i class="fas fa-sign-in-alt"></i><%= userLogged.first_name %></a>
+                </div>
+                
+                <div class="login">
+                     <a href="/register"><i class="fas fa-plus-circle"></i>Cerrar Sesión</a>
+                </div>
+            <% }else  { %>
             <div class="login">
                 <a href="/login"><i class="fas fa-sign-in-alt"></i>Iniciar Sesión</a>
             </div>
@@ -33,7 +41,7 @@
             <div class="login">
                 <a href="/register"><i class="fas fa-plus-circle"></i>Registrarse</a>
             </div>
-
+            <% } %>
         </div>
         </div>
         <div class="bottom-header">

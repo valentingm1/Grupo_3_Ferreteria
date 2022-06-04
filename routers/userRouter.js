@@ -6,6 +6,9 @@ const mainController = require("../controllers/mainController.js");
 const multer = require("multer");
 const path = require("path");
 
+//Middleware require//
+const guestMiddlware = require("../middlewares/guestMiddleware")
+
 //CONFIGURACION DE MULTER
 const multerDiskStorage = multer.diskStorage({
   destination: (req, file, callback) => {
@@ -23,10 +26,10 @@ const path_upload_img = multer({ storage: multerDiskStorage });
 
 //------------------------------------------------------RUTAS--------------------------------------------------------------//
 
-router.get("/register", mainController.userController.register);
+router.get("/register",guestMiddlware, mainController.userController.register);
 router.post("/register",path_upload_img.single("image_profile"), mainController.userController.createUsers);
 
-router.get("/login", mainController.userController.login);
-router.post("/login", mainController.userController.veriLogin);
+router.get("/login",guestMiddlware, mainController.userController.login);
+router.post("/login", mainController.userController.loginProcess);
 
 module.exports = router;

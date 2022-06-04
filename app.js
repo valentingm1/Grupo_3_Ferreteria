@@ -3,6 +3,8 @@
 const express = require("express");
 const path = require("path");
 const methodOverride = require("method-override");
+const session = require("express-session")
+const isLoggedMiddleware = require("./middlewares/isLoggedMiddleware")
 
 //REQUERIMIENTOS RUTAS//
 const app = express();
@@ -10,8 +12,12 @@ const mainRouter = require("./routers/mainRouter.js");
 const userRouter = require("./routers/userRouter");
 const productRouter = require("./routers/productRouter");
 
+
 //Middlewares//
 app.use(express.static("public"));
+app.use(session({secret:"AMIGO NO PUEDO PAUSARLO", resave: false, saveUninitialized: false}));
+app.use(isLoggedMiddleware);
+
 
 // Habilitar las peticiones http put y delete
 app.use(methodOverride("_method"));

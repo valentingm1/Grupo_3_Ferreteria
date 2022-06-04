@@ -9,7 +9,7 @@
 
     <main id="main">
         <section class="section-login">
-          <form action="/" method="POST" class="form2">
+          <form action="/login" method="POST" class="form2">
             <div class="username">
               <label for="login-name"></label>
               <input
@@ -18,6 +18,9 @@
                 id="login-name"
                 placeholder="Email"
               />
+              <% if (locals.errors && errors.email) { %>
+               <div><%= errors.email.errorMsg %></div>
+              <% } %>
             </div>
             <div class="password-container">
               <label for="login-password"></label>
@@ -25,7 +28,6 @@
                 type="password"
                 name="password"
                 id="password"
-                minlength="8"
                 placeholder="Contraseña"
               />
             </div>
@@ -36,8 +38,8 @@
                     <section class="#">
           </div>
             <div class="login-button">
-              <button class="publicarproducto">
-                <a href="/">INICIAR SESION</a>
+              <button class="publicarproducto" type="submit">
+                <a>INICIAR SESION</a>
               </button>
             </div>
           </form>
