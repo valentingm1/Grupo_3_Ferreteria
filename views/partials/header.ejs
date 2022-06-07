@@ -26,19 +26,21 @@
                 <i class="fa fa-bars burger"></i>
             </div>
             <% if (locals.isLogged) { %>
-                <div class="login">
-                    <a href="/login"><i class="fas fa-sign-in-alt"></i><%= userLogged.first_name %></a>
+                <div class="users-action">
+                    <a href="/login"><i class="fas fa-user"></i><%= userLogged.first_name %></a>
                 </div>
-                
-                <div class="login">
-                     <a href="/register"><i class="fas fa-plus-circle"></i>Cerrar Sesión</a>
-                </div>
+                <div class="users-action">
+                    <form action="/logout" method="post">
+                        <button type="submit"><i class="fas fa-sign-in-alt"></i>Cerrar Sesión</button>
+                    </form>  
+
+                  </div>
             <% }else  { %>
-            <div class="login">
+            <div class="users-action">
                 <a href="/login"><i class="fas fa-sign-in-alt"></i>Iniciar Sesión</a>
             </div>
 
-            <div class="login">
+            <div class="users-action">
                 <a href="/register"><i class="fas fa-plus-circle"></i>Registrarse</a>
             </div>
             <% } %>

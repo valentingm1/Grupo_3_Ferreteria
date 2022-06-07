@@ -21,7 +21,7 @@ const userController = {
     const password = bcrypt.hashSync(req.body.password,10);
     const id = users.length + 1;
 
-    const image = req.file;
+    const image = req.file.filename;
 
     console.log(image)
 
@@ -61,8 +61,6 @@ const userController = {
       }
     })
     }
-
-    
   },
   logout: (req,res) =>{
     req.session.destroy();

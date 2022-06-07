@@ -12,10 +12,9 @@ const guestMiddlware = require("../middlewares/guestMiddleware")
 //CONFIGURACION DE MULTER
 const multerDiskStorage = multer.diskStorage({
   destination: (req, file, callback) => {
-    const image_path = path.join(__dirname, "../public/img/userImg");
+    const image_path = path.join(__dirname, "../public/img/profiles");
     callback(null, image_path);
   },
-
   filename: (req, file, callback) => {
     const imageName = Date.now() + path.extname(file.originalname);
     callback(null, imageName);
@@ -25,11 +24,14 @@ const multerDiskStorage = multer.diskStorage({
 const path_upload_img = multer({ storage: multerDiskStorage });
 
 //------------------------------------------------------RUTAS--------------------------------------------------------------//
-
+// Renders de Pantalla
 router.get("/register",guestMiddlware, mainController.userController.register);
-router.post("/register",path_upload_img.single("image_profile"), mainController.userController.createUsers);
-
 router.get("/login",guestMiddlware, mainController.userController.login);
+
+// CRUD
 router.post("/login", mainController.userController.loginProcess);
+router.put("/register",path_upload_img.single("image_profile"), mainController.userController.createUsers);
+router.post("/logout", mainController.userController.logout);
+
 
 module.exports = router;
