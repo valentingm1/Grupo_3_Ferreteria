@@ -15,7 +15,7 @@
       <div class="main-product-detail">
         <div class="img-producto">
           <div class="contain-img">
-            <img src="/img/<%= producto.image%>" alt="<%=producto.alt %>" />
+            <img src="/img/products/<%= producto.image%>" alt="<%=producto.alt %>" />
           </div>
         </div>
 
@@ -76,7 +76,7 @@
         <% for (let i = 0; i < otrosProductos.length; i++) {%>
         <article>
           <img
-            src="/img/<%= otrosProductos[i].image %>"
+            src="/img/products/<%= otrosProductos[i].image %>"
             alt="<%= otrosProductos[i].alt %>"
             class="product_img"
           />

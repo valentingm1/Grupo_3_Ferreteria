@@ -1,8 +1,8 @@
 function guestMiddlware(req,res,next){
      if(req.session.userLogged){
-         return res.redirect("index")
+         return res.redirect("/")
      }
      next()
 }
 
-module.exports = guestMiddlware; 
+module.exports = guestMiddlware;
