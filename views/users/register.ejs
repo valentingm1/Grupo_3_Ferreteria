@@ -12,11 +12,11 @@
          <div class="color_orange">
          </div>
        <section class="section_register">
-          <form class="register_form" action="/register" method="POST" enctype="multipart/form-data" class="form2">
+          <form class="register_form" action="/register?_method=PUT" method="POST" enctype="multipart/form-data" class="form2">
 
             <div class="register_img">
               <label class="register_img_label" for="label_register_img">Foto de perfil:</label>
-              <input class="register_profile_img" type="file" name="image_profile" placeholder="Subir Imagen de P" />
+              <input id="label_register_img" class="register_profile_img" type="file" name="image_profile" placeholder="Subir Imagen de P" accept="image/*" />
             </div>
 
             <div class="register_firstname">
@@ -66,7 +66,6 @@
                   Registrarse
                 </button>
               </div>
-              
             </div>
           </form>
         </section>
