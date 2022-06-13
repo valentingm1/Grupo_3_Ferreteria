@@ -9,6 +9,7 @@ const session = require("express-session")
 const userFilePath = path.join(__dirname, "../data/USER_DATA.json");
 const users = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
 const userTracker = require("../models/userTracker.js")
+const HOUR= 1_000 * 3_600 
 
 const userController = {
   register: (req, res) => {
@@ -18,12 +19,12 @@ const userController = {
     const first_name = req.body.first_name;
     const last_name = req.body.last_name;
     const email = req.body.email;
-    const password = bcrypt.hashSync(req.body.password,10);
+    const password = bcrypt.hashSync(req.body.password, 10);
     const id = users.length + 1;
 
     const image = req.file.filename;
 
-    console.log(image)
+    console.log(image);
 
     users.push({
       first_name,
@@ -31,7 +32,7 @@ const userController = {
       email,
       password,
       id,
-      image
+      image,
     });
 
     const news_users = JSON.stringify(users);
@@ -44,28 +45,37 @@ const userController = {
   login: (req, res) => {
     res.render("users/login");
   },
-  loginProcess: (req,res) => {
-    let UserToLog = userTracker.findOneByField("email", req.body.email)
+  loginProcess: (req, res) => {
+    let UserToLog = userTracker.findOneByField("email", req.body.email);
 
-    if(UserToLog){
-      let passwordCheck = bcryptjs.compareSync(req.body.password, UserToLog.password)
-      if(passwordCheck){
-        req.session.userLogged = UserToLog 
-        return res.redirect("/")
+    if (UserToLog) {
+      let isCheckedPassword = bcryptjs.compareSync(
+        req.body.password,
+        UserToLog.password
+      );
+      if (isCheckedPassword) {
+        req.session.userLogged = UserToLog;
+
+        if (req.body.remember =! undefined) {
+          res.cookie("UserEmail", req.body.email, { maxAge: HOUR});
+        }
+
+        return res.redirect("/");
       }
       return res.render("users/login", {
-      errors: {
-        email: {
-          errorMsg : "Le erraste a una credencial maestro"
-        }
-      }
-    })
+        errors: {
+          email: {
+            errorMsg: "Le erraste a una credencial maestro",
+          },
+        },
+      });
     }
   },
-  logout: (req,res) =>{
+  logout: (req, res) => {
     req.session.destroy();
-    res.redirect("/")
-  }
+    res.clearCookie("UserEmail");
+    res.redirect("/");
+  },
 };
 
 module.exports = userController;
