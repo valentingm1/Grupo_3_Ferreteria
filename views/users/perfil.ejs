@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../partials/head.ejs")%>
+    <link rel="stylesheet" href="/css/profile.css">
+
+    <body>
+        <%- include("../partials/header.ejs")%>
+            <section class="container_all_perfil">
+                <% if (locals.isLogged) { %>
+                <div class="container_profile">
+                    <h2 class="title_perfil">Perfil:</h2>
+                    <div class="profileImage">
+                        <div class="contain_img_perfil">
+                            <img src="/img/<%= userLogged.image %>" alt="" />
+                        </div>
+                    </div>
+                    <div class="perfil_data">
+                   
+                        <div class="name_perfil">
+                            <h3>Nombre:</h3>
+                            <p><%= userLogged.first_name %></p>
+                        </div>
+
+                        <div class="email_perfil">
+                            <h3>Email:</h3>
+                            <p><%= userLogged.email %></p>
+                        </div>
+                        <button>Boton de editar datos</button>
+                    
+                    </div>
+                </div>
+                <% }%>
+            </section>
+    </body>
+    <%- include("../partials/footer.ejs")%>
+
+</html>
