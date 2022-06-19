@@ -76,9 +76,12 @@ const userController = {
     res.clearCookie("UserEmail");
     res.redirect("/");
   },
+<<<<<<< HEAD
   profile:(req,res) =>{
     res.render("users/profile")
   }
+=======
+>>>>>>> ad8cf7b966917410cc09fe1caa426938664a3745
 };
 
 module.exports = userController;
