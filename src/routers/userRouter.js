@@ -8,6 +8,7 @@ const path = require("path");
 
 //Middleware require//
 const guestMiddlware = require("../middlewares/guestMiddleware")
+const authLoggMiddlware = require("../middlewares/authLoggMiddleware")
 
 //CONFIGURACION DE MULTER
 const multerDiskStorage = multer.diskStorage({
@@ -27,6 +28,7 @@ const path_upload_img = multer({ storage: multerDiskStorage });
 // Renders de Pantalla
 router.get("/register",guestMiddlware, mainController.userController.register);
 router.get("/login",guestMiddlware, mainController.userController.login);
+router.get("/profile",authLoggMiddlware, mainController.userController.profile);
 
 // CRUD
 router.post("/login", mainController.userController.loginProcess);

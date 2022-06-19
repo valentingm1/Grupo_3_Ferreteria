@@ -1,0 +1,67 @@
+
+/*---SECION PRINCIPAL---*/
+section.container_all_perfil{
+    min-height: 44vh;
+    padding: 15px 0px;
+}
+
+div.container_profile{
+    border: 7px orange solid;
+    margin: 14px 27px 0px;
+    padding: 15px 0px 40px;
+    border-radius: 13px;
+}
+
+
+/*---Titulo de la vista----*/
+h2.title_perfil{
+    margin: 0px;
+    text-align: center;
+}
+
+
+/*---------Imagen del perfil-----*/
+
+div.contain_img_perfil{
+    margin: 12px 60px 18px 56px;
+    text-align: center;
+}
+
+
+div.contain_img_perfil img{
+    width: 150px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+
+/*-----Info del Perfil----*/
+
+div.perfil_data{
+    text-align: center;
+}
+
+/*---------Nombre de Usuario--------------*/
+div.name_perfil h3{
+    margin: 0px;
+}
+
+div.name_perfil p{
+    margin: 6px;
+}
+
+/*-----------Email de Usuario---------------*/
+
+div.email_perfil h3{
+    margin: 0px;
+}
+
+div.email_perfil p{
+    margin: 6px 0px 14px;
+}
+
+
+@media (min-width: 768px) and (max-width:1024px) {
+
+
+}

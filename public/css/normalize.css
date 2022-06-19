@@ -347,3 +347,7 @@
   [hidden] {
     display: none;
   }
+  
+.avatar_img{
+  border-radius: 50%;
+}

@@ -27,7 +27,7 @@
             </div>
             <% if (locals.isLogged) { %>
                 <div class="users-action">
-                    <a href="/login"><i class="fas fa-user"></i><%= userLogged.first_name %></a>
+                    <a href="/profile"><i class="fas fa-user"></i><%= userLogged.first_name %></a>
                 </div>
                 <div class="users-action">
                     <form action="/logout" method="post">

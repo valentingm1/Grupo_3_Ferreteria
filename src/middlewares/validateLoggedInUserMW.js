@@ -1,4 +1,4 @@
-function isLoggedMiddleware(req,res,next){
+function validateLoggedInUserMW(req,res,next){
     res.locals.isLogged = false;
     if(req.session && req.session.userLogged){
         res.locals.isLogged = true;
@@ -7,4 +7,4 @@ function isLoggedMiddleware(req,res,next){
     next()
 }
 
-module.exports = isLoggedMiddleware
+module.exports = validateLoggedInUserMW

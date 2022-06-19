@@ -21,6 +21,7 @@ section.section_register {
     top: 40px;
     background-color: white;
     box-shadow: 0px 0px 10px grey;
+    border-radius: 21px;
 }
 
 form.register_form{

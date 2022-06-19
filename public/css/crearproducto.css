@@ -1,3 +1,11 @@
+/*Fondo naranja*/
+div.color_orange{
+    background-color: #f36e21;
+    display: block;
+    height: 12.375rem;
+    width: 100%;
+    position: absolute;
+}
 
 /*Forma de la pagina*/
 
@@ -9,6 +17,7 @@ form.submit-product-form{
     justify-content: center;
     align-items: center;
     padding-bottom: 15%;
+    position: relative;
 }
 
 section.submit-product-description{
@@ -256,6 +265,12 @@ div.submit-sub-categorias p{
 
 
 @media (min-width:768px) and (max-width:1024px) {
+    /*Contenedor de Creacion de producto*/
+    section.submit-product-description{
+        box-shadow: 0px 0px 10px grey;
+        border-radius: 21px;
+        background-color: white;
+    }
 
     /*Forma de la pagina*/
     div.submit-main-product-detail {
@@ -264,6 +279,12 @@ div.submit-sub-categorias p{
         justify-content: center;
     }
 
+    /*Titulo de creacion de producto*/
+    div.title-product{
+        color: white;
+        font-weight: 600;
+        font-size: 16px;       
+    }
     /*Imagen del producto*/
     div.submit-imagen {
         margin: 84px 0px;
@@ -358,6 +379,20 @@ div.submit-sub-categorias p{
         justify-content: center;
     }
 
+    /*Contenedor de Creacion de producto*/
+     section.submit-product-description{
+        box-shadow: 0px 0px 10px grey;
+        border-radius: 21px;
+        background-color: white;
+    }
+
+    /*Titulo de cracion de producto*/
+    div.title-product{
+        color: white;
+        font-weight: 600;
+        font-size: 21px;
+    }
+
     /*Imagen del producto*/
     div.submit-imagen {
         margin: 84px 0px;
@@ -440,10 +475,24 @@ div.submit-sub-categorias p{
         width: 65%;
     }
 
+     /*Contenedor de Creacion de producto*/
+     section.submit-product-description{
+        box-shadow: 0px 0px 10px grey;
+        border-radius: 21px;
+        background-color: white;
+    }
+
     div.submit-main-product-detail {
         display: flex;
         margin-top: 10px;
         justify-content: center;
+    }
+
+    /*Titulo de cracion de producto*/
+    div.title-product{
+        color: white;
+        font-weight: 600;
+        font-size: 21px;
     }
 
     /*Imagen del producto*/
