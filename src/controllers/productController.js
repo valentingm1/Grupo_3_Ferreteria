@@ -5,7 +5,7 @@ const multer = require("multer");
 
 //Base DE DATOS//
 const path = require("path");
-const herramientasFilePath = path.join(__dirname, "../data/PRODUCTS_DATA.json");
+const herramientasFilePath = path.join(__dirname, "../database/data/PRODUCTS_DATA.json");
 var herramientas = JSON.parse(fs.readFileSync(herramientasFilePath, "utf-8"));
 const otrosProductos = herramientas;
 

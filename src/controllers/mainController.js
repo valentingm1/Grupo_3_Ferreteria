@@ -4,7 +4,7 @@ const path = require("path");
 const productController = require("./productController");
 const userController = require("./userController");
 
-const herramientasFilePath = path.join(__dirname, "../data/PRODUCTS_DATA.json");
+const herramientasFilePath = path.join(__dirname, "../database/data/PRODUCTS_DATA.json");
 const herramientas = JSON.parse(fs.readFileSync(herramientasFilePath, "utf-8"));
 const otros = herramientas;
 

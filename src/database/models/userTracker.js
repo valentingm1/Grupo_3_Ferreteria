@@ -1,9 +1,12 @@
 const fs = require("fs")
 const { userInfo } = require("os")
+const path = require("path")
+
+const pathUserData = path.join(__dirname, "../data/USER_DATA.json")
 
 const userTracker = {
 
-    fileName: "./data/USER_DATA.json",
+    fileName: pathUserData,
 
     getData: function() {
         return JSON.parse(fs.readFileSync(this.fileName, "utf-8"));

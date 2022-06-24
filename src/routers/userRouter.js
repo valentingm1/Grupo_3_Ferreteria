@@ -13,7 +13,7 @@ const authLoggMiddlware = require("../middlewares/authLoggMiddleware")
 //CONFIGURACION DE MULTER
 const multerDiskStorage = multer.diskStorage({
   destination: (req, file, callback) => {
-    const image_path = path.join(__dirname, "../public/img/profiles");
+    const image_path = path.join(__dirname, "../../public/img/profiles");
     callback(null, image_path);
   },
   filename: (req, file, callback) => {

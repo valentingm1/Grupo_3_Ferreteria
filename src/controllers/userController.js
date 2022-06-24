@@ -6,7 +6,7 @@ const multer = require("multer");
 const path = require("path");
 const session = require("express-session")
 
-const userFilePath = path.join(__dirname, "../data/USER_DATA.json");
+const userFilePath = path.join(__dirname, "../database/data/USER_DATA.json");
 const users = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
 const userTracker = require("../database/models/userTracker.js")
 const HOUR= 1_000 * 3_600 
@@ -76,12 +76,9 @@ const userController = {
     res.clearCookie("UserEmail");
     res.redirect("/");
   },
-<<<<<<< HEAD
   profile:(req,res) =>{
     res.render("users/profile")
   }
-=======
->>>>>>> ad8cf7b966917410cc09fe1caa426938664a3745
 };
 
 module.exports = userController;
