@@ -77,7 +77,7 @@ const userController = {
     res.redirect("/");
   },
   profile:(req,res) =>{
-    res.render("users/profile")
+    res.render("users/perfil")
   }
 };
 
