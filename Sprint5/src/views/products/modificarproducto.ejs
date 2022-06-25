@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs")%>
+  <link rel="stylesheet" href="/css/crearproducto.css">
+  <link rel="stylesheet" href="/css/editarproducto.css">
+  <body>
+    <%- include("../partials/header.ejs")%>
+    <main>
+        <form 
+          action="/producto/<%=producto.id%>/editar?_method=PUT"
+          method="POST"
+          class="form2"
+          enctype="multipart/form-data">
+          <div>
+            <h4>Como se veria tu Producto:</h4>
+          </div>
+          <section class="edit-product-description">
+            <div class="submit-main-product-detail">
+              <div class="img-edit-product">
+                <div class="contain-edit-img">
+                  <div class="submit-edit-imagen">
+                    <img src="/img/products/<%= producto.image%>" alt="<%=producto.alt %>" />
+                  </div>
+                  <input type="file" name="image" id="image" placeholder="Subir Imagen"/>
+                </div>
+              </div>
+
+              <div class="submit-botton-product-img">
+                <div class="submit-product-title-rigth">
+                  <label for="discount"></label>
+                  <input type="text" class="name" name="name" id="name" placeholder="Nombre del producto" value="<%=producto.name%>"/>
+                </div>
+
+                <div class="submit-product-discount-rigth">
+                  <label for="discount"></label>
+                  <input type="text" class="discount" name="discount" id="discount"  placeholder="Descuento" value="<%=producto.discount%>" />
+                </div>
+
+                <div class="submit-product-stock">
+                  <label for="cantidad"></label>
+                  <input type="text" class="stock" name="stock" id="stock" placeholder="cantidad de productos" value="<%=producto.stock%>">
+                </div>
+                <div class="submit-product-price">
+                  <label for="price"></label>
+                  <input type="number" class="price" name="price" id="price" placeholder="Precio" value="<%=producto.price%>">
+                </div>
+              </div>
+            </div>
+            <div class="submit-product-carac">
+              <p>CARACTERISTICAS:</p>
+              <label for="description"></label>
+              <input class="description" name="description" id="description" placeholder="Descripcion" value="<%=producto.description%>"></input>
+            </div>
+
+
+            <div class="submit-color">
+              <p>COLORES DISPONIBLES:</p>
+              <input type="text" name="color" id="colores" placeholder="Colores" value="<%=producto.color%>"/>
+            </div>
+
+            <div class="submit-sub-categorias">
+              <p>CATEGORIAS:</p>
+              <input type="text" name="category" id="category" placeholder="Sub Categoria" value="<%=producto.category%>"/>
+            </div>
+            <div class="submit-product">
+              <button type="submit" class="button-submit-product">
+                EDITAR PRODUCTO
+              </button>  
+            </div>
+          </section>
+        </form>
+      <!-- <script>
+              const imagenHtml = document.getElementById("vitrina");
+              const loadFile=(event)=>{
+                const file= event.target.files[0];
+                 if (file) {
+                  imagenHtml.src = URL.createObjectURL(file)
+                }
+              };
+      </script>
+    </main> -->
+    <%- include("../partials/footer.ejs")%>
+  </body>
+</html>

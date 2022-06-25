@@ -1,0 +1,37 @@
+section.edit-product-description {
+    background-color: #ebebeb;
+    width: 70%;
+}
+
+
+/* CSS de Subida de imagen */
+div.contain-edit-img{
+    padding: 16px 16px 0px;
+    border-bottom: 0px;
+    width: 60%;
+    background-color: white;
+}
+
+section div.img-edit-product {
+    padding: 16px 0px;
+    border-bottom: 2px solid #f36e21;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    margin-left: 10px;
+}
+
+div.submit-edit-imagen {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    display: flex;
+}
+
+div.submit-edit-imagen img {
+   width: 100%;
+}
+
+
+
+    

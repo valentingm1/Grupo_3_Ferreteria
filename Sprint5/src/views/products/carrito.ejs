@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs")%>
+
+  <body>
+    <%- include("../partials/header.ejs")%>
+
+    <main>
+      <section class="carrito-header">
+        <div class="row-center-carrito-header">
+          <div class="h2container">
+            <h2>Carrito de Compras</h2>
+          </div>
+          <div class="breadcrumbs">
+            <div class="paginasRecorridas">
+              <a href="" title="Hammerhead">Inicio</a>
+              <span class="divider">-</span>
+              <span class="paginaActual">Carrito de Compras</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div id="paginaCarrito" class="carrito-container">
+        <div class="itemList">
+          <div class="item">
+            <div class="imagenItemCarrito">
+              <img
+                src="https://d2r9epyceweg5n.cloudfront.net/stores/001/859/338/products/fox70180-quick-preset_2000x12361-e1be437fcfc87a12d116426217133095-320-0.jpg"
+                class="img-fluid"
+              />
+            </div>
+            <div class="descripcionItem">
+              <div class="nombreItem">
+                <a href="/producto/productList"
+                  >Disco Para Madera Premium 180 Mm. Carburo De Tungsteno</a
+                >
+              </div>
+              <span class="menosItem">
+                <button type="button" onclick="">-</button>
+              </span>
+              <span class="inputCantidadItem">
+                <input type="number" value="1" style="display: inline-block" />
+              </span>
+              <span class="masItem">
+                <button type="button" onclick="">+</button>
+              </span>
+            </div>
+            <h4 class="subtotal">$Cantidad</h4>
+            <div class="buttonBorrar">
+              <button type="button">X</button>
+            </div>
+          </div>
+          <div class="item">
+            <div class="imagenItemCarrito">
+              <img
+                src="https://d2r9epyceweg5n.cloudfront.net/stores/001/859/338/products/fox65180-quick-preset_2000x12361-89d299cfce57d3904416426216038139-640-0.jpg"
+                class="img-fluid"
+              />
+            </div>
+            <div class="descripcionItem">
+              <div class="nombreItem">
+                <a href="/producto/productList"
+                  >Disco Diamantado Para Corte De Metales 180 Mm</a
+                >
+              </div>
+              <span class="menosItem">
+                <button type="button" onclick="">-</button>
+              </span>
+              <span class="inputCantidadItem">
+                <input type="number" value="1" style="display: inline-block" />
+              </span>
+              <span class="masItem">
+                <button type="button" onclick="">+</button>
+              </span>
+            </div>
+            <h4 class="subtotal">$Cantidad</h4>
+            <div class="buttonBorrar">
+              <button type="button">X</button>
+            </div>
+          </div>
+        </div>
+        <div class="total-subtotal-container">
+          <div class="subtotal-container">
+            <h3 class="carro-subtotal">
+              <span class="subtotal"
+                >Subtotal
+                <small>(Sin envío):</small>
+              </span>
+              <strong class="subtotal-text-right"> $Cantidad </strong>
+            </h3>
+          </div>
+          <div class="total-container">
+            <h3>
+              <span class="total-float-left">Total:</span>
+              <span class="total-cantidad-float-right">$Cantidad</span>
+            </h3>
+          </div>
+          <div class="siguienteButton-container">
+            <button type="button" class="siguienteButton">
+              <a href="">INICIAR COMPRA</a>
+            </button>
+          </div>
+          <div class="ver-mas">
+            <a href="/">VER MAS PRODUCTOS</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <%- include("../partials/footer.ejs")%>
+  </body>
+</html>

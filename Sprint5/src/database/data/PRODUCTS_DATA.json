@@ -1,0 +1,96 @@
+[
+    {
+        "id": 1,
+        "name": "Pincel De 2 1/2 Pulgadas - Pura Cerda China - Marca Stok",
+        "description": "et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus id sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis",
+        "price": "2499",
+        "category": "Construccion",
+        "image": "pincel-stok.png",
+        "color": "Negro",
+        "stock": ""
+    },
+    {
+        "id": 2,
+        "name": "Piedra De Afilar Doble Faz 8 Kleber",
+        "description": "a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum",
+        "price": 3020,
+        "category": "Otros",
+        "image": "piedra-de-afilar-kleber.jpg",
+        "color": "Negro"
+    },
+    {
+        "id": 3,
+        "name": "Guante De Algodon Negro Con Mota Naranja",
+        "description": "ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id",
+        "price": 3252,
+        "category": "Plomeria",
+        "image": "guante-algodon-negro.jpg",
+        "color": "Gris"
+    },
+    {
+        "id": 4,
+        "name": "Hacha de mano 600grs",
+        "description": "nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed",
+        "price": 3162,
+        "category": "Construccion",
+        "image": "Hacha.jpg",
+        "color": "Naranja"
+    },
+    {
+        "id": 5,
+        "name": "Linterna Portatil Led Profesional Ficha Encendedor - Kleber",
+        "description": "odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in",
+        "price": 1957,
+        "category": "Herramientas",
+        "image": "linterna-kleber.jpg",
+        "color": "Naranja"
+    },
+    {
+        "id": 6,
+        "name": "Martillo doble de acero inoxidable",
+        "description": "Super martillo doble hiper mega increible de acero inoxidable, con gran resistencia2",
+        "price": "3000",
+        "category": "Plomeria",
+        "image": "Martillo.jpg",
+        "color": "Amarillo, rojo, azul",
+        "stock": "6"
+    },
+    {
+        "id": 7,
+        "name": "Amoladora angular Stanley STGS8115 amarilla 850 W 220 V,amoladora",
+        "description": "Super mega hiper amoladora de gran tamaño",
+        "price": "5000",
+        "category": "Construccion",
+        "image": "amoladora-stanley.jpg",
+        "color": "Naranja, roja, amarilla",
+        "stock": "15"
+    },
+    {
+        "id": 8,
+        "name": "Disco Diamantado Para Corte De Metales 180 Mm",
+        "description": "Discos de gran tamaño para amoladora super resistentes y de gran calidad",
+        "price": "2600",
+        "category": "Plomeria",
+        "image": "disco-180mm.jpg",
+        "color": "Negro",
+        "stock": "4"
+    },
+    {
+        "id": 9,
+        "name": "Remachadora Reforzada De Chapa 10.5 Pulgadas - Kleber",
+        "description": "fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum",
+        "price": 3447,
+        "category": "Otros",
+        "image": "remachadora.jpg",
+        "color": "Naranja"
+    },
+    {
+        "id": 10,
+        "name": "Hacha pico de Bombero 1.2kg",
+        "description": "auctor gravida sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et commodo",
+        "price": 1526,
+        "category": "Electricidad",
+        "image": "hacha-bombero.jpg",
+        "color": "Amarillo"
+    }
+]
