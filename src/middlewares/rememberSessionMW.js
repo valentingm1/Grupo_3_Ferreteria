@@ -1,4 +1,4 @@
-const userTracker = require("../database/models/userTracker.js")
+const userTracker = require("../middlewares/userTracker")
 
 const rememberSessionMW = (req, res, next) => {
         if (req.cookies.UserEmail != undefined && req.session.userLogged == undefined) {

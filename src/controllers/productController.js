@@ -3,6 +3,14 @@ const { append } = require("express/lib/response");
 const fs = require("fs");
 const multer = require("multer");
 
+//BASE DE DATOS SQL
+
+const db = require('../database/models');
+const sequelize = db.sequelize;
+
+//Modelo De Productos
+const Product = db.Producto;
+
 //Base DE DATOS//
 const path = require("path");
 const herramientasFilePath = path.join(__dirname, "../database/data/PRODUCTS_DATA.json");
@@ -12,6 +20,7 @@ const otrosProductos = herramientas;
 //CONFIGURACION de RUTAS//
 const productController = {
   productDetail: (req, res) => {
+
     const id = req.params.id;
     const toolFound = herramientas.find((herramienta) => herramienta.id == id);
 
@@ -32,34 +41,23 @@ const productController = {
   },
 
   createProductPost: (req, res) => {
-    const name = req.body.name;
-    const discount = req.body.discount;
-    const stock = req.body.stock;
-    const price = req.body.price;
-    const description = req.body.description;
-    const color = req.body.colores;
-    const category = req.body.category;
-    const id = herramientas.length + 1;
-
     const image = req.file.filename;
-    
-
-    herramientas.push({
-      name,
-      discount,
-      stock,
-      price,
-      description,
-      color,
-      category,
-      image,
-      id,
-    });
-
-    const nuevas_herramientas = JSON.stringify(herramientas);
-    fs.writeFileSync(herramientasFilePath, nuevas_herramientas);
-
-    res.redirect("/");
+    Product.create({
+      name: req.body.name,
+      discount: req.body.discount,
+      stock: req.body.stock,
+      price: req.body.price,
+      description: req.body.description,
+      color: req.body.colores,
+      category: req.body.category,
+      image : image
+    })
+    .then(()=>{
+        res.redirect("/");
+    }).catch((errors)=>{
+        console.log(errors)
+        res.send("ERROR")
+    })
   },
 
   editProduct: (req, res) => {
@@ -115,7 +113,11 @@ const productController = {
   },
 
   productList: (req, res) => {
-    res.render("products/productList", { products: herramientas });
+      db.Product.findAll()
+    .then(products => {
+      res.render("products/productList", { products})
+    })
+    
   },
 };
 

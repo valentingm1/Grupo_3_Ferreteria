@@ -9,7 +9,7 @@ const path = require("path");
 //CONFIGURACION DE MULTER
 const multerDiskStorage = multer.diskStorage({
   destination: (req, file, callback) => {
-    const image_path = path.join(__dirname, "../public/img/products");
+    const image_path = path.join(__dirname, "../../public/img/products");
     callback(null, image_path);
   },
   filename: (req, file, callback) => {
@@ -37,6 +37,7 @@ router.put("/:id/editar",path_upload_img.single("image"),mainController.productC
 //ELIMINAR UN PRODUCTO
 router.delete("/:id/detalle", mainController.productController.deleteProduct);
 
+//LISTA DE PRODUCTOS
 router.get("/productList", mainController.productController.productList);
 
 module.exports = router;

@@ -26,10 +26,15 @@ module.exports = (sequelize, dataTypes) =>{
         discount: {
             type: dataTypes.INTEGER,
         },
+        category: {
+            type: dataTypes.INTEGER,
+        },
+        color: {
+            type: dataTypes.INTEGER,
+        }
         //productCategory_id: {
 
-        //}
-            
+        //}           
     };
     const config = {
         timestamps : false
