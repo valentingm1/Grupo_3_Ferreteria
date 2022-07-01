@@ -1,7 +1,7 @@
 const  sequelize  = require("sequelize");
 
 module.exports = (sequelize, dataTypes) =>{
-    const alias = "Usuarios";
+    const alias = "Users";
     const cols = {
         id :{
             type: dataTypes.INTEGER,

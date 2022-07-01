@@ -3,9 +3,14 @@ const { append } = require("express/lib/response");
 const fs = require("fs");
 const multer = require("multer");
 
+//BASE DE DATOS CON SQL
+
+const db = require("../database/models")
+
+
 //Base DE DATOS//
 const path = require("path");
-const herramientasFilePath = path.join(__dirname, "../database/data/PRODUCTS_DATA.json");
+const herramientasFilePath = path.join(__dirname, "../data/PRODUCTS_DATA.json");
 var herramientas = JSON.parse(fs.readFileSync(herramientasFilePath, "utf-8"));
 const otrosProductos = herramientas;
 
@@ -13,18 +18,16 @@ const otrosProductos = herramientas;
 const productController = {
   productDetail: (req, res) => {
     const id = req.params.id;
-    const toolFound = herramientas.find((herramienta) => herramienta.id == id);
 
-    if (toolFound) {
-      const productDetailData = {
-        producto: toolFound,
-        otrosProductos,
-      };
+    db.Products.findByPk(id)
+    .then(producto => {
+        res.render('products/productDetail.ejs', {producto});
+    })
+    .catch((error)=>{
+      console.log(error);
+    });
 
-      res.render("products/productDetail", productDetailData);
-    } else {
-      res.send("Producto inexistente");
-    }
+
   },
 
   createProduct: (req, res) => {
@@ -32,34 +35,23 @@ const productController = {
   },
 
   createProductPost: (req, res) => {
-    const name = req.body.name;
-    const discount = req.body.discount;
-    const stock = req.body.stock;
-    const price = req.body.price;
-    const description = req.body.description;
-    const color = req.body.colores;
-    const category = req.body.category;
-    const id = herramientas.length + 1;
-
     const image = req.file.filename;
-    
-
-    herramientas.push({
-      name,
-      discount,
-      stock,
-      price,
-      description,
-      color,
-      category,
-      image,
-      id,
-    });
-
-    const nuevas_herramientas = JSON.stringify(herramientas);
-    fs.writeFileSync(herramientasFilePath, nuevas_herramientas);
-
-    res.redirect("/");
+    db.Products.create({
+      name: req.body.name,
+      discount: req.body.discount,
+      stock: req.body.stock,
+      price: req.body.price,
+      description: req.body.description,
+      color: req.body.colores,
+      category: req.body.category,
+      image : image
+    })
+    .then(()=>{
+        res.redirect("/");
+    }).catch((errors)=>{
+        console.log(errors)
+        res.send("ERROR")
+    })
   },
 
   editProduct: (req, res) => {
@@ -115,8 +107,12 @@ const productController = {
   },
 
   productList: (req, res) => {
-    res.render("products/productList", { products: herramientas });
-  },
+    db.Products.findAll()
+      .then(products => {
+          res.render('products/productList', {products})
+      })
+  }
+
 };
 
 module.exports = productController;

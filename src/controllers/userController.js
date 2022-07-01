@@ -6,9 +6,9 @@ const multer = require("multer");
 const path = require("path");
 const session = require("express-session")
 
-const userFilePath = path.join(__dirname, "../database/data/USER_DATA.json");
+const userFilePath = path.join(__dirname, "../data/USER_DATA.json");
 const users = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
-const userTracker = require("../database/models/userTracker.js")
+const userTracker = require("../middlewares/userTracker")
 const HOUR= 1_000 * 3_600 
 
 const userController = {

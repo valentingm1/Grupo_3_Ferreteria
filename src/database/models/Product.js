@@ -1,7 +1,5 @@
-const  sequelize  = require("sequelize");
-
 module.exports = (sequelize, dataTypes) =>{
-    const alias = "Productos";
+    const alias = "Products";
     const cols = {
         id :{
             type: dataTypes.INTEGER,
@@ -9,33 +7,41 @@ module.exports = (sequelize, dataTypes) =>{
             autoIncrement: true
         },
         name:{
-            type: dataTypes.STRING(100)
+            type: dataTypes.STRING(100),
+            allowNull: false
         },
         description: {
-            type: dataTypes.STRING(400)
+            type: dataTypes.STRING(400),
+            allowNull: false
         },
         price: {
-            type: dataTypes.DECIMAL
+            type: dataTypes.DECIMAL,
+            allowNull: false
         },
         stock: {
             type: dataTypes.INTEGER,
+            allowNull: false
         },
         image: {
-            type: dataTypes.STRING(1234)
+            type: dataTypes.STRING(1234),
+            allowNull: false
         },
         discount: {
             type: dataTypes.INTEGER,
+            allowNull: false
         },
-        //productCategory_id: {
-
-        //}
-            
+        color: {
+            type: dataTypes.INTEGER,
+            allowNull: false
+        }     
     };
     const config = {
         timestamps : false
     };
 
     const Producto = sequelize.define(alias, cols, config);
+
+    console.log(Producto === sequelize.models.Products)
 
     return Producto;
 }
