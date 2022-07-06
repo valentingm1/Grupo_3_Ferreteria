@@ -43,48 +43,7 @@
       <section class="ultima-visita">
         <h4 class="titulo-entre-productos">Productos Destacados</h4>
         <div class="productos-login">
-          <% for (let i = 5; i < productos.length; i++) {%> <!--  /* cambié i = 0 por i = 5*/ -->
-          <article class="article-producto-login">
-            <img
-              class="picture"
-              src="/img/products/<%= productos[i].image %>"
-              alt="<%= productos[i].alt %>"
-              width="100"
-              height="100"
-            />
-            <div class="articulos-vistos">
-              <p class="precio-Antes">$<%= productos[i].price %></p>
-              <i class="fas fa-truck"></i>
-              <h5 class="descripcion">
-                <a href="/producto/<%= productos[i].id %>/detalle"><%= productos[i].name %></a>
-              </h5>
-            </div>
-          </article>
-          <%}%>
       </section>
-      <section class="promociones">
-        <h4 class="titulo-entre-productos">Nuestras promociones</h4>
-        <div class="productos-login">
-          <% for (let i = 0; i < 5; i++) {%><!--  /* cambié productos.length por un 5 */ -->
-            <article class="article-producto-login">
-              <img
-                class="picture"
-                src="/img/products/<%= productos[i].image %>"
-                alt="<%= productos[i].alt %>"
-                width="100"
-                height="100"
-              />
-              <div class="articulos-vistos">
-                <p class="precio-Antes"><%= productos[i].price %>$</p>
-                <i class="fas fa-truck"></i>
-                <h5 class="descripcion">
-                  <a href="producto/<%= productos[i].id %>/detalle/"><%= productos[i].name %></a>
-                </h5>
-              </div>
-            </article>
-            <%}%>
-        </div>
-      </section> 
     </main>
 
     <%- include("partials/footer.ejs")%>

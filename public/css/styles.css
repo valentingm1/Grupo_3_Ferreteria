@@ -18,12 +18,6 @@ body {
   height: 50px;
 }
 
-.memo {
-  color: #f36e21;
-  align-self: center;
-  font-size: 14px;
-  display: none;
-}
 
 .input {
   width: 55%;
@@ -876,11 +870,6 @@ article div.main-article p.discount {
   }
 }
 
-@media (min-width: 375px) and (max-width: 768px) {
-  .memo {
-    display: none;
-  }
-}
 
 @media (min-width: 426px) and (max-width: 768px) {
   .carrito-header {
@@ -960,12 +949,6 @@ article div.main-article p.discount {
   .logo {
     width: 180px;
     height: 80px;
-  }
-
-  .memo {
-    width: 20%;
-    font-size: 15px;
-    display: block;
   }
 
   .main-header {
@@ -1161,12 +1144,6 @@ article div.main-article p.discount {
     height: 75px;
   }
 
-  .memo {
-    width: 15%;
-    font-size: 17px;
-    display: block;
-  }
-
   .input {
     width: 45%;
   }
@@ -1354,12 +1331,6 @@ article div.main-article p.discount {
   .logo {
     width: 200px;
     height: 75px;
-  }
-
-  .memo {
-    width: 15%;
-    font-size: 17px;
-    display: block;
   }
 
   .input {

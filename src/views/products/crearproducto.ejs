@@ -6,18 +6,13 @@
   <body>
     <%- include("../partials/header.ejs")%>
     <div class="color_orange"></div>
-      <main id="main">
+      <main class="product-create-main">
         <form class="submit-product-form" action="/producto/crear" method="POST" enctype="multipart/form-data" class="form2">
           <div class="title-product">
             <h4>Como se veria tu Producto:</h4>
           </div>
           <section class="submit-product-description">
             <div class="submit-main-product-detail">
-              <div class="submit-product-title">
-                <label for="name"></label>
-                <input type="text" name="name" id="name" placeholder="Nombre del Producto" />
-              </div>
-
               <div class="img-submit-product">
                 <div class="contain-img">
                   <div class="submit-imagen">

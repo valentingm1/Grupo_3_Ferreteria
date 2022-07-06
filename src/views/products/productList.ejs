@@ -1,33 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include("../partials/head.ejs")%>
-  <link rel="stylesheet" href="/css/productList.ejs">
+  <link rel="stylesheet" href="/css/productList.css">
   <body>
     <%- include("../partials/header.ejs")%>
 
-    <main>
-        <section class="ultima-visita">
-            <h4 class="titulo-entre-productos">Todos los productos</h4>
-            <div class="productos-List">
-              <% for (let i = 0; i < products.length; i++) {%> <!--  /* cambié i = 0 por i = 5*/ -->
-              <article class="article-producto-login">
-                <img
-                  class="picture"
+    <main class="product-list-main">
+      <!-- Titulo de lista de productos -->
+      <section class="product-list-tittle">
+          <h1>Productos:</h1>
+      </section>
+
+      <!-- Boton para filtart por categoria -->
+      <div class="button-filter-container">
+        <a class="button-filter"> Filtrar </a>
+      </div>
+
+      <!-- Contenerdor de Lista de productos y categorias  -->
+      <section class="product-list-container">
+        <div class="product-list-row">
+          <!-- categoria de los productos -->
+          <div class="product-list-category-off">
+            <ul>
+              <li>Construccion</li>
+              <li>Hogar</li>
+              <li>Electrica</li>
+              <li>Herramientas</li>
+            </ul>
+          </div>
+          <!-- Lista de productos -->
+          <div class="product-list-products">
+            <% for (let i = 0; i < products.length; i++) {%> <!--  /* cambié i = 0 por i = 5*/ -->
+            <article class="product-card-container">
+              <!-- Productos individuales -->
+              <div class="product-card">
+                <div class="product-card-container-img">
+                  <img
+                  class="product-card-img"
                   src="/img/products/<%= products[i].image %>"
                   alt="<%= products[i].alt %>"
                   width="100"
                   height="100"
-                />
-                <div class="articulos-vistos">
-                  <p class="precio-Antes"><%= products[i].price %>$</p>
-                  <i class="fas fa-truck"></i>
-                  <h5 class="descripcion">
-                    <a href="/producto/<%= products[i].id %>/detalle"><%= products[i].name %></a>
-                  </h5>
+                  />
                 </div>
-              </article>
-              <%}%>
-          </section>
+                <div class="product-card-info-container">
+                  <div class="product-card-info">
+                    <div class="product-card-name">
+                      <a href="/producto/<%= products[i].id %>/detalle"><%= products[i].name %></a>
+                    </div>
+                    <div class="product-card-price">
+                      <%= products[i].price %>$
+                    </div>
+                    <i class="fas fa-truck"></i>
+                  </div>
+                  <div class="product-card-buttons">
+                    <div class="product-card-detail"> 
+                      <i class="fa-solid fa-eye"></i> 
+                      <span> Detalle </span>
+                    </div>
+                    <div class="product-card-comprar"> 
+                      <i class="fas fa-shopping-cart"></i>
+                      <span> Comprar </span>  
+                    </div>
+                  </div>
+                </div>
+                <a class="link-detail-product" href="/producto/<%= products[i].id %>/detalle"></a>
+              </div>
+            </article>
+            <%}%>
+        </div>
+      </section>
+      
+      <!-- Filtro por categoria para moviles -->
+      <div class="product-list-filter-off">
+        <div class="filter-tittle">
+          <span>Icono de filtro</span>
+          "Filtros"
+        </div>
+        <div class="filter-body">
+          <div class="filter-category-container">
+            <h3 class="filter-category-tittle">Por categoria</h3>
+            <div class="filter-category">
+              <ul>
+                <li>Construccion</li>
+                <li>Hogar</li>
+                <li>Electrica</li>
+                <li>Herramientas</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <%- include("../partials/footer.ejs")%>

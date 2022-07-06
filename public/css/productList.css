@@ -1,0 +1,172 @@
+
+main.product-list-main{
+
+}
+
+/*------------ TITULO DE LISTA DE PRODUCTOS-------------*/
+section.product-list-tittle{
+
+}
+
+section.product-list-tittle h1{
+
+}
+
+/*-----BOTON DE FILTRAR----------*/
+
+div.button-filter-container{
+
+}
+
+div.button-filter-container a.button-filter{
+
+}
+
+/*-----------CONTENEDOR DE LISTA DE PRODUCTOS-----------------*/
+section.product-list-container{
+
+}
+
+div.product-list-row{
+
+}
+
+/*------CATEGORIA DE LOS PRODUCTOS-----*/
+div.product-list-category-off{
+
+}
+
+div.product-list-category-off ul{
+    
+}
+
+div.product-list-category-off ul li{
+    
+}
+
+/*-------------------LISTA DE PRODUCTOS------------------------*/
+div.product-list-products{
+
+}
+
+article.product-card-container{
+
+}
+
+/*--------PRODUCTOS INDIVIDUALES--------*/
+div.product-card{
+
+}
+
+/*Imagen del producto*/
+div.product-card-container-img{
+
+}
+
+img.product-card-img{
+
+}
+
+/*---Informacion del producto---*/
+div.product-card-info-container{
+
+}
+
+/*descripcion del producto*/
+div.product-card-info{
+
+}
+
+div.product-card-name{
+
+}
+
+div.product-card-price{
+
+}
+/*icono del carrito*/
+div.product-card-info i{
+
+}
+
+/*---Botones de los productos---*/
+div.product-card-buttons{
+
+}
+
+/*boton Detalle*/
+div.product-card-detail{
+
+}
+
+div.product-card-detail i{
+
+}
+
+div.product-card-detail span{
+
+}
+
+/*boton Compra*/
+div.product-card-comprar{
+
+}
+
+div.product-card-comprar i{
+
+}
+
+div.product-card-comprar span{
+
+}
+
+/*-----Vinculo al detalle del producto seleccionado----*/
+
+a.link-detail-product{
+
+}
+
+/*-----------FILTRO POR CATEGORIA PARA MOVILES----------------*/
+div.product-list-filter-off{
+
+}
+
+/*Titulo de filtro*/
+div.filter-tittle{
+
+}
+
+/*icono de filtro*/
+div.filter-tittle span {
+
+}
+
+/*contenedor categorias del filtro*/
+div.filter-body{
+
+}
+
+div.filter-category-container{
+
+}
+
+/*titulo de categorias*/
+h3.filter-category-tittle{
+
+}
+
+/*Contenedor de categorias*/
+div.filter-category{
+
+}
+
+/*Categorias*/
+div.filter-category ul{
+
+}
+
+div.filter-category ul li{
+
+}
+
+

@@ -7,7 +7,7 @@ const session = require("express-session")
 const validateLoggedInUserMW = require("./src/middlewares/validateLoggedInUserMW")
 const rememberSessionMW = require("./src/middlewares/rememberSessionMW")
 const cookies = require('cookie-parser');
-
+  
 //REQUERIMIENTOS RUTAS//
 const app = express();
 const mainRouter = require("./src/routers/mainRouter");

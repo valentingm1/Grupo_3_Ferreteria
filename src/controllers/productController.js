@@ -3,37 +3,31 @@ const { append } = require("express/lib/response");
 const fs = require("fs");
 const multer = require("multer");
 
-//BASE DE DATOS SQL
+//BASE DE DATOS CON SQL
 
-const db = require('../database/models');
-const sequelize = db.sequelize;
+const db = require("../database/models")
 
-//Modelo De Productos
-const Product = db.Producto;
 
 //Base DE DATOS//
 const path = require("path");
-const herramientasFilePath = path.join(__dirname, "../database/data/PRODUCTS_DATA.json");
+const herramientasFilePath = path.join(__dirname, "../data/PRODUCTS_DATA.json");
 var herramientas = JSON.parse(fs.readFileSync(herramientasFilePath, "utf-8"));
 const otrosProductos = herramientas;
 
 //CONFIGURACION de RUTAS//
 const productController = {
   productDetail: (req, res) => {
-
     const id = req.params.id;
-    const toolFound = herramientas.find((herramienta) => herramienta.id == id);
 
-    if (toolFound) {
-      const productDetailData = {
-        producto: toolFound,
-        otrosProductos,
-      };
+    db.Products.findByPk(id)
+    .then(producto => {
+        res.render('products/productDetail.ejs', {producto});
+    })
+    .catch((error)=>{
+      console.log(error);
+    });
 
-      res.render("products/productDetail", productDetailData);
-    } else {
-      res.send("Producto inexistente");
-    }
+
   },
 
   createProduct: (req, res) => {
@@ -42,7 +36,7 @@ const productController = {
 
   createProductPost: (req, res) => {
     const image = req.file.filename;
-    Product.create({
+    db.Products.create({
       name: req.body.name,
       discount: req.body.discount,
       stock: req.body.stock,
@@ -100,25 +94,23 @@ const productController = {
     fs.writeFileSync(herramientasFilePath, data);
     res.redirect("/producto/"+ req.params.id + "/detalle");
   },
+
   deleteProduct: (req, res) => {
-    function checkProduct(product) {
-      if (product.id != req.params.id) {
-        return product;
-      }
-    }
-    herramientas = herramientas.filter(checkProduct);
-    let newData = JSON.stringify(herramientas);
-    fs.writeFileSync(herramientasFilePath, newData);
-    res.redirect("/");
+    let productId = req.params.id;
+    db.Products
+    .destroy({where: {id: productId}, force: true}) // force: true es para asegurar que se ejecute la acción
+    .then(()=>{
+        return res.redirect('../productList')})
+    .catch(error => res.send(error)) 
   },
 
   productList: (req, res) => {
-      db.Product.findAll()
-    .then(products => {
-      res.render("products/productList", { products})
-    })
-    
-  },
+    db.Products.findAll()
+      .then(products => {
+          res.render('products/productList', {products})
+      })
+  }
+
 };
 
 module.exports = productController;

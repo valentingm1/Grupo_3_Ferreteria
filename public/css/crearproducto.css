@@ -1,3 +1,7 @@
+main.product-create-main{
+    background-color: #ffff;
+}
+
 /*Fondo naranja*/
 div.color_orange{
     background-color: #f36e21;
@@ -20,22 +24,12 @@ form.submit-product-form{
     position: relative;
 }
 
-section.submit-product-description{
+section.submit-product-description {
     background-color: #ebebeb;
+    box-shadow: 0px 0px 10px grey;
+    border-radius: 40px;
 }
 
-/*Descuento del producto derecha*/
-section div.submit-product-discount-rigth{
-    padding: 15px 16px;
-    padding-bottom: 0px;
-}
-
-section div.submit-product-discount-rigth .discount{
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 2px lightgray solid;
-    font-size: 15px;
-}
 
 /*---------------TITULO---------------*/
 
@@ -52,20 +46,17 @@ section div.submit-product-title input{
     font-size: 15px;
 }
 
-section div.submit-product-title-rigth{
-    display: none;
-}
-
 
 /*---------------IMAGEN---------------*/
 
-section div.img-submit-product{
+section div.img-submit-product {
     padding: 16px 0px;
     border-bottom: 2px solid #f36e21;
     display: flex;
     justify-content: center;
     background-color: white;
-    margin: auto;
+    margin: 0px;
+    border-radius: 20px 29px 0px 0px;
 }
 
 section div.img-submit-product img{
@@ -76,17 +67,49 @@ div.submit-imagen{
     background-color: white;
     color:black;
     border-radius: 5px;
-    border: 4px solid rgba(0,0,0,.6);
     margin: 50px 0px;
-    width:95%;
     display: flex;
 }
+
+div.submit-imagen input {
+    width: 80%;
+    border: 1px solid lightgray;
+    margin: auto;
+    border-radius: 5px;
+}
+
+
 button.submit-imagen a{
     text-decoration: none;
     color: black;
     padding: inherit;
 }
 
+/*-------------NOMBRE-------------*/
+section div.submit-product-title-rigth{
+    display: block;
+    padding: 15px 16px;
+}
+
+section div.submit-product-title-rigth .name{
+    margin-bottom: 10px;
+    border-radius: 5px; 
+    border: 2px lightgray solid;
+    font-size: 15px;
+}
+
+/*Descuento del producto derecha*/
+section div.submit-product-discount-rigth{
+    padding: 15px 16px;
+    padding-top: 0px;
+}
+
+section div.submit-product-discount-rigth .discount{
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 2px lightgray solid;
+    font-size: 15px;
+}
 
 /*---------------STOCK--------------*/
 
@@ -264,9 +287,9 @@ div.submit-sub-categorias p{
 }
 
 
-@media (min-width:768px) and (max-width:1024px) {
-    /*Contenedor de Creacion de producto*/
-    section.submit-product-description{
+@media (min-width: 768px) and (max-width:1024px) {
+     /*Contenedor de Creacion de producto*/
+     section.submit-product-description{
         box-shadow: 0px 0px 10px grey;
         border-radius: 21px;
         background-color: white;
@@ -282,9 +305,15 @@ div.submit-sub-categorias p{
     /*Titulo de creacion de producto*/
     div.title-product{
         color: white;
-        font-weight: 600;
-        font-size: 16px;       
+        font-size: 23px;
+        margin: 20px;     
     }
+
+    div.title-product h4{
+        font-weight: 500;
+        margin: 0px;      
+    }
+
     /*Imagen del producto*/
     div.submit-imagen {
         margin: 84px 0px;
@@ -295,7 +324,6 @@ div.submit-sub-categorias p{
         padding-right: 30px;
         width: 30%;
         margin-right: 20px;
-    }
     }
 
 
@@ -311,7 +339,7 @@ div.submit-sub-categorias p{
 
     section div.submit-product-title-rigth .name{
         margin-bottom: 10px;
-        border-radius: 5px;
+        border-radius: 5px; 
         border: 2px lightgray solid;
         font-size: 15px;
     }
@@ -365,6 +393,8 @@ div.submit-sub-categorias p{
         font-size: 16px;
     }
 
+}
+   
 @media (min-width: 1025px) and (max-width: 1440px) {
 
 
@@ -386,11 +416,16 @@ div.submit-sub-categorias p{
         background-color: white;
     }
 
-    /*Titulo de cracion de producto*/
+    /*Titulo de creacion de producto*/
     div.title-product{
         color: white;
-        font-weight: 600;
-        font-size: 21px;
+        font-size: 23px;
+        margin: 20px;     
+    }
+
+    div.title-product h4{
+        font-weight: 500;
+        margin: 0px;      
     }
 
     /*Imagen del producto*/
@@ -488,11 +523,16 @@ div.submit-sub-categorias p{
         justify-content: center;
     }
 
-    /*Titulo de cracion de producto*/
+    /*Titulo de creacion de producto*/
     div.title-product{
         color: white;
-        font-weight: 600;
-        font-size: 21px;
+        font-size: 23px;
+        margin: 20px;     
+    }
+
+    div.title-product h4{
+        font-weight: 500;
+        margin: 0px;      
     }
 
     /*Imagen del producto*/

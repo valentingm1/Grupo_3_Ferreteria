@@ -6,39 +6,36 @@ const multer = require("multer");
 const path = require("path");
 const session = require("express-session")
 
-const userFilePath = path.join(__dirname, "../database/data/USER_DATA.json");
-const users = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
-const userTracker = require("../middlewares/userTracker.js")
-const HOUR= 1_000 * 3_600 
+// const userFilePath = path.join(__dirname, "../data/USER_DATA.json");
+// const users = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
+// const userTracker = require("../middlewares/userTracker")
+// const HOUR= 1_000 * 3_600 
+
+
+const db = require("../database/models")
+
 
 const userController = {
   register: (req, res) => {
     res.render("users/register");
   },
   createUsers: (req, res) => {
-    const first_name = req.body.first_name;
-    const last_name = req.body.last_name;
-    const email = req.body.email;
-    const password = bcrypt.hashSync(req.body.password, 10);
-    const id = users.length + 1;
-
     const image = req.file.filename;
+    db.Users
+    .create(
+        {
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            email: req.body.email,
+            password: req.body.password,
+            genre_id: req.body.genre_id,
+            image: image
+        }
+    )
+    .then(()=> {
+        return res.redirect('/')})            
+    .catch(error => res.send(error))
 
-    console.log(image);
-
-    users.push({
-      first_name,
-      last_name,
-      email,
-      password,
-      id,
-      image,
-    });
-
-    const news_users = JSON.stringify(users);
-    fs.writeFileSync(userFilePath, news_users);
-
-    res.redirect("/");
   },
   // Para traer a los usuarios desde el JSON uso estos metodos, los nedesito para hacer funcionar el login
 
@@ -46,30 +43,43 @@ const userController = {
     res.render("users/login");
   },
   loginProcess: (req, res) => {
-    let UserToLog = userTracker.findOneByField("email", req.body.email);
+    const userEmail = req.body.email;
 
-    if (UserToLog) {
-      let isCheckedPassword = bcryptjs.compareSync(
-        req.body.password,
-        UserToLog.password
-      );
-      if (isCheckedPassword) {
-        req.session.userLogged = UserToLog;
-
-        if (req.body.remember =! undefined) {
-          res.cookie("UserEmail", req.body.email, { maxAge: HOUR});
-        }
-
-        return res.redirect("/");
+    let userToLog = db.Users.findOne({
+      where : {
+        email: userEmail
       }
-      return res.render("users/login", {
-        errors: {
-          email: {
-            errorMsg: "Le erraste a una credencial maestro",
-          },
-        },
-      });
+    });
+
+    if (userToLog.password === req.body.password) {
+      res.render("index", {usuario})
     }
+
+// -------------------------------
+//     let UserToLog = userTracker.findOneByField("email", req.body.email);
+
+//     if (UserToLog) {
+//       let isCheckedPassword = bcryptjs.compareSync(
+//         req.body.password,
+//         UserToLog.password
+//       );
+//       if (isCheckedPassword) {
+//         req.session.userLogged = UserToLog;
+
+//         if (req.body.remember =! undefined) {
+//           res.cookie("UserEmail", req.body.email, { maxAge: HOUR});
+//         }
+
+//         return res.redirect("/");
+//       }
+//       return res.render("users/login", {
+//         errors: {
+//           email: {
+//             errorMsg: "Le erraste a una credencial maestro",
+//           },
+//         },
+//       });
+//     }
   },
   logout: (req, res) => {
     req.session.destroy();
