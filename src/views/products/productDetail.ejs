@@ -54,8 +54,14 @@
         <div>
           <%= producto.color %>
         </div>
-        <div>
-          <%= producto.subCategory %>
+        <div> 
+          <% for (let i = 0; i < producto.categorias.length; i++) {%>  
+            <ul>
+              <li>
+                <%= producto.categorias[i].name%>
+              </li>
+            </ul>      
+          <% } %>    
         </div>
         <!-- <ul class="produc-info">
           <li>Apta para un disco de 115 mm de diámetro</li>

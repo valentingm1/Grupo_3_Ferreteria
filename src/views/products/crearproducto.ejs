@@ -56,7 +56,12 @@
 
             <div class="submit-sub-categorias">
               <p>CATEGORIAS:</p>
-              <input type="text" name="category" id="category" placeholder="Sub Categoria" />
+                <% for (let i = 0; i < categories.length; i++) {%>
+                <label for="">
+                  <input type="checkbox" name="categorias" id="categorias" placeholder="" value=" <%= categories[i].name %>">
+                  <%= categories[i].name %>
+                </label>   
+                <%}%>
             </div>
             <div class="submit-product">
               <button type="submit" class="button-submit-product">

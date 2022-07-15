@@ -41,7 +41,18 @@ module.exports = (sequelize, dataTypes) =>{
 
     const Producto = sequelize.define(alias, cols, config);
 
-    console.log(Producto === sequelize.models.Products)
+    console.log(Producto === sequelize.models.Products);
+
+     //Aquí debes realizar lo necesario para crear las relaciones con el modelo (Movie)
+     Producto.associate = (models)=>{
+        Producto.belongsToMany(models.Categories,{
+            as:"categorias",
+            through: "product_category",
+            foreignKey: "product_id",
+            otherKey: "category_id",
+            timestamps: false
+        });
+    }
 
     return Producto;
 }

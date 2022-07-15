@@ -19,8 +19,11 @@ const productController = {
   productDetail: (req, res) => {
     const id = req.params.id;
 
-    db.Products.findByPk(id)
+    db.Products.findByPk(id,{
+      include:['categorias']
+   })
     .then(producto => {
+      console.log(producto.categorias.name)
         res.render('products/productDetail.ejs', {producto});
     })
     .catch((error)=>{
@@ -31,7 +34,15 @@ const productController = {
   },
 
   createProduct: (req, res) => {
-    res.render("products/crearproducto");
+    db.Categories.findAll()
+    .then(categories => {
+     return res.render('products/crearproducto', {categories})
+  }).catch((e)=>{
+    console.log(e)
+  })
+
+  const categorias = db.Categories.findAll();
+  console.log(categorias)
   },
 
   createProductPost: (req, res) => {
@@ -105,12 +116,16 @@ const productController = {
   },
 
   productList: (req, res) => {
-    db.Products.findAll()
-      .then(products => {
-          res.render('products/productList', {products})
-      })
-  }
+    const categorias = db.Categories.findAll();
+    const productos = db.Products.findAll();
 
-};
+    Promise.all([categorias,productos])
+      .then(function([categorias,products]){
+        console.log(categorias)
+          res.render('products/productList', {products, categorias})
+      })
+    }
+
+  }
 
 module.exports = productController;
