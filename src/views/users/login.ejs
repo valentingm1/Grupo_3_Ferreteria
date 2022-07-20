@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include("../partials/head.ejs")%>
+
+<body>
+
+    <%- include("../partials/header.ejs")%>
+
+    <main id="main">
+        <section class="section-login">
+          <form action="/login" method="POST" class="form2">
+            <div class="username">
+              <label for="login-name"></label>
+              <input
+                type="email"
+                name="email"
+                id="login-name"
+                placeholder="Email"
+              />
+              <% if (locals.errors && errors.email) { %>
+               <div><%= errors.email.errorMsg %></div>
+              <% } %>
+            </div>
+            <div class="password-container">
+              <label for="login-password"></label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Contraseña"
+              />
+            </div>
+            <div class="login-button-checkbox">
+                <div>
+                    <label for="checkbox-recuerdame">Recuerdame</label>
+                    <input type="checkbox" name="remember" id="checkbox">
+                    <section class="#">
+          </div>
+            <div class="login-button">
+              <button class="publicarproducto" type="submit">
+                <a>INICIAR SESION</a>
+              </button>
+            </div>
+          </form>
+        </section>
+        <div class="banner-filler">
+          <img src="https://www.idemcosb.com.my/media/mbimages/i/d/idemco_shopee_homepage_banner_july.jpg" alt="Banner De Hammerhead" width="100%" height="20%">
+        </div>
+      </main>
+
+
+    <%- include("../partials/footer.ejs")%>
+
+</body>
+
+</html>

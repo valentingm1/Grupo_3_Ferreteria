@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../partials/head.ejs")%>
+  <link rel="stylesheet" href="/css/crearproducto.css">
+
+  <body>
+    <%- include("../partials/header.ejs")%>
+    <div class="color_orange"></div>
+      <main class="product-create-main">
+        <form class="submit-product-form" action="/producto/crear" method="POST" enctype="multipart/form-data" class="form2">
+          <div class="title-product">
+            <h4>Como se veria tu Producto:</h4>
+          </div>
+          <section class="submit-product-description">
+            <div class="submit-main-product-detail">
+              <div class="img-submit-product">
+                <div class="contain-img">
+                  <div class="submit-imagen">
+                    <input type="file" name="image" id="image" placeholder="Subir Imagen" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="submit-botton-product-img">
+                <div class="submit-product-title-rigth">
+                  <label for="discount"></label>
+                  <input type="text" class="name" name="name" id="name" placeholder="Nombre del producto" />
+                </div>
+
+                <div class="submit-product-discount-rigth">
+                  <label for="discount"></label>
+                  <input type="text" class="discount" name="discount" id="discount"  placeholder="Descuento" />
+                </div>
+
+                <div class="submit-product-stock">
+                  <label for="cantidad"></label>
+                  <input type="text" class="stock" name="stock" id="stock" placeholder="cantidad de productos">
+                </div>
+                <div class="submit-product-price">
+                  <label for="price"></label>
+                  <input type="number" class="price" name="price" id="price" placeholder="Precio">
+                </div>
+              </div>
+            </div>
+            <div class="submit-product-carac">
+              <p>CARACTERISTICAS:</p>
+              <label for="description"></label>
+              <input class="description" name="description" id="description" placeholder="Descripcion" ></input>
+            </div>
+
+
+            <div class="submit-color">
+              <p>COLORES DISPONIBLES:</p>
+              <input type="text" name="colores" id="colores" placeholder="Colores" />
+            </div>
+
+            <div class="submit-sub-categorias">
+              <p>CATEGORIAS:</p>
+                <% for (let i = 0; i < categories.length; i++) {%>
+                <label for="">
+                  <input type="checkbox" name="categorias" id="categorias" placeholder="" value=" <%= categories[i].name %>">
+                  <%= categories[i].name %>
+                </label>   
+                <%}%>
+            </div>
+            <div class="submit-product">
+              <button type="submit" class="button-submit-product">
+                PUBLICAR PRODUCTO
+              </button>  
+            </div>
+        </form>
+        </section>
+      </main>
+      <%- include("../partials/footer.ejs")%>
+  </body>
+
+</html>

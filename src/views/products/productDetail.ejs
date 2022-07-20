@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs")%>
+
+  <body class="body-product-detail">
+    <%- include("../partials/header.ejs")%>
+
+    <section class="product-description">
+      <div class="product-title">
+        <p>
+          <%= producto.name %>
+        </p>
+      </div>
+
+      <div class="main-product-detail">
+        <div class="img-producto">
+          <div class="contain-img">
+            <img src="/img/products/<%= producto.image%>" alt="<%=producto.alt %>" />
+          </div>
+        </div>
+
+        <div class="botton-product-img">
+          <div class="product-title-rigth">
+            <p><%= producto.name %></p>
+          </div>
+
+          <div class="product-price">
+            <h3>$<%= producto.price %></h3>
+            <p>Precio en 12 cuotas: <%=producto.price/10%>$ </p>
+            <p>cantidad: <%= producto.stock %></p>
+          </div>
+
+          <div class="product-carrito">
+            <a href="#">Agregar al carrito</a>
+          </div>
+
+          <div class="product-compra">
+            <a href="/producto/<%=producto.id%>/editar">Editar Producto</a>
+          </div>
+
+          <form action="/producto/<%=producto.id %>/detalle?_method=DELETE" method="POST">
+            <div class="product-compra">
+              <button type="submit" id="button-delete">Eliminar producto</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="product-carac">
+        <h2>Caracteristicas:</h2>
+        <div>
+          <%= producto.description %>
+        </div>
+        <div>
+          <%= producto.color %>
+        </div>
+        <div> 
+          <% for (let i = 0; i < producto.categorias.length; i++) {%>  
+            <ul>
+              <li>
+                <%= producto.categorias[i].name%>
+              </li>
+            </ul>      
+          <% } %>    
+        </div>
+        <!-- <ul class="produc-info">
+          <li>Apta para un disco de 115 mm de diámetro</li>
+          <li>Trae interruptor tecla.</li>
+          <li>Su potencia es de 840 W.</li>
+          <li>Velocidad máxima de rotación de rpm.</li>
+          <li>Con arranque progresivo.</li>
+          <li>Tiene botón de bloqueo de disco.</li> -->
+        </ul>
+      </div>
+    </section>
+
+    <!------------------ producto SIMILARES CON LAS MISMA CATEGORIAS------------------->
+
+    <%- include("../partials/footer.ejs")%>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../partials/head.ejs")%>
+  <link rel="stylesheet" href="/css/register.css">
+
+  <body>
+
+    <%- include("../partials/header.ejs")%>
+
+      <main class="register_main">
+         <div class="color_orange">
+         </div>
+       <section class="section_register">
+          <form class="register_form" action="/edit-user?_method=PUT" method="GET" enctype="multipart/form-data" class="form2">
+
+            <div class="register_img">
+              <label class="register_img_label" for="label_register_img">Foto de perfil:</label>
+              <input id="label_register_img" class="register_profile_img" type="file" name="image_profile" placeholder="Subir Imagen de P" accept="image/*" />
+            </div>
+
+            <div class="register_firstname">
+              <label for="register_firstname"></label>
+              <input class="register_firstname_in" type="text" name="first_name" id="register_firstname" required="required" minlength="4"
+                placeholder="Nombre" />
+            </div>
+
+            <div class="register_lastname">
+              <label for="register_lastname"></label>
+              <input class="register_lastname_in" type="text" name="last_name" id="register_lastname" required="required" minlength="4"
+                placeholder="Apellido" />
+            </div>
+
+            <div class="register_email">
+              <label for="register_email"></label>
+              <input class="register_email_in" type="text" name="email" id="register_email" required="required" minlength="10"
+                placeholder="Email" />
+            </div>
+
+            <div class="register_password">
+              <label for="register_password"></label>
+              <input class="register_password_in" type="password" name="password" id="register_password" required="required" minlength="8"
+                placeholder="Contraseña" />
+            </div>
+
+            <!-- <div class="password-container">
+              <label for="login-password"></label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                minlength="8"
+                placeholder="Repetir la Contraseña"
+              />
+            </div> -->
+
+            <div class="register_buttons">
+              <div class="register_button_back">
+                <a href="/perfil" class="register_back_button">
+                  Regresar
+                </a>
+              </div>
+
+              <div class="register_button_submit">
+                <button type="submit" class="register_submit_button">
+                  Terminar Edición
+                </button>
+              </div>
+            </div>
+          </form>
+        </section>
+      </main>
+
+      <%- include("../partials/footer.ejs")%>
+
+  </body>
+
+</html>
