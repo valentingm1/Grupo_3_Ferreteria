@@ -1,5 +1,5 @@
 //requerimientos//
-const { append } = require("express/lib/response");
+const { append, redirect } = require("express/lib/response");
 const fs = require("fs");
 const multer = require("multer");
 
@@ -35,18 +35,19 @@ const productController = {
 
   createProduct: (req, res) => {
     db.Categories.findAll()
-    .then(categories => {
-     return res.render('products/crearproducto', {categories})
-  }).catch((e)=>{
-    console.log(e)
-  })
-
-  const categorias = db.Categories.findAll();
-  console.log(categorias)
+    .then((categories) =>{
+     return res.render('products/crearproducto', { categories})
+    }).catch((e)=>{
+      console.log(e)
+    })
   },
 
   createProductPost: (req, res) => {
     const image = req.file.filename;
+
+    console.log(req.body.categorias)
+    console.log(req.body.id)
+
     db.Products.create({
       name: req.body.name,
       discount: req.body.discount,
@@ -54,56 +55,49 @@ const productController = {
       price: req.body.price,
       description: req.body.description,
       color: req.body.colores,
-      category: req.body.category,
       image : image
-    })
-    .then(()=>{
+    },)
+    .then((producto)=>{
         res.redirect("/");
     }).catch((errors)=>{
         console.log(errors)
         res.send("ERROR")
-    })
+    });
+
   },
 
   editProduct: (req, res) => {
     const id = req.params.id;
-    const toolFound = herramientas.find((herramienta) => herramienta.id == id);
 
-    if (toolFound) {
-      const productoParaModificar = {
-        producto: toolFound,
-      };
-      res.render("products/modificarproducto", productoParaModificar);
-    } else {
-      res.send("Producto inexistente");
-    }
+    db.Products.findByPk(id)
+    .then((producto) =>{
+     return res.render('products/modificarproducto', { producto})
+    }).catch((e)=>{
+      console.log(e)
+    })
   },
 
   putProduct: (req, res) => {
-    const id = req.params.id;
-    const name = req.body.name;
-    const price = req.body.price;
-    const description = req.body.description;
-    const stock = req.body.stock;
-    const color = req.body.color;
-    const category = req.body.category;
-    
-    const image = req.file.filename
 
-    herramientas.forEach((producto) => {
-      if (producto.id === parseInt(id)) {
-        producto.name = name;
-        producto.price = price;
-        producto.description = description;
-        producto.stock = stock;
-        producto.color = color;
-        producto.category = category;
-        producto.image = image;
-      }
-    });
-    const data = JSON.stringify(herramientas);
-    fs.writeFileSync(herramientasFilePath, data);
-    res.redirect("/producto/"+ req.params.id + "/detalle");
+    let peliculaId = req.params.id;
+
+
+    db.Products.update(
+      {
+        name: req.body.name,
+        discount: req.body.discount,
+        stock: req.body.stock,
+        price: req.body.price,
+        description: req.body.description,
+        colores: req.body.colores,
+        image: req.file ? req.file.filename : req.body.image
+      },
+      {
+          where: {id: peliculaId}
+      })
+      .then( ()=> {
+            res.redirect("/")})
+      .catch(error => res.send(error))
   },
 
   deleteProduct: (req, res) => {
@@ -112,7 +106,7 @@ const productController = {
     .destroy({where: {id: productId}, force: true}) // force: true es para asegurar que se ejecute la acción
     .then(()=>{
         return res.redirect('../productList')})
-    .catch(error => res.send(error)) 
+    .catch(error => res.send(error))
   },
 
   productList: (req, res) => {
@@ -121,7 +115,6 @@ const productController = {
 
     Promise.all([categorias,productos])
       .then(function([categorias,products]){
-        console.log(categorias)
           res.render('products/productList', {products, categorias})
       })
     }

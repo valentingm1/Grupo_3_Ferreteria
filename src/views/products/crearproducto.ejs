@@ -36,11 +36,14 @@
                   <label for="cantidad"></label>
                   <input type="text" class="stock" name="stock" id="stock" placeholder="cantidad de productos">
                 </div>
+
                 <div class="submit-product-price">
                   <label for="price"></label>
                   <input type="number" class="price" name="price" id="price" placeholder="Precio">
                 </div>
+                
               </div>
+
             </div>
             <div class="submit-product-carac">
               <p>CARACTERISTICAS:</p>
@@ -58,7 +61,7 @@
               <p>CATEGORIAS:</p>
                 <% for (let i = 0; i < categories.length; i++) {%>
                 <label for="">
-                  <input type="checkbox" name="categorias" id="categorias" placeholder="" value=" <%= categories[i].name %>">
+                  <input type="checkbox" name="categorias" id="categorias" placeholder="" value=" <%= categories[i].id %>">
                   <%= categories[i].name %>
                 </label>   
                 <%}%>

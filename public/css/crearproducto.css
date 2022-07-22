@@ -2,6 +2,11 @@ main.product-create-main{
     background-color: #ffff;
 }
 
+/*Id del producto*/
+div.product-id{
+    visibility: hidden;
+}
+
 /*Fondo naranja*/
 div.color_orange{
     background-color: #f36e21;

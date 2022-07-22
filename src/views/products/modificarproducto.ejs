@@ -21,13 +21,13 @@
                   <div class="submit-edit-imagen">
                     <img src="/img/products/<%= producto.image%>" alt="<%=producto.alt %>" />
                   </div>
-                  <input type="file" name="image" id="image" placeholder="Subir Imagen"/>
+                  <input type="file" name="image" id="image" placeholder="Subir Imagen" value="<%=producto.image%>"/>
                 </div>
               </div>
 
               <div class="submit-botton-product-img">
                 <div class="submit-product-title-rigth">
-                  <label for="discount"></label>
+                  <label for="name"></label>
                   <input type="text" class="name" name="name" id="name" placeholder="Nombre del producto" value="<%=producto.name%>"/>
                 </div>
 
@@ -55,7 +55,7 @@
 
             <div class="submit-color">
               <p>COLORES DISPONIBLES:</p>
-              <input type="text" name="color" id="colores" placeholder="Colores" value="<%=producto.color%>"/>
+              <input type="text" name="colores" id="colores" placeholder="colores" value="<%=producto.color%>"/>
             </div>
 
             <div class="submit-sub-categorias">

@@ -30,11 +30,11 @@ router.get("/crear", mainController.productController.createProduct);
 //utilizacion de multer con el path_upload_img BASE SQL
 router.post( "/crear",path_upload_img.single("image"),mainController.productController.createProductPost);
 
-//FORMULARIO DE EDICION DE PRODUCTOS
+//FORMULARIO DE EDICION DE PRODUCTOS BASE SQL
 router.get("/:id/editar", mainController.productController.editProduct);
 router.put("/:id/editar",path_upload_img.single("image"),mainController.productController.putProduct);
 
-//ELIMINAR UN PRODUCTO
+//ELIMINAR UN PRODUCTO BASE SQL
 router.delete("/:id/detalle", mainController.productController.deleteProduct);
 
 //LISTA DE PRODUCTOS BASE SQL

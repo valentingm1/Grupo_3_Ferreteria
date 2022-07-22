@@ -44,7 +44,6 @@ const userController = {
       },
     });
     Promise.all([userToLog]).then((userToLog) => {
-      console.log(userToLog)
       if (userToLog.password == req.body.password) {
         res.render("index", { userToLog });
       }

@@ -35,7 +35,10 @@ router.get("/profile",authLoggMiddlware, mainController.userController.profile);
 
 
 // CRUD
+//INICIO DE SESION CON SQL
 router.post("/login", mainController.userController.loginProcess);
+
+//CREACION DE USUARIO CON BASE SQL
 router.post("/register",path_upload_img.single("image_profile"),
 [
   check("first_name", "El nombre no puede estar vacio")
