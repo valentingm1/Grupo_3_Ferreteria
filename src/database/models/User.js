@@ -23,12 +23,11 @@ module.exports = (sequelize, dataTypes) =>{
         image: {
             type: dataTypes.STRING(1234)
         },
-        //usertType_id:{
+        user_type_id:{
+            type: dataTypes.INTEGER,
+        }
 
-     //}
-
-            
-    };
+     };
     const config = {
         timestamps : false
     };

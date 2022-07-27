@@ -42,13 +42,30 @@ const userController = {
       where: {
         email: userEmail,
       },
-    });
-    Promise.all([userToLog]).then((userToLog) => {
-      if (userToLog.password == req.body.password) {
-        res.render("index", { userToLog });
+    })
+    .then(
+      user => {
+          if (user.password == req.body.password) {
+              // if password match, then go to index with the user profile.
+              //res.render("index", { user });
+              // TODO: locals.isLogged poner en true.
+              // en userLogged poner los campos del usuario (first_name)
+              res.render("index");
+          }
+          else {
+              // otherwise, keep on login (maybe we must add an error message.
+              res.render("users/login");
+          }
       }
-    });
-    
+  );
+
+
+
+
+//Promise.all([userToLog]).then((userToLog) => {
+  // FIXME: verify that both passwords match.
+//});
+
 },
   
   editUser: (req,res) => {
