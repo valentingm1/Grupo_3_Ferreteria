@@ -7,6 +7,8 @@ const multer = require("multer");
 
 const db = require("../database/models")
 
+const Op = db.Sequelize.Op;
+
 
 //Base DE DATOS//
 const path = require("path");
@@ -109,6 +111,8 @@ const productController = {
     .catch(error => res.send(error))
   },
 
+
+
   productList: (req, res) => {
     const categorias = db.Categories.findAll();
     const productos = db.Products.findAll();
@@ -117,8 +121,23 @@ const productController = {
       .then(function([categorias,products]){
           res.render('products/productList', {products, categorias})
       })
-    }
+  },
 
+  busqueda: (req, res) =>{
+
+    const productosSearch =db.Products.findAll({
+      where:{
+        name: {[Op.like]: `%${req.body.search}%`}
+      }
+    })
+    const categorias = db.Categories.findAll();
+
+
+    Promise.all([categorias,productosSearch])
+      .then(function([categorias,products]){
+          res.render('products/productList', {products, categorias})
+      })
   }
+}
 
 module.exports = productController;

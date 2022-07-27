@@ -1,107 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include("../partials/head.ejs")%>
+<%- include("../partials/head.ejs")%>
   <link rel="stylesheet" href="/css/productList.css">
+
   <body class="product-list-body">
     <%- include("../partials/header.ejs")%>
 
-    <main class="product-list-main">
-      <!-- Titulo de lista de productos -->
-      <section class="product-list-tittle">
+      <main class="product-list-main">
+        <!-- Titulo de lista de productos -->
+        <section class="product-list-tittle">
           <h1>Productos</h1>
           <div class="orange-line"></div>
-      </section>
+        </section>
 
-      <!-- Boton para filtart por categoria -->
-      <div class="button-filter-container">
-        <button class="button-filter"> 
-          <p>
-            Filtrar 
-            <i class="fas fa-filter"></i>
-          </p>
-        </button>
-      </div>
-
-      <!-- Contenerdor de Lista de productos y categorias  -->
-      <section class="product-list-container">
-        <div class="product-list-row">
-          <!-- categoria de los productos -->
-          <div class="product-list-category-off">
-            <h3>Categorias</h3>
-            <% for (let i = 0; i < categorias.length; i++) {%>
-            <ul>
-              <li><%= categorias[i].name %></li>
-            </ul>
-            <%}%>
-          </div>
-          <!-- Lista de productos -->
-          <div class="product-list-products">
-            <% for (let i = 0; i < products.length; i++) {%> <!--  /* cambié i = 0 por i = 5*/ -->
-            <article class="product-card-container">
-              <!-- Productos individuales -->
-              <div class="product-card">
-                <div class="product-card-container-img">
-                  <img
-                  class="product-card-img"
-                  src="/img/products/<%= products[i].image %>"
-                  alt="<%= products[i].alt %>"
-                  width="100"
-                  height="100"
-                  />
-                </div>
-                <div class="product-card-info-container">
-                  <div class="product-card-info">
-                    <div class="product-card-name">
-                      <%= products[i].name %>
-                    </div>
-                    <div class="product-card-price">
-                      $<%= products[i].price %>
-                    </div>     
-                  </div>
-                  <div class="product-card-buttons">
-                    <div class="product-card-detail"> 
-                      <i class="fas fa-eye">
-                        <a class="product-eye" href="/producto/<%= products[i].id %>/detalle"></a>
-                      </i>
-                      <span> Detalle </span>
-                    </div>
-                    <div class="product-card-comprar"> 
-                      <i class="fas fa-shopping-cart"></i>
-                      <span> Comprar </span>  
-                    </div>
-                  </div>
-                </div>
-                <a class="link-detail-product" href="/producto/<%= products[i].id %>/detalle"></a>
-              </div>
-            </article>
-            <%}%>
-        </div>
-      </section>
-      
-      <!-- Filtro por categoria para moviles -->
-      <div class="product-list-filter-off">
-        <div class="filter-tittle">
-          <button>
-            <i class="fas fa-times"></i>
+        <!-- Boton para filtart por categoria -->
+        <div class="button-filter-container">
+          <button class="button-filter">
+            <p>
+              Filtrar
+              <i class="fas fa-filter"></i>
+            </p>
           </button>
-            Filtros
         </div>
-        <div class="filter-body">
-          <div class="filter-category-container">
-            <h3 class="filter-category-tittle">Por categoria</h3>
-            <div class="filter-category">
-              <ul>
-                <li>Construccion</li>
-                <li>Hogar</li>
-                <li>Electrica</li>
-                <li>Herramientas</li>
-              </ul>
+
+        <!-- Contenerdor de Lista de productos y categorias  -->
+        <section class="product-list-container">
+          <div class="product-list-row">
+            <!-- categoria de los productos -->
+            <div class="product-list-category-off">
+              <h3>Categorias</h3>
+              <% for (let i=0; i < categorias.length; i++) {%>
+                <ul>
+                  <li>
+                    <%= categorias[i].name %>
+                  </li>
+                </ul>
+                <%}%>
+            </div>
+            <!-- Lista de productos -->
+            <div class="product-list-products">
+              <% if(products.length > 0){%>
+                <% for (let i=0; i < products.length; i++) {%>
+                  <!--  /* cambié i = 0 por i = 5*/ -->
+                  <article class="product-card-container">
+                    <!-- Productos individuales -->
+                    <div class="product-card">
+                      <div class="product-card-container-img">
+                        <img class="product-card-img" src="/img/products/<%= products[i].image %>"
+                          alt="<%= products[i].alt %>" width="100" height="100" />
+                      </div>
+                      <div class="product-card-info-container">
+                        <div class="product-card-info">
+                          <div class="product-card-name">
+                            <%= products[i].name %>
+                          </div>
+                          <div class="product-card-price">
+                            $<%= products[i].price %>
+                          </div>
+                        </div>
+                        <div class="product-card-buttons">
+                          <div class="product-card-detail">
+                            <i class="fas fa-eye">
+                              <a class="product-eye" href="/producto/<%= products[i].id %>/detalle"></a>
+                            </i>
+                            <span> Detalle </span>
+                          </div>
+                          <div class="product-card-comprar">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span> Comprar </span>
+                          </div>
+                        </div>
+                      </div>
+                      <a class="link-detail-product" href="/producto/<%= products[i].id %>/detalle"></a>
+                    </div>
+                  </article>
+                <%}%>
+              <%}%>
+              <% if(products.length == 0){%>
+                <div class="product-inexist">
+                  <h2>
+                    El producto no existe
+                  </h2>
+                </div>
+              <%}%>
+            </div>
+        </section>
+
+        <!-- Filtro por categoria para moviles -->
+        <div class="product-list-filter-off">
+          <div class="filter-tittle">
+            <button>
+              <i class="fas fa-times"></i>
+            </button>
+            Filtros
+          </div>
+          <div class="filter-body">
+            <div class="filter-category-container">
+              <h3 class="filter-category-tittle">Por categoria</h3>
+              <div class="filter-category">
+                <ul>
+                  <li>Construccion</li>
+                  <li>Hogar</li>
+                  <li>Electrica</li>
+                  <li>Herramientas</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
 
-    <%- include("../partials/footer.ejs")%>
+      <%- include("../partials/footer.ejs")%>
   </body>
+
 </html>

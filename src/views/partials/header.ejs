@@ -7,10 +7,12 @@
                 </div>
             </div>
             
-            <span class="input">
-                <input type="text" placeholder="Producto o Marca">
-                <button><i class="fas fa-search"></i></button>
-            </span>
+            <form action="/producto/busqueda" class="input-search" method="Post">
+                <div class="input">
+                    <input type="text"  name="search" id = "search" placeholder="Producto o Marca">       
+                    <button class=" search-icon"><i class="fas fa-search"></i></button>
+                </div>              
+            </form>
 
             <div class="carritoAccesoDirecto">
                 <a href="/carrito">

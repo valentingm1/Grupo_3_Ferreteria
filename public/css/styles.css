@@ -18,22 +18,32 @@ body {
   height: 50px;
 }
 
+form.input-search{
+  margin-top: 14px;
+}
 
 .input {
-  width: 55%;
   align-self: center;
   display: flex;
 }
 
-span input {
+div input {
   width: 90%;
   border-radius: 7px 0px 0px 7px;
   border: none;
   font-size: 100%;
   padding: 5px;
 }
+button.search-icon{
+  width: 16%;
+  padding-top: 6px;
+  height: 26px;
+  border-radius: 0px 7px 7px 0px;
+  background-color: white;
+}
 
-span button {
+
+div button {
   width: 16%;
   border-radius: 0px 7px 7px 0px;
   border: none;
@@ -805,11 +815,7 @@ article div.main-article p.discount {
 /* ---------- Media queries ----------- */
 @media (min-width: 320px) and (max-width: 425px) {
   /* ---------- login inicio ----------- */
-  input#login-name,
-  input#password {
-    width: 100%;
-    max-width: 198px;
-  }
+
   .login-button button.loguearse {
     width: 100%;
     max-width: 198px;
@@ -955,9 +961,16 @@ article div.main-article p.discount {
     justify-content: none;
   }
 
-  .input {
-    width: 40%;
+  form.input-search {
+    margin-top: 27px;
+    width: 45%;
   }
+
+  button.search-icon{
+    width: 7%;
+    height: 41px;
+  }
+ 
 
   span input {
     width: 90%;
@@ -1131,7 +1144,7 @@ article div.main-article p.discount {
 }
 
 @media (min-width: 1024px) and (max-width: 1440px) {
-  span input {
+  div input {
     width: 90%;
     font-size: 18px;
     border-radius: 7px 0px 0px 7px;
@@ -1139,13 +1152,21 @@ article div.main-article p.discount {
     padding: 10px;
   }
 
+  div.search-icon{
+    width: 7%;
+    padding-top: 14px;
+    padding-left: 9px;
+    height: 27px;
+  }
+
   .logo {
     width: 200px;
     height: 75px;
   }
 
-  .input {
-    width: 45%;
+  form.input-search {
+    margin-top: 21px;
+    width: 40%;
   }
 
   .users-action {
@@ -1318,14 +1339,20 @@ article div.main-article p.discount {
     max-width: 750px;
   }
 }
-@media (min-width: 1440px) and (max-width: 2560px) {
+@media (min-width: 1440px) {
   /*-----------------------Top-Header---------------------*/
-  span input {
+  div input {
     width: 90%;
     font-size: 18px;
     border-radius: 7px 0px 0px 7px;
     border: none;
     padding: 10px;
+  }
+  button.search-icon{
+    width: 7%;
+    padding-top: 5px;
+    padding-left: 5px;
+    height: 41px;
   }
 
   .logo {
@@ -1333,11 +1360,11 @@ article div.main-article p.discount {
     height: 75px;
   }
 
-  .input {
-    width: 45%;
+  form.input-search {
+    margin-top: 21px;
+    width: 40%;
   }
-
-  .users-action {
+    .users-action {
     display: block;
     text-align: center;
     width: 15%;

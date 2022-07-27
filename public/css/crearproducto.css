@@ -278,6 +278,11 @@ div.submit-sub-categorias{
     padding: 0px 20px;
 }
 
+div.submit-sub-categorias label{
+    display: -webkit-inline-box;
+}
+
+
 div.submit-sub-categorias input {
     margin-left: 6px;
     border-radius: 5px;

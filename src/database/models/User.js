@@ -23,7 +23,7 @@ module.exports = (sequelize, dataTypes) =>{
         image: {
             type: dataTypes.STRING(1234)
         },
-        user_type_id:{
+        rol:{
             type: dataTypes.INTEGER,
         }
 

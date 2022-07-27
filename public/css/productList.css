@@ -5,6 +5,12 @@ body.product-list-body{
 
 main.product-list-main{
     background-color: rgb(255, 255, 255);
+    min-height: 270px;
+}
+
+/*BUSQUEDA DE PRODUCTO INEXISTENTE*/
+div.product-inexist{
+
 }
 
 /*------------ TITULO DE LISTA DE PRODUCTOS-------------*/
@@ -57,6 +63,8 @@ div.button-filter-container button.button-filter :hover{
 /*-----------CONTENEDOR DE LISTA DE PRODUCTOS-----------------*/
 section.product-list-container{
     background-color: rgb(255, 255, 255);
+    width: 75%;
+    margin: auto;
 }
 
 div.product-list-row{
@@ -285,6 +293,19 @@ div.filter-category ul li{
 /*                        and (max-width:1024px)  */
 @media (min-width: 768px) {
 
+
+    main.product-list-main{
+        min-height: 653px;
+    }
+    /*BUSQUEDA DE PRODUCTO INEXISTENTE*/
+    div.product-inexist{
+        padding-left: 221px;
+    }
+
+    div.product-inexist h2{
+        margin: 0px;
+    }
+
     /*------Raya de color naranja al lado del titutlo------*/
     section.product-list-tittle div.orange-line {
         width: 81%;
@@ -354,5 +375,13 @@ div.filter-category ul li{
     div.product-list-category-off ul li {
         margin: 8px 0px;
         font-size: 16px;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    main.product-list-main{
+
+        min-height: 820px;
     }
 }

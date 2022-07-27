@@ -102,6 +102,7 @@ div.register_button_back a.register_back_button{
 
 /*Boton de registarse*/
 div.register_button_submit button.register_submit_button{
+    width: 100%;
     padding: 4px;
     border-radius: 3px;
     border: none;

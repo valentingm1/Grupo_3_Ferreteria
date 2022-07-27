@@ -48,7 +48,7 @@
             <div class="submit-product-carac">
               <p>CARACTERISTICAS:</p>
               <label for="description"></label>
-              <input class="description" name="description" id="description" placeholder="Descripcion" ></input>
+              <input type="text" class="description" name="description" id="description" placeholder="Descripcion" ></input>
             </div>
 
 
@@ -60,9 +60,9 @@
             <div class="submit-sub-categorias">
               <p>CATEGORIAS:</p>
                 <% for (let i = 0; i < categories.length; i++) {%>
-                <label for="">
-                  <input type="checkbox" name="categorias" id="categorias" placeholder="" value=" <%= categories[i].id %>">
-                  <%= categories[i].name %>
+                <label for="">                 
+                  <input type="checkbox" name="categorias" id="categorias" placeholder="" value=" <%= categories[i].id %>">  
+                  <div><%= categories[i].name %></div>
                 </label>   
                 <%}%>
             </div>
