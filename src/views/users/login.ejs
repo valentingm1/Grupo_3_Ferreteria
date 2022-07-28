@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include("../partials/head.ejs")%>
+<%- include("../partials/head.ejs")%>
+  <link rel="stylesheet" href="/css/register.css">
 
-<body>
+  <body>
 
     <%- include("../partials/header.ejs")%>
 
-    <main id="main">
-        <section class="section-login">
-          <form action="/login" method="POST" class="form2">
-            <div class="username">
+      <main class="register_main">
+         <div class="color_orange">
+         </div>
+       <section class="section_register">
+          <form class="register_form" action="/login" method="POST" id="log-form">
+            <h2> Iniciar Sesión</h2>
+            <div class="register_control">
               <label for="login-name"></label>
+              <small></small>
               <input
                 type="email"
                 name="email"
                 id="login-name"
                 placeholder="Email"
               />
-              <% if (locals.errors && errors.email) { %>
-               <div><%= errors.email.errorMsg %></div>
-              <% } %>
             </div>
-            <div class="password-container">
+
+            <div class="register_control">
               <label for="login-password"></label>
+              <small class="passwordSmall"></small>
               <input
                 type="password"
                 name="password"
@@ -31,27 +35,26 @@
                 placeholder="Contraseña"
               />
             </div>
-            <div class="login-button-checkbox">
-                <div>
-                    <label for="checkbox-recuerdame">Recuerdame</label>
-                    <input type="checkbox" name="remember" id="checkbox">
-                    <section class="#">
-          </div>
-            <div class="login-button">
-              <button class="publicarproducto" type="submit">
-                <a>INICIAR SESION</a>
-              </button>
+
+              <div>
+                  <label for="checkbox-recuerdame">Recuerdame</label>
+                  <input type="checkbox" name="remember" id="checkbox">
+              </div>
+
+              <div class="register_button_submit">
+                <button type="submit" class="register_submit_button">
+                  Iniciar Sesión
+                </button>
+              </div>
+
             </div>
           </form>
         </section>
-        <div class="banner-filler">
-          <img src="https://www.idemcosb.com.my/media/mbimages/i/d/idemco_shopee_homepage_banner_july.jpg" alt="Banner De Hammerhead" width="100%" height="20%">
-        </div>
       </main>
 
+      <%- include("../partials/footer.ejs")%>
 
-    <%- include("../partials/footer.ejs")%>
-
-</body>
+    <script src="/js/login.js"></script>
+  </body>
 
 </html>

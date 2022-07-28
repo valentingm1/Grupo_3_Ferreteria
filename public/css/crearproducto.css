@@ -90,6 +90,20 @@ button.submit-imagen a{
     padding: inherit;
 }
 
+
+
+div.error input{
+    border-color: #e74c3c;
+    background-color: #ffc9cd
+}
+
+div.success input{
+    border-color:#2ecc17;
+    background-color: #b2ffda;
+    margin-bottom: 3px;
+    margin-top: 3px;
+}
+
 /*-------------NOMBRE-------------*/
 section div.submit-product-title-rigth{
     display: block;
@@ -222,6 +236,7 @@ div button.button-submit-product{
     color: white;
     background-color: #f36e21;
     margin: 0px;
+    cursor: pointer;
 }
 
 /*---------------CARACTERISTICAS---------------*/
@@ -235,6 +250,7 @@ section div.submit-product-carac input{
     border: 2px lightgray solid;
     font-size: 15px;
     width: 95%;
+    display: block;
 }
 
 section div.submit-product-carac .description {
@@ -283,11 +299,16 @@ div.submit-sub-categorias label{
 }
 
 
-div.submit-sub-categorias input {
+/* div.submit-sub-categorias input { 
     margin-left: 6px;
     border-radius: 5px;
     border: 2px lightgray solid;
     font-size: 16px;
+} */
+
+div.submit-sub-categorias input { 
+    width: 13px;
+    margin-bottom: 10px;
 }
 
 div.submit-sub-categorias p{

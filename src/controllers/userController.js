@@ -36,21 +36,21 @@ const userController = {
     res.render("users/login");
   },
   loginProcess: (req, res) => {
-    const userEmail = req.body.email;
-
+    console.log(req.body)
     let userToLog = db.Users.findOne({
       where: {
-        email: userEmail,
+        email: req.body.email
       },
     })
     .then(
-      user => {
-          if (user.password == req.body.password) {
+      userToLog => {
+          if (userToLog.password == req.body.password) {
+
               // if password match, then go to index with the user profile.
               //res.render("index", { user });
               // TODO: locals.isLogged poner en true.
               // en userLogged poner los campos del usuario (first_name)
-              res.render("index");
+              res.render("index",{userToLog});
           }
           else {
               // otherwise, keep on login (maybe we must add an error message.

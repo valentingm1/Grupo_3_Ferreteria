@@ -70,7 +70,6 @@ const productController = {
 
   editProduct: (req, res) => {
     const id = req.params.id;
-
     db.Products.findByPk(id)
     .then((producto) =>{
      return res.render('products/modificarproducto', { producto})

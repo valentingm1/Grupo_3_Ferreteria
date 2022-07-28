@@ -6,7 +6,7 @@ const mainController = require("../controllers/mainController.js");
 const multer = require("multer");
 const path = require("path");
 const bodyParser = require("body-parser")
-const {check, validationResult} = require("express-validator")
+const {check, validationResult, body} = require("express-validator")
 
 //Middleware require//
 const guestMiddlware = require("../middlewares/guestMiddleware")
@@ -36,7 +36,15 @@ router.get("/profile",authLoggMiddlware, mainController.userController.profile);
 
 // CRUD
 //INICIO DE SESION CON SQL
-router.post("/login", mainController.userController.loginProcess);
+router.post("/login",[
+  check("email", "El mail no puede estar vacio")
+  .exists()
+  .isEmail()
+  .normalizeEmail(),
+  check("password", "La contraseña no puede estar vacia y debe tener entre 8 y 20 caracteres")
+  .exists()
+  .isLength({ min:8, max: 20})
+], mainController.userController.loginProcess);
 
 //CREACION DE USUARIO CON BASE SQL
 router.post("/register",path_upload_img.single("image_profile"),
@@ -51,10 +59,45 @@ router.post("/register",path_upload_img.single("image_profile"),
   .normalizeEmail(),
   check("password", "La contraseña no puede estar vacia y debe tener entre 8 y 20 caracteres")
   .exists()
-  .isLength({ min:8, max: 20})
-],
+  .isLength({ min:8, max: 20}),
+  body("image_profile").custom((value, {req}) => {
+    let file = req.file
+    let extensiones = [".jpg", ".jpeg", ".png", ".gif"]
+    let fileExtension = path.extname(file.originalname)
+      if(!file){
+        throw new Error("Debes subir una imagen")
+      }
+      if(!extensiones.includes(fileExtension)){
+        throw new Error("Las extensiones permitidas son .png, .jpg y .gif")
+      }
+  }
+)],
 mainController.userController.createUsers,);
 router.post("/logout", mainController.userController.logout);
-router.put("/:id/edit-user",authLoggMiddlware,  mainController.userController.editUser)
+router.put("/:id/edit-user",authLoggMiddlware,[
+  check("first_name", "El nombre no puede estar vacio")
+  .exists(),
+  check("last_name", "El apellido no puede estar vacio")
+  .exists(),
+  check("email", "El mail no puede estar vacio")
+  .exists()
+  .isEmail()
+  .normalizeEmail(),
+  check("password", "La contraseña no puede estar vacia y debe tener entre 8 y 20 caracteres")
+  .exists()
+  .isLength({ min:8, max: 20}),
+  body("image_profile").custom((value, {req}) => {
+      let file = req.file
+      let extensiones = [".jpg", ".jpeg", ".png", ".gif"]
+      let fileExtension = path.extname(file.originalname)
+        if(!file){
+          throw new Error("Debes subir una imagen")
+        }
+        if(!extensiones.includes(fileExtension)){
+          throw new Error("Las extensiones permitidas son .png, .jpg y .gif")
+        }
+    }
+  )
+],  mainController.userController.editUser)
 
 module.exports = router;

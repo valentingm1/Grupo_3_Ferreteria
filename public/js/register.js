@@ -1,11 +1,14 @@
 window.onload = () => {
-  const form = document.querySelector("form");
+  const form = document.getElementById("reg-form");
 
   let register_firstname = document.getElementById("firstname");
   let register_lastname = document.getElementById("lastname");
   let register_email = document.getElementById("email");
   let register_password = document.getElementById("password");
   let register_profile_img = document.querySelector(".register_profile_img");
+  let inputs = [register_firstname,register_lastname]
+
+  
   form.addEventListener("submit", (e) => {
     const errors = []
     const register_firstnameValue = register_firstname.value.trim();
@@ -70,12 +73,14 @@ window.onload = () => {
       errors.shift()
     }
     
-    var allowedExtensions =
-      /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+    var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
     if (!allowedExtensions.exec(register_profile_imgValue)){
      alert("Foto de perfil inválida");
      e.preventDefault()
     }
+
+
+
     if(errors.length > 0){
       e.preventDefault()
     }
@@ -107,15 +112,37 @@ window.onload = () => {
 
 
   register_password.addEventListener("keypress", () => {
-    const small = document.querySelector(".passwordSmall");
     if(register_password.value.length < 7){
-      small.innerText = "La contraseña debe tener al menos 8 caracteres";
-    } else if(register_password.value.length > 20){
-      small.innerText = "La contraseña debe tener menos de 20 caracteres"
-    }else if(register_password.value.length >= 7){
-      small.innerText = ""
+      setErrorFor(register_password, "La contraseña debe tener al menos 8 caracteres")
+    } else if(register_password.value.length > 19){
+      setErrorFor(register_password, "La contraseña debe tener menos de 20 caracteres")
+    }else if(register_password.value.length >= 7 < 20){
+      setSuccessFor(register_password)
     }
     
   });
+
+  for (let i = 0; i < inputs.length; i++) {
+    inputs[i].addEventListener("change", () => {
+      if (inputs[i].value === "") {
+        setErrorFor(inputs[i], "Este campo no puede estar vacío");
+      } else {
+        setSuccessFor(inputs[i]);
+      }
+    });
+  }
+  register_email.addEventListener("change", () =>{
+
+if (register_email.value === "") {
+    setErrorFor(register_email, "Este campo no puede estar vacío");
+  } else if(!isEmail(register_email.value)){
+    setErrorFor(register_email, "Introduzca un mail válido");;
+  } else {
+    setSuccessFor(register_email);
+  }
+  })
+  
+  
+
 
 };

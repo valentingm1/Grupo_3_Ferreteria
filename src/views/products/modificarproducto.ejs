@@ -10,7 +10,8 @@
           action="/producto/<%=producto.id%>/editar?_method=PUT"
           method="POST"
           class="form2"
-          enctype="multipart/form-data">
+          enctype="multipart/form-data"
+          id="edit-product">
           <div>
             <h4>Como se veria tu Producto:</h4>
           </div>
@@ -27,20 +28,24 @@
 
               <div class="submit-botton-product-img">
                 <div class="submit-product-title-rigth">
+                  <small></small>
                   <label for="name"></label>
                   <input type="text" class="name" name="name" id="name" placeholder="Nombre del producto" value="<%=producto.name%>"/>
                 </div>
 
                 <div class="submit-product-discount-rigth">
+                  <small></small>
                   <label for="discount"></label>
-                  <input type="text" class="discount" name="discount" id="discount"  placeholder="Descuento" value="<%=producto.discount%>" />
+                  <input type="number" class="discount" name="discount" id="discount"  placeholder="Descuento" value="<%=producto.discount%>" />
                 </div>
 
                 <div class="submit-product-stock">
+                  <small></small>
                   <label for="cantidad"></label>
-                  <input type="text" class="stock" name="stock" id="stock" placeholder="cantidad de productos" value="<%=producto.stock%>">
+                  <input type="number" class="stock" name="stock" id="stock" placeholder="cantidad de productos" value="<%=producto.stock%>">
                 </div>
                 <div class="submit-product-price">
+                  <small></small>
                   <label for="price"></label>
                   <input type="number" class="price" name="price" id="price" placeholder="Precio" value="<%=producto.price%>">
                 </div>
@@ -48,6 +53,7 @@
             </div>
             <div class="submit-product-carac">
               <p>CARACTERISTICAS:</p>
+              <small></small>
               <label for="description"></label>
               <input class="description" name="description" id="description" placeholder="Descripcion" value="<%=producto.description%>"></input>
             </div>
@@ -55,11 +61,13 @@
 
             <div class="submit-color">
               <p>COLORES DISPONIBLES:</p>
+              <small></small>
               <input type="text" name="colores" id="colores" placeholder="colores" value="<%=producto.color%>"/>
             </div>
 
             <div class="submit-sub-categorias">
               <p>CATEGORIAS:</p>
+              <small></small>
               <input type="text" name="category" id="category" placeholder="Sub Categoria" value="<%=producto.category%>"/>
             </div>
             <div class="submit-product">
@@ -80,5 +88,6 @@
       </script>
     </main> -->
     <%- include("../partials/footer.ejs")%>
+    <script src="/js/editarProducto.js"></script>
   </body>
 </html>

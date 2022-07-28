@@ -12,47 +12,42 @@
          <div class="color_orange">
          </div>
        <section class="section_register">
-          <form class="register_form" action="/edit-user?_method=PUT" method="GET" enctype="multipart/form-data" class="form2">
+          <form class="register_form" action="/profile?_method=PUT" method="POST" enctype="multipart/form-data" id="reg-form">
 
             <div class="register_img">
               <label class="register_img_label" for="label_register_img">Foto de perfil:</label>
+              <small></small>
               <input id="label_register_img" class="register_profile_img" type="file" name="image_profile" placeholder="Subir Imagen de P" accept="image/*" />
             </div>
 
-            <div class="register_firstname">
+            <div class="register_control">
               <label for="register_firstname"></label>
-              <input class="register_firstname_in" type="text" name="first_name" id="register_firstname" required="required" minlength="4"
+              <small></small>
+              <input class="register_firstname_in" type="text" name="first_name" id="firstname" 
                 placeholder="Nombre" />
             </div>
 
-            <div class="register_lastname">
+            <div class="register_control">
               <label for="register_lastname"></label>
-              <input class="register_lastname_in" type="text" name="last_name" id="register_lastname" required="required" minlength="4"
+              <small></small>
+              <input class="register_lastname_in" type="text" name="last_name" id="lastname" 
                 placeholder="Apellido" />
+                
             </div>
 
-            <div class="register_email">
+            <div class="register_control">
               <label for="register_email"></label>
-              <input class="register_email_in" type="text" name="email" id="register_email" required="required" minlength="10"
+              <small></small>
+              <input class="register_email_in" type="email" name="email" id="email" 
                 placeholder="Email" />
             </div>
 
-            <div class="register_password">
+            <div class="register_control">
               <label for="register_password"></label>
-              <input class="register_password_in" type="password" name="password" id="register_password" required="required" minlength="8"
-                placeholder="Contraseña" />
+              <small class="passwordSmall"></small>
+              <input class="register_password_in" type="password" name="password" id="password" 
+                placeholder="Contraseña"/>
             </div>
-
-            <!-- <div class="password-container">
-              <label for="login-password"></label>
-              <input
-                type="password"
-                name="password"
-                id="password"
-                minlength="8"
-                placeholder="Repetir la Contraseña"
-              />
-            </div> -->
 
             <div class="register_buttons">
               <div class="register_button_back">
@@ -73,6 +68,7 @@
 
       <%- include("../partials/footer.ejs")%>
 
+    <script src="/js/register.js"></script>
   </body>
 
 </html>

@@ -114,7 +114,7 @@ div.main-header .burger-menu i {
 /* Main */
 main {
   background-color: rgb(255, 255, 255);
-  padding-bottom: 100px;
+  /*padding-bottom: 100px; */
 }
 
 .carrito-header {
@@ -713,6 +713,7 @@ section div.product-compra a {
   font-size: 24px;
   color: white;
   background-color: red;
+  cursor: pointer;
 }
 
 section div.product-carac {
