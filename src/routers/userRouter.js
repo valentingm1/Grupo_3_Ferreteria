@@ -73,7 +73,9 @@ router.post("/register",path_upload_img.single("image_profile"),
   }
 )],
 mainController.userController.createUsers,);
+
 router.post("/logout", mainController.userController.logout);
+
 router.put("/:id/edit-user",authLoggMiddlware,[
   check("first_name", "El nombre no puede estar vacio")
   .exists(),

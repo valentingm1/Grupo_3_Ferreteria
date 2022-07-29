@@ -115,16 +115,7 @@ window.onload = () => {
       errors.shift();
     }
 
-    if (document.querySelector("[name=categorias]:checked")) {
-      alert("Categoría elegida correctamente")
-    } else {
-      alert("Debes elegir por lo menos una categoria");
-      e.preventDefault
-      errors.push("Error en checkboxes")
-      console.log(errors)
-      errors.shift
-    }
-   
+
 
     var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
     if (!allowedExtensions.exec(product_imgValue)) {

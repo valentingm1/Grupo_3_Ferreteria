@@ -18,8 +18,9 @@ window.onload = () => {
       product_colors,
       product_cat,
     ];
-    console.log(inputs)
-    
+    console.log(product_name)
+    console.log(product_img)
+
     form.addEventListener("submit", (e) => {
       const errors = [];
       const product_nameValue = product_name.value.trim();
@@ -29,7 +30,7 @@ window.onload = () => {
       const product_descValue = product_desc.value.trim();
       const product_colorsValue = product_colors.value.trim();
       const product_imgValue = product_img.value;
-  
+
       if (product_nameValue === "") {
         setErrorFor(product_name, "Este campo no puede estar vacío");
         errors.push("Error en name");
@@ -126,12 +127,15 @@ window.onload = () => {
       */
   
       var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
-      if (!allowedExtensions.exec(product_imgValue)) {
-        alert("Foto inválida, intente con otro formato");
-        e.preventDefault();
-      }
-      if (errors.length > 0) {
-        e.preventDefault();
+      if(product_imgValue == ""){
+        if (!allowedExtensions.exec(product_imgValue)) {
+          alert(
+            "Se debe subir una nueva foto por temas de seguridad, que contenga el formato adecuado");
+          e.preventDefault();
+        }
+        if (errors.length > 0) {
+          e.preventDefault();
+        }
       }
     });
   

@@ -33,7 +33,11 @@ module.exports = (sequelize, dataTypes) =>{
         color: {
             type: dataTypes.INTEGER,
             allowNull: false
-        }     
+        },
+        categoria_id:{
+            type: dataTypes.STRING(100),
+            allowNull: false
+        },     
     };
     const config = {
         timestamps : false
@@ -45,14 +49,12 @@ module.exports = (sequelize, dataTypes) =>{
 
      //Aquí debes realizar lo necesario para crear las relaciones con el modelo (Movie)
      Producto.associate = (models)=>{
-        Producto.belongsToMany(models.Categories,{
-            as:"categorias",
-            through: "product_category",
-            foreignKey: "product_id",
-            otherKey: "category_id",
-            timestamps: false
-        });
-    }
+        Producto.belongsTo(models.Categories,{
+            as: "categorias",
+            foreignKey: "categoria_id"
+          });
+
+    };
 
     return Producto;
 }

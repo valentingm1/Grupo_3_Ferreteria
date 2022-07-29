@@ -25,7 +25,6 @@ const productController = {
       include:['categorias']
    })
     .then(producto => {
-      console.log(producto.categorias.name)
         res.render('products/productDetail.ejs', {producto});
     })
     .catch((error)=>{
@@ -47,8 +46,8 @@ const productController = {
   createProductPost: (req, res) => {
     const image = req.file.filename;
 
-    console.log(req.body.categorias)
-    console.log(req.body.id)
+    // console.log(req.body.categorias)
+    // console.log(req.body.id)
 
     db.Products.create({
       name: req.body.name,
@@ -57,10 +56,12 @@ const productController = {
       price: req.body.price,
       description: req.body.description,
       color: req.body.colores,
-      image : image
+      image : image,
+      categoria_id:req.body.categorias
     },)
     .then((producto)=>{
-        res.redirect("/");
+      res.redirect("/");
+      
     }).catch((errors)=>{
         console.log(errors)
         res.send("ERROR")
@@ -70,9 +71,14 @@ const productController = {
 
   editProduct: (req, res) => {
     const id = req.params.id;
-    db.Products.findByPk(id)
-    .then((producto) =>{
-     return res.render('products/modificarproducto', { producto})
+    const categorias = db.Categories.findAll();
+    const productos = db.Products.findByPk(id,{
+      include:['categorias']
+   })
+  
+   Promise.all([categorias,productos])
+    .then(([categorias,producto]) =>{
+     return res.render('products/modificarproducto', { categorias,producto})
     }).catch((e)=>{
       console.log(e)
     })
@@ -80,9 +86,7 @@ const productController = {
 
   putProduct: (req, res) => {
 
-    let peliculaId = req.params.id;
-
-
+    let productoId = req.params.id;
     db.Products.update(
       {
         name: req.body.name,
@@ -94,7 +98,7 @@ const productController = {
         image: req.file ? req.file.filename : req.body.image
       },
       {
-          where: {id: peliculaId}
+          where: {id: productoId}
       })
       .then( ()=> {
             res.redirect("/")})
@@ -118,6 +122,21 @@ const productController = {
 
     Promise.all([categorias,productos])
       .then(function([categorias,products]){
+        console.log(categorias)
+          res.render('products/productList', {products, categorias})
+      })
+  },
+
+  productCategory: (req, res) =>{
+    const categoriaId = req.params.id
+    const categorias = db.Categories.findAll();
+    const productos = db.Products.findAll({
+      where: {id: categoriaId}
+    });
+
+    Promise.all([categorias,productos])
+      .then(function([categorias,products]){
+        console.log(categorias)
           res.render('products/productList', {products, categorias})
       })
   },

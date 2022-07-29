@@ -17,58 +17,64 @@ const userController = {
   register: (req, res) => {
     res.render("users/register");
   },
+
   createUsers: (req, res) => {
     const image = req.file.filename;
-    db.Users.create({
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
-      email: req.body.email,
-      password: req.body.password,
-      image: image
+
+    db.Users.findAll({
+      where: { email: req.body.email }
     })
-      .then(() => {
-        return res.redirect("/");
+      .then(allUsers => {
+
+        if (allUsers === []) {
+          return res.render("users/register")
+        }
+        else {
+          db.Users.create({
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            email: req.body.email,
+            password: bcryptjs.hashSync(req.body.password, 10),
+            image: image
+          })
+            .then(() => {
+              return res.redirect("/login");
+            })
+            .catch((error) => res.send(error));
+        }
       })
-      .catch((error) => res.send(error));
   },
-  
+
   login: (req, res) => {
     res.render("users/login");
   },
+
   loginProcess: (req, res) => {
+
     console.log(req.body)
-    let userToLog = db.Users.findOne({
+
+    db.Users.findOne({
       where: {
         email: req.body.email
       },
     })
-    .then(
-      userToLog => {
-          if (userToLog.password == req.body.password) {
+      .then(userToLog => {
+        if (userToLog) {
+          let passwordConfirm = bcryptjs.compareSync(req.body.password, userToLog.password)
+          if (passwordConfirm) {
+            req.session.userLogged = userToLog;
 
-              // if password match, then go to index with the user profile.
-              //res.render("index", { user });
-              // TODO: locals.isLogged poner en true.
-              // en userLogged poner los campos del usuario (first_name)
-              res.render("index",{userToLog});
+            res.redirect("/profile");
           }
-          else {
-              // otherwise, keep on login (maybe we must add an error message.
-              res.render("users/login");
-          }
+        }
+        else {
+          res.redirect("/login");
+        }
       }
-  );
+      );
+  },
 
-
-
-
-//Promise.all([userToLog]).then((userToLog) => {
-  // FIXME: verify that both passwords match.
-//});
-
-},
-  
-  editUser: (req,res) => {
+  editUser: (req, res) => {
     const image = req.file.filename;
     db.Users.update({
       first_name: req.body.first_name,
@@ -77,12 +83,12 @@ const userController = {
       password: req.body.password,
       image: image
     },
-    {
-      where: id == req.params.id
-    }).then(() => {
-      return res.redirect("/perfil");
-    })
-    .catch((error) => res.send(error));
+      {
+        where: id == req.params.id
+      }).then(() => {
+        return res.redirect("/perfil");
+      })
+      .catch((error) => res.send(error));
   },
 
   logout: (req, res) => {
@@ -90,8 +96,11 @@ const userController = {
     res.clearCookie("UserEmail");
     res.redirect("/");
   },
+
   profile: (req, res) => {
-    res.render("users/perfil");
+    res.render("users/perfil", {
+      userLogged: req.session.userLogged
+    });
   },
 };
 

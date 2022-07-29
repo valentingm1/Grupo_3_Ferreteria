@@ -18,6 +18,7 @@ const mainController = {
   index: (req, res) => {
     db.Products.findAll()
       .then(products => {
+        console.log(req.session)
           res.render('index', {products})
       })
   },

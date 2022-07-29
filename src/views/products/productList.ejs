@@ -28,14 +28,15 @@
           <div class="product-list-row">
             <!-- categoria de los productos -->
             <div class="product-list-category-off">
-              <h3>Categorias</h3>
-              <% for (let i=0; i < categorias.length; i++) {%>
+              <h3>Categorias</h3> 
                 <ul>
+                  <% for (let i=0; i < categorias.length; i++) {%>
                   <li>
-                    <%= categorias[i].name %>
+                    <a href="/producto/productList/<%= categorias[i].id %>"><%= categorias[i].name %></a>
                   </li>
+                  <%}%>
                 </ul>
-                <%}%>
+                <a href="/producto/productList"> Borrar Caregorias</a>      
             </div>
             <!-- Lista de productos -->
             <div class="product-list-products">
@@ -99,10 +100,9 @@
               <h3 class="filter-category-tittle">Por categoria</h3>
               <div class="filter-category">
                 <ul>
-                  <li>Construccion</li>
-                  <li>Hogar</li>
-                  <li>Electrica</li>
-                  <li>Herramientas</li>
+                  <% for (let i=0; i < categorias.length; i++) {%>
+                  <li>categorias[i].id</li>
+                  <%}%>
                 </ul>
               </div>
             </div>

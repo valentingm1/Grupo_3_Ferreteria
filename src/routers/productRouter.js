@@ -100,6 +100,10 @@ router.delete("/:id/detalle", mainController.productController.deleteProduct);
 //LISTA DE PRODUCTOS BASE SQL
 router.get("/productList", mainController.productController.productList);
 
+//LISTA DE PRODUCTOS BASE SQL
+router.get("/productList/:id", mainController.productController.productCategory);
+
+
 //BUSQUEDA DE PRODUCTOS
 router.post("/busqueda", mainController.productController.busqueda);
 

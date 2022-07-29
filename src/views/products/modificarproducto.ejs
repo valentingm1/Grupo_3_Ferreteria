@@ -66,10 +66,24 @@
             </div>
 
             <div class="submit-sub-categorias">
-              <p>CATEGORIAS:</p>
-              <small></small>
-              <input type="text" name="category" id="category" placeholder="Sub Categoria" value="<%=producto.category%>"/>
-            </div>
+              <p>CATEGORIA DEL PRODUCTO: <%=producto.categorias.name%></p>
+              <label for="categorias">
+                  
+                <select name="categorias" id="categorias">
+                  
+                  <% for (let i = 0; i < categorias.length; i++) {%>
+                    <% if(producto.categorias.id == categorias[i].id){%>
+                      <option value="categorias[i].id" selected><%= categorias[i].name %></option>
+                    <%}%>
+                    <% if(producto.categorias.id !== categorias[i].id){%>
+                      <option value="categorias[i].id" ><%= categorias[i].name %></option>
+                    <%}%>
+                  <%}%>
+                </select>   
+
+              </label>   
+
+            
             <div class="submit-product">
               <button type="submit" class="button-submit-product">
                 EDITAR PRODUCTO

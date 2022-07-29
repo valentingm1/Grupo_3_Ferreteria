@@ -66,13 +66,20 @@
             <div class="submit-sub-categorias">
               <p>CATEGORIAS:</p>
               <small></small>
-                <% for (let i = 0; i < categories.length; i++) {%>
+                
                 <label for="categorias">
                   
-                  <input type="checkbox" name="categorias" id="categorias" placeholder="" value=" <%= categories[i].id %>">
-                  <%= categories[i].name %>
+                  <select name="categorias" id="categorias">
+                    <% for (let i = 0; i < categories.length; i++) {%>
+                      <option name="categoria" id="categoria" value="<%= categories[i].id %>">
+                        <%= categories[i].name %>
+                      </option>
+                    
+                    <%}%>
+                  </select>   
+
                 </label>   
-                <%}%>
+
             </div>
             <div class="submit-product">
               <button type="submit" class="button-submit-product">
