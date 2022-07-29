@@ -30,19 +30,25 @@
             <p>cantidad: <%= producto.stock %></p>
           </div>
 
-          <div class="product-carrito">
-            <a href="#">Agregar al carrito</a>
-          </div>
-
-          <div class="product-compra">
-            <a href="/producto/<%=producto.id%>/editar">Editar Producto</a>
-          </div>
-
-          <form action="/producto/<%=producto.id %>/detalle?_method=DELETE" method="POST">
+          <% if (locals.isLogged & userLogged.rol == "Admin") { %>
             <div class="product-compra">
-              <button type="submit" id="button-delete">Eliminar producto</button>
+              <a href="/producto/<%=producto.id%>/editar">Editar Producto</a>
             </div>
-          </form>
+         
+            <form action="/producto/<%=producto.id %>/detalle?_method=DELETE" method="POST">
+              <div class="product-compra">
+                <button type="submit" id="button-delete">Eliminar producto</button>
+              </div>
+            </form>
+          <%}%>
+          
+          <div class="product-carrito">
+            <a href="/producto/productlist">Agregar al carrito</a>
+          </div>
+          
+          <div class="product-compra">
+            <a href="/producto/productlist">Comprar</a>
+          </div>
         </div>
       </div>
 

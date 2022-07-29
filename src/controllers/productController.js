@@ -25,7 +25,8 @@ const productController = {
       include:['categorias']
    })
     .then(producto => {
-        res.render('products/productDetail.ejs', {producto});
+      console.log( req.session.userLogged)
+        res.render('products/productDetail.ejs', {producto, userLogged : req.session.userLogged});
     })
     .catch((error)=>{
       console.log(error);
