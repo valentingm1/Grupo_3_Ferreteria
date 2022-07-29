@@ -25,7 +25,7 @@
                             <h3>Email:</h3>
                             <p><%= userLogged.email %></p>
                         </div>
-                        <button><a href="/edit-user"> de editar datos</a></button>
+                        <button><a href="<%= userLogged.id %>/edit-user"> de editar datos</a></button>
 
                         <% if (locals.isLogged & userLogged.rol == "Admin") { %>
                             <div><a href="/producto/crear">Vender</a></div>

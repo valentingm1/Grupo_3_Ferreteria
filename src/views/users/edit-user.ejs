@@ -12,26 +12,26 @@
          <div class="color_orange">
          </div>
        <section class="section_register">
-          <form class="register_form" action="/profile?_method=PUT" method="POST" enctype="multipart/form-data" id="reg-form">
+          <form class="register_form" action="<%= userLogged.id %>/edit-user?_method=PUT" method="POST" enctype="multipart/form-data" id="reg-form">
 
             <div class="register_img">
               <label class="register_img_label" for="label_register_img">Foto de perfil:</label>
               <small></small>
-              <input id="label_register_img" class="register_profile_img" type="file" name="image_profile" placeholder="Subir Imagen de P" accept="image/*" />
+              <input id="label_register_img" class="register_profile_img" type="file" name="image_profile" placeholder="Subir Imagen de P" accept="image/*" value="<%= userLogged.image %>" />
             </div>
 
             <div class="register_control">
               <label for="register_firstname"></label>
               <small></small>
               <input class="register_firstname_in" type="text" name="first_name" id="firstname" 
-                placeholder="Nombre" />
+                placeholder="Nombre" value="<%= userLogged.first_name %>"/>
             </div>
 
             <div class="register_control">
               <label for="register_lastname"></label>
               <small></small>
               <input class="register_lastname_in" type="text" name="last_name" id="lastname" 
-                placeholder="Apellido" />
+                placeholder="Apellido" value="<%= userLogged.last_name %>"/>
                 
             </div>
 
@@ -39,16 +39,32 @@
               <label for="register_email"></label>
               <small></small>
               <input class="register_email_in" type="email" name="email" id="email" 
-                placeholder="Email" />
+                placeholder="Email" value="<%= userLogged.email %>"/>
             </div>
 
             <div class="register_control">
               <label for="register_password"></label>
               <small class="passwordSmall"></small>
               <input class="register_password_in" type="password" name="password" id="password" 
-                placeholder="Contraseña"/>
+                placeholder="Contraseña" value="<%= userLogged.password %>"/>
             </div>
-
+            
+            <% if (locals.isLogged & userLogged.rol == "Admin") { %>
+              <div class="register_control">
+                <label for="register_firstname"></label>
+                <small></small>
+                <select name="rol" id="rol">
+                  if<% if (userLogged.rol == "Admin") { %>
+                    <option value="<%= userLogged.rol %>" Select><%= userLogged.rol %></option>
+                    <option value="Usuario" >Usuario</option>
+                  <% } %>
+                  if<% if (userLogged.rol !== "Admin") { %>
+                    <option value="Admin" >Admin</option>
+                    <option value="userLogged.rol " Select>userLogged.rol </option>
+                  <% } %>
+                </select>
+              </div>
+            <% } %>
             <div class="register_buttons">
               <div class="register_button_back">
                 <a href="/perfil" class="register_back_button">

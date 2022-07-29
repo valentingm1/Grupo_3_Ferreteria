@@ -31,6 +31,7 @@ const path_upload_img = multer({ storage: multerDiskStorage });
 router.get("/register",guestMiddlware, mainController.userController.register);
 router.get("/login",guestMiddlware, mainController.userController.login);
 router.get("/profile",authLoggMiddlware, mainController.userController.profile);
+router.get("/:id/edit-user",authLoggMiddlware, mainController.userController.viewEditUser);
 
 
 

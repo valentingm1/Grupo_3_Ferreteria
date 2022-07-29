@@ -83,6 +83,7 @@ div.main-header .burger-menu i {
 }
 
 .users-action button {
+    width: 100%;
     color: white;
     background-color: transparent;
     border: none;
@@ -578,7 +579,7 @@ div.login-button-checkbox input {
 
 div.users-action a i, div.users-action button i {
   color: #f36e21;
-  padding: 5px;
+  padding-right: 5px;
 }
 
 .identikit-container input {

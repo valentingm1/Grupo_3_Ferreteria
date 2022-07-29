@@ -74,6 +74,11 @@ const userController = {
       );
   },
 
+  viewEditUser: (req, res) =>{
+console.log(req.session.userLogged)
+  res.render("users/edit-user", {userLogged: req.session.userLogged})
+  },
+
   editUser: (req, res) => {
     const image = req.file.filename;
     db.Users.update({
