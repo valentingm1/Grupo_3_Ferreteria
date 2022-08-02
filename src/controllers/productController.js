@@ -21,12 +21,13 @@ const productController = {
   productDetail: (req, res) => {
     const id = req.params.id;
 
-    db.Products.findByPk(id,{
-      include:['categorias']
-   })
-    .then(producto => {
-      console.log( req.session.userLogged)
-        res.render('products/productDetail.ejs', {producto, userLogged : req.session.userLogged});
+    const producto =db.Products.findByPk(id,{
+      include:['categorias']});
+    const productsAll = db.Products.findAll();
+
+    Promise.all([producto,productsAll])
+    .then(([producto,productsAll])=> {
+        res.render('products/productDetail.ejs', {producto,productsAll ,userLogged : req.session.userLogged});
     })
     .catch((error)=>{
       console.log(error);
@@ -129,15 +130,16 @@ const productController = {
   },
 
   productCategory: (req, res) =>{
-    const categoriaId = req.params.id
+    const categoriaId = req.params.id;
+
     const categorias = db.Categories.findAll();
     const productos = db.Products.findAll({
-      where: {id: categoriaId}
+      where: {categoria_id: categoriaId}
     });
+
 
     Promise.all([categorias,productos])
       .then(function([categorias,products]){
-        console.log(categorias)
           res.render('products/productList', {products, categorias})
       })
   },

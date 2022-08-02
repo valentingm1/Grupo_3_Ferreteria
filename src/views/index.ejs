@@ -1,51 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include("partials/head.ejs")%>
+<%- include("partials/head.ejs")%>
+  <link rel="stylesheet" href="/css/carrusel.css">
+  <link rel="stylesheet" href="/css/productList.css">
+  <link rel="stylesheet" href="/css/index.css">
 
   <body>
     <%- include("partials/header.ejs")%>
 
-    <div class="carrusel">
-      <img
-        src="img/bandera-login.jpg"
-        alt=" imagen productos"
-        class="carrusel-img"
-      />
-    </div>
-    <main id="main">
-      <section class="categorias-carrusel">
-        <!--aside class="carrusel">
-                <ul class="slides">
-                    <li id="slide1">Nuestras promociones</li>
-                    <li id="slide2">Nuestros productos</li>
-                    <li id="slide3">Productos de temporada</li>
-                </ul>
-                <nav>
-                    <ul class="menu">
-                        <li> <img class="picture" src="img/Alicate.jpg" alt="imagen de Alicate">Diapositiva 1</a></li>
-                        <li> <img class="picture" src="img/Alicate.jpg" alt="imagen de Alicate">Diapositiva 2</a></li>
-                        <li> <img class="picture" src="img/Alicate.jpg" alt="imagen de Alicate">Diapositiva 3</a></li>
-                    </ul>
-                </nav>
+      <div class="carrusel">
+        <div class="swiffy-slider">
+          <ul class="slider-container">
+            <li> <img src="img/bandera-login.jpg" alt=" imagen productos" class="carrusel-img" /></li>
+            <li> <img src="img/bandera-login2.jpg" class="carrusel-img"></li>
+            <li> <img src="img/bandera-login3.jpg" class="carrusel-img"></li>
+          </ul>
 
-            </aside> -->
-        <!-- trabajando en el carrusel-->
-        <article class="categorias-lista">
-          <h3 class="categorias">Categorías</h3>
-          <p class="lista-categorias">
-            <a href="#">Categoria 1 </a>
-            <a href="#">Categoria 2</a>
-            <a href="#">Categoria 3</a>
-            <a href="#">Categoría 4</a>
-          </p>
-        </article>
-      </section>
-      <section class="ultima-visita">
-        <h4 class="titulo-entre-productos">Productos Destacados</h4>
-        <div class="productos-login">
-      </section>
-    </main>
+          <button type="button" class="slider-nav"></button>
+          <button type="button" class="slider-nav slider-nav-next"></button>
 
-    <%- include("partials/footer.ejs")%>
+          <div class="slider-indicators">
+            <button class="active"></button>
+            <button></button>
+            <button></button>
+          </div>
+        </div>
+
+      </div>
+
+      <main id="main">
+        <section class="product-destacado">
+          <div class="contenedor">
+            <div class="titulo">
+              <div class="shape right-skew">
+                <i class="fa-solid fa-hammer"></i>
+                <h2>Descatacados</h2>
+              </div>
+
+            </div>
+            <div class="slider carousel">
+              <% for (let i=0; i < products.length; i++) {%>
+                <!--  /* cambié i = 0 por i = 5*/ -->
+                <article class="product-card-container">
+                  <!-- Productos individuales -->
+                  <div class="product-card">
+                    <div class="product-card-container-img">
+                      <img class="product-card-img" src="/img/products/<%= products[i].image %>"
+                        alt="<%= products[i].alt %>" width="100" height="100" />
+                    </div>
+                    <div class="product-card-info-container">
+                      <div class="product-card-info">
+                        <div class="product-card-name">
+                          <%= products[i].name %>
+                        </div>
+                        <div class="product-card-price">
+                          $<%= products[i].price %>
+                        </div>
+                      </div>
+                      <div class="product-card-buttons">
+                        <div class="product-card-detail">
+                          <i class="fas fa-eye">
+                            <a class="product-eye" href="/producto/<%= products[i].id %>/detalle"></a>
+                          </i>
+                          <span> <a class="product-eye" href="/producto/<%= products[i].id %>/detalle">Detalle</a>
+                          </span>
+                        </div>
+                        <div class="product-card-comprar">
+                          <i class="fas fa-shopping-cart"></i>
+                          <span> Comprar </span>
+                        </div>
+                      </div>
+                    </div>
+                    <a class="link-detail-product" href="/producto/<%= products[i].id %>/detalle"></a>
+                  </div>
+                </article>
+                <%}%>
+            </div>
+          </div>
+        </section>
+
+        <section class="atornillador-section">
+          <h2 class="atornillador-tittle">Puntas De Atornillador:</h2>
+          <article class="atornillador-container">
+
+            <div class="atornillador-container-little">
+
+              <div class="atornillador-card-big">
+                <div class="atornillador-img">
+                  <img class="atornillador-img-in" src="img/products/punta-atornillador3.jpg" alt="">
+                  <a class="card-atornillador-grande" href="/producto/28/detalle"></a>
+                </div>
+                <p>Puntas de Atornillador Imantadas PH2 x 25 mm.</p>
+              </div>
+
+              <div class="atornillador-card-little-container">
+                <div class="atornillador-card-little">
+                  <div class="atornillador-img-little">
+                    <img class="atornillador-img-in-little" src="img/products/punta-atornillador.jpg" alt="">
+                    <a class="card-left-atornillador" href="/producto/26/detalle"></a>
+                  </div>
+                  <p>Puntas de Atornillador Imantadas PH2 x 65 mm.</p>
+                </div>
+
+                <div class="atornillador-card-little">
+                  <div class="atornillador-img-little">
+                    <img class="atornillador-img-in-little" src="img/products/punta-atornillador2.jpg" alt="">
+                    <a class="card-rigth-atornillador" href="/producto/27/detalle"></a>
+                  </div>
+                  <p>Puntas de Atornillador Imantadas PH1 x 50 mm.</p>
+                </div>
+              </div>
+
+            </div>
+
+          </article>
+
+        </section>
+
+        <section class="product-destacado">
+          <div class="contenedor">
+            <div class="titulo">
+              <div class="shape right-skew">
+                <i class="fa-solid fa-hammer"></i>
+                <h2>Promociones</h2>
+              </div>
+
+            </div>
+            <div class="slider carousel">
+              <% for (let i=0; i < products.length; i++) {%>
+                <% if (products[i].discount !=0) { %>
+                  <!--  /* cambié i = 0 por i = 5*/ -->
+                  <article class="product-card-container">
+                    <!-- Productos individuales -->
+                    <div class="product-card">
+                      <div class="product-card-container-img">
+                        <img class="product-card-img" src="/img/products/<%= products[i].image %>"
+                          alt="<%= products[i].alt %>" width="100" height="100" />
+                      </div>
+                      <div class="product-card-info-container">
+                        <div class="product-card-info">
+                          <div class="product-card-name">
+                            <%= products[i].name %>
+                          </div>
+                          <div class="product-card-price">
+                            Descuento:
+                            <%=products[i].discount%>%
+                          </div>
+                          <div class="product-card-price">
+                            $<%= products[i].price - products[i].discount * products[i].price / 100%>
+                          </div>
+                        </div>
+                        <div class="product-card-buttons">
+                          <div class="product-card-detail">
+                            <i class="fas fa-eye">
+                              <a class="product-eye" href="/producto/<%= products[i].id %>/detalle"></a>
+                            </i>
+                            <span> <a class="product-eye" href="/producto/<%= products[i].id %>/detalle">Detalle</a>
+                            </span>
+                          </div>
+                          <div class="product-card-comprar">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span> Comprar </span>
+                          </div>
+                        </div>
+                      </div>
+                      <a class="link-detail-product" href="/producto/<%= products[i].id %>/detalle"></a>
+                    </div>
+                  </article>
+                  <%}%>
+                <%}%>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <%- include("partials/footer.ejs")%>
   </body>
+    <!-- CARRUCEL DE PRODUCTOS -->
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <!-- Carousel -->
+    <script src="js/slickslider/slick.min.js"></script>
+    <link rel="StyleSheet" href="js/slickslider/slick.css">
+    <!-- Starrr -->
+    <script src="js/starrr.js"></script>
+
+  <script type="text/javascript">
+    //Starrr
+    $('.starrr').starrr({})
+
+    $('.carousel').slick({
+      dots: false,
+      infinite: false,
+      speed: 300,
+      draggable: false,
+      slidesToShow: 5,
+      responsive: [{
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: false
+        }
+      }, {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1
+        }
+      }, {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      },]
+    });
+  </script>
+
 </html>

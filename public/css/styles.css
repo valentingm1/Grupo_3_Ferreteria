@@ -277,10 +277,18 @@ footer {
   margin: 0%;
   padding-bottom: 50px;
 }
+ul.listaContacto{
+  list-style: none;
+}
+
+ul.listaNavegacion {
+  list-style: none;
+}
 
 .listaNavegacion li a {
   color: #f36e21;
   text-decoration: none;
+  list-style: none;
 }
 
 .footer-legal {
@@ -345,7 +353,8 @@ main section article img {
 }
 
 img.carrusel-img {
-  width: 100%;
+    width: 100%;
+    height: 125px;
 }
 
 .categorias-carrusel {
@@ -719,7 +728,6 @@ section div.product-compra a {
 
 section div.product-carac {
   color: black;
-  background: white;
   margin: 16px;
 }
 
@@ -870,9 +878,13 @@ article div.main-article p.discount {
     display: flex;
     flex-direction: column;
   }
+
   .newsletter input {
     width: 100px;
+    margin: 0px 5px;
+    border-radius: 7px 7px 7px 7px;
   }
+
   .newsletter p {
     display: none;
   }
@@ -1145,7 +1157,33 @@ article div.main-article p.discount {
   }
 }
 
+/*IMAGENS DE CARRUCEL*/
+img.carrusel-img {
+  width: 100%;
+  height: 260px;
+}
+
+
+/*------------FOOTER--------------*/
+.newsletter input {
+  width: 34%;
+  margin: 0px 5px;
+  border-radius: 7px 7px 7px 7px;
+}
+
+.newsletter button {
+  margin: 0px;
+  padding: 3px;
+  border-radius: 5px;
+}
+
 @media (min-width: 1024px) and (max-width: 1440px) {
+
+  button.search-icon{
+    width: 7%;
+    height: 41px;
+  }
+
   div input {
     width: 90%;
     font-size: 18px;

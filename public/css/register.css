@@ -80,6 +80,9 @@ div.success input{
    }
 
 /*Boton de registro*/
+div.register_button_submit{
+    padding-bottom: 6px;
+}
 
 div.register_buttons{
     display: flex;
@@ -110,6 +113,11 @@ div.register_button_submit button.register_submit_button{
     color: white;
     background-color: #f36e21;
     cursor: pointer;
+}
+
+/*BOTON PARA IR A REGISTRARSE*/
+div.register_button_submit button.register_submit_button a{
+   color: white;
 }
 
 @media (min-width: 768px) and (max-width:1024px) {
@@ -228,7 +236,7 @@ div.register_button_submit button.register_submit_button{
 @media (min-width: 1440px){
 
     main.register_main {
-        min-height: 61vh;
+        min-height: 72vh;
     }
 
     

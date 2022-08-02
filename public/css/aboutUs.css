@@ -1,0 +1,38 @@
+main.about-us-main{
+
+}
+
+div.about-us-tittle{
+    padding: 0px 11px;
+}
+
+p.about-us-p{
+    padding: 0px 20px;
+}
+
+
+@media (min-width: 768px) and (max-width:1024px) {
+    main.about-us-main {
+        min-height: 70vh;
+    }
+
+    p.about-us-p{
+        font-size: 17px;
+    }
+    
+    
+}
+
+@media (min-width: 1024px) and (max-width:1440px) {
+    main.about-us-main {
+        min-height: 70vh;
+    }
+}
+
+@media (min-width: 1440px){
+    main.about-us-main {
+        width: 75%;
+        margin: auto;
+        min-height: 70vh;
+    }
+}

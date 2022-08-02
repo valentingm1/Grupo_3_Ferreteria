@@ -1,0 +1,169 @@
+
+section{
+    background-color: white;
+}
+
+section.atornillador-section{
+    width: 90%;
+    margin: auto;
+}
+
+/*-------Paneles DE Atornilladores---------*/
+
+/*Titulo de los atornilladores*/
+h2.atornillador-tittle{
+    padding-left: 6px;
+    border-bottom: 1px solid #f36e21;
+}
+
+/*contenedor imagen grande*/
+div.atornillador-card-big{
+    border-bottom: 1px solid #f36e21;
+    position: relative;
+}
+
+/*Link de la imagen grande*/
+a.card-atornillador-grande{
+    position: absolute;
+    left: 0;
+    padding: 112px 134px;
+}
+
+
+
+/*contenedor de las cartas pequeñas*/
+div.atornillador-card-little-container{
+    display: flex ;
+    justify-content: space-around;
+}
+
+/*imagen de la izquierda*/
+div.atornillador-img-little{
+   position: relative;
+}
+
+a.card-left-atornillador{
+    position: absolute;
+    left: 0;
+    padding: 91px 66px;
+}
+
+/*imagen de la izquierda*/
+a.card-rigth-atornillador{
+    position: absolute;
+    left: 3px;
+    padding: 91px 66px;
+}
+
+@media (min-width: 768px) and (max-width:1024px) {
+
+    /*Imagen del contenedor grande*/
+    img.atornillador-img-in{
+        width: 100%;
+        height: 253px;
+    }
+
+    /*Link de la imagen grande*/
+    a.card-atornillador-grande {
+        padding: 146px 321px;
+    }
+
+    /*Imagenes de los contenedores pequeños*/
+    img.atornillador-img-in-little{
+        width: 100%;
+        height: 163px;
+    }
+
+    /*Link de la imagenes izquierda*/
+    a.card-left-atornillador {
+        padding: 112px 158px;
+    }
+
+    /*Link de la imagenes derecha*/
+    a.card-rigth-atornillador {
+        padding: 112px 158px;
+    }
+
+}
+
+@media (min-width: 1024px) and (max-width:1440px) {
+
+    /*Link de la imagen grande*/
+    a.card-atornillador-grande {
+        padding: 146px 436px;
+    }
+
+     /*Link de la imagenes izquierda*/
+     a.card-left-atornillador {
+        padding: 105px 174px;
+    }
+
+    /*Link de la imagenes derecha*/
+    a.card-rigth-atornillador {
+        padding: 105px 174px;
+    }
+
+}
+
+@media (min-width: 1440px){
+
+    section.atornillador-section {
+        width: 74%;
+        padding-bottom: 11vh;
+        padding-top: 4vh;
+    }
+
+     /*articulo de las puntas de atornilladores*/
+     article.atornillador-container {
+        margin: auto;
+        width: 70%;
+        box-shadow: 0px 0px 0px grey;
+        border: none;
+    }
+
+    h2.atornillador-tittle {
+        padding-left: 6px;
+        border-bottom: 1px solid #f36e21;
+        margin-left: 90px;
+        margin-right: 95px;
+    }
+    
+    /*--------------------------IMAGEN GRANDE-----------------------*/
+    /*Imagen del contenedor grande*/
+    img.atornillador-img-in{
+        height: 347px;
+    }
+
+    /*Titulo de la imagen grande*/
+
+    div.atornillador-card-big p{
+        font-size: 23px;
+    }
+   
+    /*Link de la imagwen grande*/
+    a.card-atornillador-grande {
+        padding: 200px 442px;
+    }
+
+    /*------------------------IMAGENES PEQUEÑAS-----------------------*/
+    /*Imagenes de los contenedores pequeños*/
+    img.atornillador-img-in-little{
+        height: 220px;
+    }
+
+    /*Titulo de la imagenes pequeñas*/
+    div.atornillador-card-little p{
+        font-size: 17px;
+    }
+
+    /*Link Imagen Izquierda*/
+    a.card-left-atornillador {
+        padding: 129px 183px;
+    }
+
+    /*Link Imagen Derecha*/
+    a.card-rigth-atornillador {
+        padding: 129px 183px;
+    }
+
+}

@@ -22,10 +22,13 @@ const multerDiskStorage = multer.diskStorage({
 
 const path_upload_img = multer({ storage: multerDiskStorage });
 
+//Middleware require//
+const authLoggMiddlware = require("../middlewares/authLoggMiddleware")
+
 //------------------------------------------------------RUTAS--------------------------------------------------------------//
 
 //DETALLE DE PRODUCTOS BASE SQL
-router.get("/:id/detalle", mainController.productController.productDetail);
+router.get("/:id/detalle",authLoggMiddlware, mainController.productController.productDetail);
 
 //FORMULARIO DE CREACION DE PRODUCTOS BASE SQL
 router.get("/crear", mainController.productController.createProduct);

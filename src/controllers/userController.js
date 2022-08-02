@@ -51,8 +51,6 @@ const userController = {
 
   loginProcess: (req, res) => {
 
-    console.log(req.body)
-
     db.Users.findOne({
       where: {
         email: req.body.email
@@ -75,8 +73,8 @@ const userController = {
   },
 
   viewEditUser: (req, res) =>{
-console.log(req.session.userLogged)
-  res.render("users/edit-user", {userLogged: req.session.userLogged})
+    console.log(req.session.userLogged)
+    res.render("users/edit-user", {userLogged: req.session.userLogged})
   },
 
   editUser: (req, res) => {
@@ -106,6 +104,9 @@ console.log(req.session.userLogged)
     res.render("users/perfil", {
       userLogged: req.session.userLogged
     });
+  },
+  aboutUs: (req, res) => {
+    res.render("users/about-us");
   },
 };
 
