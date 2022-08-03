@@ -11,9 +11,7 @@ function CategoriesInDb() {
           </h5>
         </div>
         <div className="card-body">
-          
-            <Categories/>
-
+              <Categories />
         </div>
       </div>
     </div>

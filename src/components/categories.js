@@ -9,28 +9,44 @@ function Categories() { //hacer un .map que genere un bloque de html por cada ca
 
   useEffect(() => {
     // Este monta el componente y me trae la informacion devuelta
-  const apiURL = `http://localhost:3000/api/category`
+  const apiURL = `http://localhost:3000/api/products`
 
   fetch(apiURL)
       .then((response) => response.json())
-      .then(({data} ) => {
-        setCategorias(data.categorias);})
+      .then(({countByCategory} ) => {
+        console.log(countByCategory)
+        setCategorias(countByCategory);})
       .catch((error) => console.log(error));
 
   }, []);
 
   return (
     <div className="row">
-    {categorias.map((categoria, i) => {
-      return (
-
-        <div className="col-lg-6 mb-4" key={i}>
-          <div className="card bg-dark text-white shadow">
-            <div className="card-body">{categoria.name}</div>
+        <div className="col-lg-6 mb-4" >
+            <div className="card bg-dark text-white shadow">
+              <div className="card-body">Construccion: {categorias.Construccion}</div>
+            </div>
           </div>
-        </div>
-      )}
-    )}
+          <div className="col-lg-6 mb-4" >
+            <div className="card bg-dark text-white shadow">
+              <div className="card-body">Hogar: {categorias.Hogar}</div>
+            </div>
+          </div>
+          <div className="col-lg-6 mb-4" >
+            <div className="card bg-dark text-white shadow">
+              <div className="card-body">Electrica: {categorias.Electrica}</div>
+            </div>
+          </div>
+          <div className="col-lg-6 mb-4" >
+            <div className="card bg-dark text-white shadow">
+             <div className="card-body">Herramientas: {categorias.Herramientas}</div>
+            </div>
+          </div>
+          <div className="col-lg-6 mb-4" >
+            <div className="card bg-dark text-white shadow">
+              <div className="card-body">Repuestos: {categorias.Repuestos}</div>
+            </div>
+          </div>      
     </div>
   )
 }

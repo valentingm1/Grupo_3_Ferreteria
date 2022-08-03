@@ -1,7 +1,8 @@
 import React from "react";
-import image from "../assets/images/logo-DH.png"; // cambiar esto por el logo de hammerhead
+import image from "../assets/images/logo-HH.png"; // cambiar esto por el logo de hammerhead
 import ContentWrapper from "./ContentWrapper";
 import CategoriesInDb from "./CategoriesInDb";
+import ChartUsers from "./ChartUsers";
 import LastMovieInDb from "./LastMovieInDb";
 import ContentRowMovies from "./ContentRowMovies";
 import NotFound from "./NotFound";
@@ -22,7 +23,7 @@ function SideBar() {
           href="/"
         >
           <div className="sidebar-brand-icon">
-            <img className="w-100" src={image} alt="Digital House" />
+            <img className="w-100" src={image} alt="HammerHead" />
           </div>
         </a>
 
@@ -55,15 +56,15 @@ function SideBar() {
         <li className="nav-item">
           <Link className="nav-link" to="/LastMovieInDb">
             <i className="fas fa-fw fa-chart-area"></i>
-            <span>Ultimo usuario en base de datos</span>
+            <span>Ultimo Producto en base de datos</span>
           </Link>
         </li>
 
         {/*<!-- Nav Item - Tables -->*/}
         <li className="nav-item nav-link">
-          <Link className="nav-link" to="/ContentRowMovies">
+          <Link className="nav-link" to="/ChartUsers">
             <i className="fas fa-fw fa-table"></i>
-            <span>Tablas</span>
+            <span>Usuarios</span>
           </Link>
         </li>
 
@@ -103,6 +104,9 @@ function SideBar() {
         </Route>
         <Route path="/SearchMovies">
           <SearchMovies />
+        </Route>
+         <Route exact path="/ChartUsers">
+          <ChartUsers />
         </Route>
         <Route component={NotFound} />
       </Switch>

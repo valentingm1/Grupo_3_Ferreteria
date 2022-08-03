@@ -10,6 +10,7 @@ function Chart (){
     return (
         /* <!-- DataTales Example --> */
         <div className="card shadow mb-4">
+              <div><h3>Productos de la Base de Datos:</h3></div>
             <div className="card-body">
                 <div className="table-responsive">
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
@@ -22,6 +23,7 @@ function Chart (){
                                 <th>Descuento</th>
                                 <th>Color</th>
                                 <th>Imagen</th>
+                                <th>Categoria</th>
                                 <th>Id de Categoria</th>
                             </tr>
                         </thead>
@@ -34,6 +36,7 @@ function Chart (){
                                 <th>Descuento</th>
                                 <th>Color</th>
                                 <th>Imagen</th>
+                                <th>Categoria</th>
                                 <th>Id de Categoria</th>
                             </tr>
                         </tfoot>

@@ -12,14 +12,13 @@ function ChartRow(){
         fetch(apiURL)
             .then((response) => response.json())
             .then(({products}) => {
-                console.log(products)
                 setproductos(products);
             })
             .catch((error) => console.log(error));
 
     }, []);
 
-       
+  
     return (
 
     <tbody>
@@ -32,7 +31,8 @@ function ChartRow(){
                     <td>{productos.stock}</td>
                     <td>{productos.discount}</td>
                     <td>{productos.color}</td>
-                    <td>{productos.image}</td>
+                    <td>{productos.image}</td>                    
+                    <td>{productos.categorias.name}</td>
                     <td>{productos.categoria_id}</td>
                 </tr>
                 )}
