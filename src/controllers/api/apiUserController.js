@@ -18,6 +18,7 @@ const apiUserController = {
     userList: (req, res) => {
         db.Users.findAll()
         .then(allUsers=>{
+            allUsers
             return res.json({
                 total: allUsers.length,
                 data: allUsers,

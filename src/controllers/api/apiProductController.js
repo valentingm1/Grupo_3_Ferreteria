@@ -30,6 +30,7 @@ const apiProductController = {
                 }
             }, {} )
             res.send({
+                URL: "http://localhost:3000/api/products",
                 count: productos.length,
                 countByCategory: countByCategory,
                 products: productos
@@ -51,9 +52,10 @@ const apiProductController = {
     },
 
     productDetail: (req, res) => {
-        db.Products.findByPk(req.params.id)
+        db.Products.findByPk(req.params.id, {include:['categorias']})
         .then(product=>{
             return res.json({
+                URL: "http://localhost:3000/api/products/" + product.id,
                 data: product,
                 status: 200
             })
