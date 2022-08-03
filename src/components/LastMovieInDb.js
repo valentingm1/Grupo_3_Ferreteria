@@ -8,7 +8,7 @@ function LastMovieInDb() {
 
     useEffect(() => {
         // Este monta el componente y me trae la informacion devuelta
-        const apiURL = `http://localhost:3000/api/products`
+        const apiURL = `http://localhost:3030/api/products`
 
         fetch(apiURL)
             .then((response) => response.json())

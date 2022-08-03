@@ -15,7 +15,7 @@ function ContentRowMovies() {
 
     useEffect(() => {
         // Este monta el componente y me trae la informacion devuelta
-        const apiURL = `http://localhost:3000/api/products`
+        const apiURL = `http://localhost:3030/api/products`
 
         fetch(apiURL)
             .then((response) => response.json())
@@ -30,7 +30,7 @@ function ContentRowMovies() {
 
     useEffect(() => {
         // Este monta el componente y me trae la informacion devuelta
-        const apiURL = `http://localhost:3000/api/category`
+        const apiURL = `http://localhost:3030/api/category`
 
         fetch(apiURL)
             .then((response) => response.json())
@@ -45,7 +45,7 @@ function ContentRowMovies() {
 
     useEffect(() => {
         // Este monta el componente y me trae la informacion devuelta
-        const apiURL = `http://localhost:3000/api/users`
+        const apiURL = `http://localhost:3030/api/users`
 
         fetch(apiURL)
             .then((response) => response.json())

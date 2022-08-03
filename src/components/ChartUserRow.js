@@ -7,7 +7,7 @@ function ChartUsersRow(){
 
     useEffect(() => {
         // Este monta el componente y me trae la informacion devuelta
-        const apiURL = `http://localhost:3000/api/users`
+        const apiURL = `http://localhost:3030/api/users`
 
         fetch(apiURL)
             .then((response) => response.json())
