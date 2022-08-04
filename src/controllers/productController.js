@@ -10,11 +10,7 @@ const db = require("../database/models")
 const Op = db.Sequelize.Op;
 
 
-//Base DE DATOS//
-const path = require("path");
-const herramientasFilePath = path.join(__dirname, "../data/PRODUCTS_DATA.json");
-var herramientas = JSON.parse(fs.readFileSync(herramientasFilePath, "utf-8"));
-const otrosProductos = herramientas;
+
 
 //CONFIGURACION de RUTAS//
 const productController = {

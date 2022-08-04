@@ -102,6 +102,6 @@ router.put("/:id/edit-user",authLoggMiddlware,[
         }
     }
   )
-],  mainController.userController.editUser)
+], path_upload_img.single("image_profile"),  mainController.userController.editUser)
 
 module.exports = router;

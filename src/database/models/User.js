@@ -25,7 +25,7 @@ module.exports = (sequelize, dataTypes) =>{
         },
         rol:{
             type: dataTypes.INTEGER,
-        }
+        },
 
      };
     const config = {

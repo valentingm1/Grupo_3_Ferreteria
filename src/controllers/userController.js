@@ -55,8 +55,7 @@ const userController = {
       where: {
         email: req.body.email
       },
-    })
-      .then(userToLog => {
+    }).then(userToLog => {
         if (userToLog) {
           let passwordConfirm = bcryptjs.compareSync(req.body.password, userToLog.password)
           if (passwordConfirm) {
@@ -69,7 +68,10 @@ const userController = {
           res.redirect("/login");
         }
       }
-      );
+      ).catch(error => {
+        console.log(error)
+        res.send(error)
+      })
   },
 
   viewEditUser: (req, res) =>{
@@ -79,17 +81,21 @@ const userController = {
 
   editUser: (req, res) => {
     const image = req.file.filename;
+    
     db.Users.update({
       first_name: req.body.first_name,
       last_name: req.body.last_name,
       email: req.body.email,
-      password: req.body.password,
+      password: bcryptjs.hashSync(req.body.password, 10),
       image: image
     },
       {
-        where: id == req.params.id
-      }).then(() => {
-        return res.redirect("/perfil");
+        where:{
+          id: req.params.id
+        } 
+      }).then((newUser) => {
+        console.log(newUser)
+         res.redirect("/profile");
       })
       .catch((error) => res.send(error));
   },

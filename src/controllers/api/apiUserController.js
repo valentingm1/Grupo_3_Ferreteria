@@ -17,10 +17,15 @@ const apiUserController = {
 
     userList: (req, res) => {
         db.Users.findAll()
-        .then(allUsers=>{
+        .then(users=>{
+            users.forEach( function( user ){
+                let id  = user.id
+                let apiUrl = "http://localhost:3000/api/users/"+id
+                user.dataValues.apiUrl = apiUrl;
+              });
             return res.json({
-                total: allUsers.length,
-                data: allUsers,
+                total: users.length,
+                data: users,
                 status: 200
             })
         })
@@ -29,6 +34,9 @@ const apiUserController = {
     userDetail: (req, res) => {
         db.Users.findByPk(req.params.id)
         .then(user=>{
+            let image = user.image
+            let imageUrl = "http://localhost:3000/img/profiles/"+image
+            user.dataValues.imageUrl = imageUrl
             return res.json({
                 data: user,
                 status: 200

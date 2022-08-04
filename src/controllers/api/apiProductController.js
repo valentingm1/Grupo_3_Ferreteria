@@ -21,6 +21,15 @@ const apiProductController = {
 
         try {
             const productos = await db.Products.findAll({nest: true, include:['categorias']});
+            productos.forEach( function( producto ){
+                let id  = producto.id
+                let url   = "http://localhost:3000/producto/"+id+"/detalle"
+                let apiUrl = "http://localhost:3000/api/products/"+id
+                producto.dataValues.detalle = url;
+                producto.dataValues.apiUrl = apiUrl;
+                console.log(producto)
+              });
+            
             const categorias = await db.Categories.findAll({include :['productos'] })
             const countByCategory = categorias.reduce((prev, curr) =>{
 
@@ -39,20 +48,14 @@ const apiProductController = {
             console.log(error)
             res.send(error)
         }
-
-        // db.Products.findAll( {include:['categorias']})
-        // .then(allProducts=>{
-        //     return res.json({
-        //         count: allProducts.length,
-        //         products: allProducts,
-        //         status: 200
-        //     })
-        // })
     },
 
     productDetail: (req, res) => {
         db.Products.findByPk(req.params.id)
         .then(product=>{
+            let image = product.image
+            let imageUrl = "http://localhost:3000/img/products/"+image
+            product.dataValues.imageUrl = imageUrl
             return res.json({
                 data: product,
                 status: 200
