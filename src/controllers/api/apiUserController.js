@@ -21,6 +21,14 @@ const apiUserController = {
             users.forEach( function( user ){
                 let id  = user.id
                 let apiUrl = "http://localhost:3000/api/users/"+id
+                
+                user.dataValues = {
+                    id: user.id,
+                    first_name: user.first_name,
+                    last_name: user.last_name,
+                    email: user.email
+
+                }
                 user.dataValues.apiUrl = apiUrl;
               });
             return res.json({
@@ -36,6 +44,14 @@ const apiUserController = {
         .then(user=>{
             let image = user.image
             let imageUrl = "http://localhost:3000/img/profiles/"+image
+            user.dataValues = {
+                id: user.id,
+                first_name: user.first_name,
+                last_name: user.last_name,
+                email: user.email,
+                image: user.image
+
+            }
             user.dataValues.imageUrl = imageUrl
             return res.json({
                 data: user,

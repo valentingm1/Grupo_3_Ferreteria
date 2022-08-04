@@ -1,7 +1,7 @@
 module.exports = {
   development: {
     username: "root",
-    password: "AAAAAAAAA",
+    password: "AAAAAAA",
     database: "ferreteria_db",
     host: "127.0.0.1",
     dialect: "mysql",
