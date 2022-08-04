@@ -28,8 +28,6 @@ function ChartUsersRow(){
                     <td>{usuarios.first_name}</td>
                     <td>{usuarios.last_name}</td>
                     <td>{usuarios.email}</td>
-                    <td>{usuarios.image}</td>
-                    <td>{usuarios.rol}</td>
                 </tr>
                 )}
             )}

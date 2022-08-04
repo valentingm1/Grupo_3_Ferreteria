@@ -22,7 +22,6 @@ function Chart (){
                                 <th>Stock</th>
                                 <th>Descuento</th>
                                 <th>Color</th>
-                                <th>Imagen</th>
                                 <th>Categoria</th>
                                 <th>Id de Categoria</th>
                             </tr>
@@ -35,7 +34,6 @@ function Chart (){
                                 <th>Stock</th>
                                 <th>Descuento</th>
                                 <th>Color</th>
-                                <th>Imagen</th>
                                 <th>Categoria</th>
                                 <th>Id de Categoria</th>
                             </tr>

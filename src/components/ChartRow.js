@@ -30,8 +30,7 @@ function ChartRow(){
                     <td>{productos.price}</td>
                     <td>{productos.stock}</td>
                     <td>{productos.discount}</td>
-                    <td>{productos.color}</td>
-                    <td>{productos.image}</td>                    
+                    <td>{productos.color}</td>                  
                     <td>{productos.categorias.name}</td>
                     <td>{productos.categoria_id}</td>
                 </tr>

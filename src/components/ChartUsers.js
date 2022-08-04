@@ -18,20 +18,9 @@ function ChartUsers (){
                             <tr>
                                 <th>Nombre</th>
                                 <th>Apellido</th>
-                                <th>Email</th>
-                                <th>imagen</th>
-                                <th>Rol</th>    
+                                <th>Email</th>   
                             </tr>
                         </thead>
-                        <tfoot>
-                            <tr>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Email</th>
-                                <th>imagen</th>
-                                <th>Rol</th>
-                            </tr>
-                        </tfoot>
                             <ChartUsersRow/>  
                     </table>
                 </div>
