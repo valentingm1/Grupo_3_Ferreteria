@@ -3,6 +3,11 @@ body {
   font-size: 14px;
 }
 
+section.product-destacado{
+  margin-top: 20px;
+  background-color: white;
+}
+
 .main-header {
   display: flex;
   background-color: black;

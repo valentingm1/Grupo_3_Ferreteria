@@ -83,7 +83,7 @@ const productController = {
   },
 
   putProduct: (req, res) => {
-
+    let categoria_id = parseInt(req.body.category)
     let productoId = req.params.id;
     db.Products.update(
       {
@@ -93,7 +93,7 @@ const productController = {
         price: req.body.price,
         description: req.body.description,
         colores: req.body.colores,
-        image: req.file ? req.file.filename : req.body.image
+        image: req.file ? req.file.filename : req.body.image,
       },
       {
           where: {id: productoId}

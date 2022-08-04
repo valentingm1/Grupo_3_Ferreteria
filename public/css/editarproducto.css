@@ -32,6 +32,13 @@ div.submit-edit-imagen img {
    width: 100%;
 }
 
+div.submit-sub-categorias p{
+    display: none;
+}
+
+div.submit-sub-categorias label{
+    display: none;
+}
 
 
     
