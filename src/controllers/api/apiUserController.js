@@ -20,7 +20,7 @@ const apiUserController = {
         .then(users=>{
             users.forEach( function( user ){
                 let id  = user.id
-                let apiUrl = "http://localhost:3000/api/users/"+id
+                let apiUrl = "http://localhost:3030/api/users/"+id
                 
                 user.dataValues = {
                     id: user.id,
@@ -43,7 +43,7 @@ const apiUserController = {
         db.Users.findByPk(req.params.id)
         .then(user=>{
             let image = user.image
-            let imageUrl = "http://localhost:3000/img/profiles/"+image
+            let imageUrl = "http://localhost:3030/img/profiles/"+image
             user.dataValues = {
                 id: user.id,
                 first_name: user.first_name,

@@ -32,6 +32,7 @@ router.get("/register",guestMiddlware, mainController.userController.register);
 router.get("/login",guestMiddlware, mainController.userController.login);
 router.get("/profile",authLoggMiddlware, mainController.userController.profile);
 router.get("/about-us", mainController.userController.aboutUs);
+router.get("/usersList", mainController.userController.userList);
 
 
 // CRUD
@@ -77,7 +78,7 @@ mainController.userController.createUsers,);
 router.post("/logout", mainController.userController.logout);
 
 //EDICION DE USUARIO
-router.get("/:id/edit-user",authLoggMiddlware, mainController.userController.viewEditUser);
+router.get("/edit-user",authLoggMiddlware, mainController.userController.viewEditUser);
 router.put("/:id/edit-user",authLoggMiddlware,[
   check("first_name", "El nombre no puede estar vacio")
   .exists(),

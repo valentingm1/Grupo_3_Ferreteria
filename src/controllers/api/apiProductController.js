@@ -23,8 +23,8 @@ const apiProductController = {
             const productos = await db.Products.findAll({nest: true, include:['categorias']});
             productos.forEach( function( producto ){
                 let id  = producto.id
-                let url   = "http://localhost:3000/producto/"+id+"/detalle"
-                let apiUrl = "http://localhost:3000/api/products/"+id
+                let url   = "http://localhost:3030/producto/"+id+"/detalle"
+                let apiUrl = "http://localhost:3030/api/products/"+id
                 producto.dataValues.detalle = url;
                 producto.dataValues.apiUrl = apiUrl;
                 console.log(producto)
@@ -54,7 +54,7 @@ const apiProductController = {
         db.Products.findByPk(req.params.id)
         .then(product=>{
             let image = product.image
-            let imageUrl = "http://localhost:3000/img/products/"+image
+            let imageUrl = "http://localhost:3030/img/products/"+image
             product.dataValues.imageUrl = imageUrl
             return res.json({
                 data: product,

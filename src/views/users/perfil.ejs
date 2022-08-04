@@ -9,27 +9,56 @@
                 <% if (locals.isLogged) { %>
                 <div class="container_profile">
                     <h2 class="title_perfil">Perfil:</h2>
-                    <div class="profileImage">
-                        <div class="contain_img_perfil">
-                            <img src="/img/profiles/<%= userLogged.image %>" alt="" />
-                        </div>
-                    </div>
-                    <div class="perfil_data">
-                   
-                        <div class="name_perfil">
-                            <h3>Nombre:</h3>
-                            <p><%= userLogged.first_name %></p>
-                        </div>
 
-                        <div class="email_perfil">
-                            <h3>Email:</h3>
-                            <p><%= userLogged.email %></p>
+                    <div class="profile">
+                        <div class="profileImage">
+                            <div class="contain_img_perfil">
+                                <img src="/img/profiles/<%= userLogged.image %>" alt="" />
+                            </div>
                         </div>
-                        <button><a href="<%= userLogged.id %>/edit-user"> de editar datos</a></button>
+                        <div class="perfil_data">
+                       
+                            <div class="name_perfil">
+                                <h3>Nombre:</h3>
+                                <p><%= userLogged.first_name %></p>
+                            </div>
+    
+                            <div class="name_perfil">
+                                <h3>Apellido:</h3>
+                                <p><%= userLogged.last_name %></p>
+                            </div>
+    
+                            <div class="email_perfil">
+                                <h3>Email:</h3>
+                                <p><%= userLogged.email %></p>
+                            </div>
+
+                            <div class="name_perfil">
+                                <h3>Rol:</h3>
+                                <p><%= userLogged.rol %></p>
+                            </div>
+                            
+                        </div>
+    
+                    </div>
+                    
+                    <div class="buttons-profile">
+
+                        <button><a href="/edit-user">Editar datos</a></button>
+                        
+                        <% if (locals.isLogged & userLogged.rol == "Admin") { %>
+                            <button><a href="/usersList">Usuarios</a></button>
+                        <% } %>
 
                         <% if (locals.isLogged & userLogged.rol == "Admin") { %>
-                            <div><a href="/producto/crear">Vender</a></div>
+                            <button><div><a href="/producto/crear">Vender</a></button>
                         <% } %>
+
+                        <% if (locals.isLogged & userLogged.rol == "Admin") { %>
+                            <button> <a href="http://localhost:3000">DashBoard</a></button>
+                        <% } %>
+
+                       
                     </div>
                 </div>
                 <% }%>

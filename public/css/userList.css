@@ -1,0 +1,93 @@
+body.body-UserList{
+}
+
+/*TITULO*/
+section.users-list-tittle{
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    padding-left: 18px;
+}
+
+section.users-list-tittle h1{
+    font-weight: bold;
+    margin-bottom: 1.5em;
+}
+
+section.users-list-tittle div.orange-line{
+    border-bottom: 1px solid #f36e21;
+    width: 90%;
+    height: 3.2em;
+}
+
+/*LISTA DE USUARIOS*/
+
+section.user-list-container{
+    margin: 14px;
+    min-height: 71vh;
+    background-color: rgb(255, 255, 255);
+}
+
+div.user-list-users{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/*----CARTA DE USUARIOS-------*/
+article.user-card-container{
+    margin: 10px 5px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ebebeb;
+    box-shadow: 0px 0px 20px #f36e21;
+}
+
+/*imagen*/
+div.user-card-container-img{
+    width: 117px;
+}
+
+img.user-card-img{
+    width: 100%;
+}
+
+/*DATOS DE USUARIOS*/
+div.user-card-info{
+    text-align: center;
+}
+
+div.user-card-data{
+    margin: 5px 0px;
+}
+
+div.user-card-data h3{
+    margin: 0px
+}
+
+/*BOTON DE REGRESAR*/
+div.botton-userList {
+    margin: auto;
+    width: 20%;
+    font-size: 15px;
+    padding: 11px;
+    border: 1px solid #f36e21;
+    border-radius: 7px;
+    background-color: #f36e21;
+}
+
+div.botton-userList a{
+    text-decoration: none;
+    color: white;
+}
+
+@media (min-width: 1024px){
+div.botton-userList {
+
+    width: 6%;
+    }
+}
+
+@media (min-width: 1440px){
+    div.botton-userList {
+        width: 60px;
+    }
+}

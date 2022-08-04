@@ -53,16 +53,6 @@
               <div class="register_control">
                 <label for="register_firstname"></label>
                 <small></small>
-                <select name="rol" id="rol">
-                  if<% if (userLogged.rol == "Admin") { %>
-                    <option value="<%= userLogged.rol %>" Select><%= userLogged.rol %></option>
-                    <option value="Usuario" >Usuario</option>
-                  <% } %>
-                  if<% if (userLogged.rol !== "Admin") { %>
-                    <option value="Admin" >Admin</option>
-                    <option value="userLogged.rol " Select>userLogged.rol </option>
-                  <% } %>
-                </select>
               </div>
             <% } %>
             <div class="register_buttons">

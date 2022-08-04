@@ -14,6 +14,16 @@ const session = require("express-session");
 const db = require("../database/models");
 
 const userController = {
+
+  userList: (req, res) => {
+    db.Users.findAll()
+    .then(allUsers=>{
+      console.log
+      res.render("users/usersList", {allUsers});
+    })
+  },
+
+
   register: (req, res) => {
     res.render("users/register");
   },
@@ -94,8 +104,9 @@ const userController = {
           id: req.params.id
         } 
       }).then((newUser) => {
-        console.log(newUser)
-         res.redirect("/profile");
+
+        req.session.destroy();
+         res.redirect("/");
       })
       .catch((error) => res.send(error));
   },

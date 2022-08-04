@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../partials/head.ejs")%>
+    <link rel="stylesheet" href="/css/userList.css">
+
+<body class="body-UserList">
+    <%- include("../partials/header.ejs")%>
+
+    <section class="users-list-tittle">
+      <h1>Usuarios</h1>
+      <div class="orange-line"></div>
+    </section>
+
+    <section class="user-list-container">
+        <div class="user-list-row">
+          <!-- Lista de useros -->
+          <div class="user-list-users">
+            <% if(allUsers.length > 0){%>
+              <% for (let i=0; i < allUsers.length; i++) {%>
+                <!--  /* cambié i = 0 por i = 5*/ -->
+                <article class="user-card-container">
+                  <!-- useros individuales -->
+                  <div class="user-card">
+                    <div class="user-card-container-img">
+                      <img class="user-card-img" src="/img/profiles/<%= allUsers[i].image %>"
+                        alt="<%= allUsers[i].name %>" width="100" height="100" />
+                    </div>
+                    <div class="user-card-info-container">
+                      <div class="user-card-info">
+                        <div class="user-card-data">
+                          <h3>Nombre:</h3> <%= allUsers[i].first_name %>
+                        </div>
+                        <div class="user-card-data">
+                          <h3>Apellido:</h3> <%= allUsers[i].last_name %>
+                        </div>
+                        <div class="user-card-data">
+                          <h3>Email:</h3> <%= allUsers[i].email %>
+                        </div>
+                        <div class="user-card-data">
+                          <h3>Rol:</h3> <%= allUsers[i].rol %>
+                        </div>
+                      </div>
+                      <div class="user-card-buttons">
+                      </div>
+                    </div>
+                    <a class="link-detail-user" href="/users/detail/<%= allUsers[i].id %>"></a>
+                  </div>
+                </article>
+              <%}%>
+            <%}%>
+          </div>
+
+          <div class="botton-userList">
+            <a href="/profile">Regresar</a>
+          </div>
+      </section>
+</body>
+<%- include("../partials/footer.ejs")%>
+</html>
