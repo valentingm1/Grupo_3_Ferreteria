@@ -3,18 +3,17 @@ También tuvimos una reunión semanal donde completamos detalles para la entrega
 
 Valentín:
 
-- Armó la rama development.
-- subió el proyecto al Git.
-- Hizo el sistema de rutas.
-- Ayudó a armar el formato para modificar productos
-- Re organizó las rutas
-- Modificó aspectos del CSS
+- Realizó el diagrama de la base de datos
+- Realizó el CRUD para users
+- Apoyó en la solución de problemas de código
 
 Jonathan:
 
-- Agregó ejs e hizo que el header, footer y head, sean compartidos por todos los archivos.
-- En produtDetail modificó los el color azúl por naranja en la página.
-- Hizo el formulario Products
+- Realizó y modificó el diagrama de la base de datos
+- Realizó el Sript de la estructura
+- Creó carpeta de Sequelize y organizó las rutas con los modelos
+- Apoyó en la solución de problemas de código
+- Creación del CRUD para productos y Users
 
 Manuel:
 
@@ -24,6 +23,5 @@ Manuel:
 
 Adriana:
 
-- Colocó y actualizó el archico daily con los mensajes de whatsapp y actualizó el trello para el sprint 3.
-- Modificó el color a naranja para algunos elementos faltantes.
-- Agregó carpetas products y users y actualizó el enrutamiento.
+- Colocó y actualizó el archico daily con los mensajes de whatsapp y actualizó el trello para el sprint 7.
+- APoyó con la creación del CRUD para Users
