@@ -1,13 +1,13 @@
 Qué hicimos bien:
 Rápida reparticion equitativa de tareas
-Se cumplieron con las Deadlines de los entregables
-Comunicación rápida y acertiva
+Apoyo del equipo para resolver problemas complejos
+Se pidió ayuda a personas con mayor conocimiento (profesores, amigos) para resolver la entrega
 
 Qué hicimos mal:
-"LOS COLORES SON HORRRRRRRRIBLES" -Juanse profe
+Se nos acumularon 3 Sprints y tuvimos que correr con la pronta entrega del mismo 
 
 Que deberiamos empezar a hacer:
 Cumplir con los dailies que proponemos
 
 Que deberiamos dejar de hacer:
-Buscar soluciones complejas a problemas simplesg
+Buscar soluciones complejas a problemas simples
