@@ -1,29 +1,22 @@
 Estuvimos reportando por whatsapp lo que hacíamos y nos organizamos teniendo en cuenta el tablero de Trello.
-También tuvimos una reunión semanal donde completamos detalles para la entrega.
+Nos reuníamos en casos puntuales para conversar y resolver problemas en el código
 
 Valentín:
 
-- Armó la rama development.
-- subió el proyecto al Git.
-- Hizo el sistema de rutas.
-- Ayudó a armar el formato para modificar productos
-- Re organizó las rutas
-- Modificó aspectos del CSS
+- Realizó los Endpoints de usuarios y productos
+- Realizó la creación completa del Dashboard con React
+- Solucionó problemas del código para que la página fuese funcional
 
 Jonathan:
 
-- Agregó ejs e hizo que el header, footer y head, sean compartidos por todos los archivos.
-- En produtDetail modificó los el color azúl por naranja en la página.
-- Hizo el formulario Products
+- Realizó las API's completas para uduarios y productos haciendo la página funcional
+- Apoyó con la creación del Dashboard
+- Modificó y mejoró el CSS para que el usuario tuviese una mejor experiencia
+- Solucionó problemas del código para que la página fuese funcional
 
-Manuel:
-
-- Hizo el formulario products
-- Modificó el login y el email junto con el espacio para la contraseña
-- Modificó aspectos del CSS
 
 Adriana:
 
-- Colocó y actualizó el archico daily con los mensajes de whatsapp y actualizó el trello para el sprint 3.
-- Modificó el color a naranja para algunos elementos faltantes.
-- Agregó carpetas products y users y actualizó el enrutamiento.
+- Colocó y actualizó el archico daily con los mensajes de whatsapp y actualizó el trello para el sprint 8.
+- Apoyó en la creación de API's
+
